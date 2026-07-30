@@ -1,0 +1,26 @@
+{
+  "name": "e2eframeworkone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "HEADLESS=false npx playwright test",
+    "test:chrome": "npx playwright test --project=Chrome",
+    "test:firefox": "npx playwright test --project=Firefox",
+    "test:safari": "npx playwright test --project=Safari",
+    "test:edge": "npx playwright test --project=Edge",
+    "test:all-browsers": "npx playwright test --project=Chrome --project=Firefox --project=Safari --project=Edge"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.62.0",
+    "@types/node": "^26.1.2",
+    "jsonpath-plus": "^10.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^7.0.2"
+  }
+}

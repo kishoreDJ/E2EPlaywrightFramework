@@ -9,6 +9,7 @@ import { BrowserPoolRegistry } from '../browser/browser-pool';
 import { BrowserLaunchOptionsManager, BrowserContextOptionsBuilder } from '../browser/browser-launch-options';
 import type { BrowserName, BrowserContextConfig, PoolConfig } from '../browser/browser-types';
 import { LoginPage } from '../pages/LoginPage';
+import { AlfrescoLoginPage } from '../pages/AlfrescoLoginPage';
 import { FaqPage } from '../pages/FaqPage';
 import { LiveChatPage } from '../pages/LiveChatPage';
 import { MctFormPage } from '../pages/MctFormPage';
@@ -31,6 +32,7 @@ export type BrowserFixtures = {
   /** Override context options per test */
   contextConfig: BrowserContextConfig;
   loginPage: LoginPage;
+  alfrescoLoginPage: AlfrescoLoginPage;
   faqPage: FaqPage;
   liveChatPage: LiveChatPage;
   mctFormPage: MctFormPage;
@@ -130,6 +132,10 @@ export const test = base.extend<BrowserFixtures, BrowserWorkerFixtures>({
 
   loginPage: async ({ pooledPage }, use) => {
     await use(new LoginPage(pooledPage));
+  },
+
+  alfrescoLoginPage: async ({ pooledPage }, use) => {
+    await use(new AlfrescoLoginPage(pooledPage));
   },
 
   faqPage: async ({ pooledPage }, use) => {

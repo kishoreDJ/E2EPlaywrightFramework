@@ -8,6 +8,17 @@ import { test as base, Browser, BrowserContext, Page } from '@playwright/test';
 import { BrowserPoolRegistry } from '../browser/browser-pool';
 import { BrowserLaunchOptionsManager, BrowserContextOptionsBuilder } from '../browser/browser-launch-options';
 import type { BrowserName, BrowserContextConfig, PoolConfig } from '../browser/browser-types';
+import { LoginPage } from '../pages/LoginPage';
+import { FaqPage } from '../pages/FaqPage';
+import { LiveChatPage } from '../pages/LiveChatPage';
+import { MctFormPage } from '../pages/MctFormPage';
+import { FeedbackFormPage } from '../pages/FeedbackFormPage';
+import { HomePage } from '../pages/HomePage';
+import { ProductAlertsPage } from '../pages/ProductAlertsPage';
+import { HelpRequestFormPage } from '../pages/HelpRequestFormPage';
+import { SupportResourceRequestPage } from '../pages/SupportResourceRequestPage';
+import { RcProductUpdatePage } from '../pages/RcProductUpdatePage';
+import { YomiuriPage } from '../pages/YomiuriPage';
 
 // ==========================================
 // Fixture types
@@ -19,6 +30,17 @@ export type BrowserFixtures = {
   pooledPage: Page;
   /** Override context options per test */
   contextConfig: BrowserContextConfig;
+  loginPage: LoginPage;
+  faqPage: FaqPage;
+  liveChatPage: LiveChatPage;
+  mctFormPage: MctFormPage;
+  feedbackFormPage: FeedbackFormPage;
+  homePage: HomePage;
+  productAlertsPage: ProductAlertsPage;
+  helpRequestFormPage: HelpRequestFormPage;
+  supportResourceRequestPage: SupportResourceRequestPage;
+  rcProductUpdatePage: RcProductUpdatePage;
+  yomiuriPage: YomiuriPage;
 };
 
 export type BrowserWorkerFixtures = {
@@ -92,12 +114,62 @@ export const test = base.extend<BrowserFixtures, BrowserWorkerFixtures>({
     await context.close();
   },
 
-  pooledPage: async ({ pooledContext }, use) => {
+  pooledPage: async ({ pooledContext }, use, testInfo) => {
     const page = await pooledContext.newPage();
 
     await use(page);
 
+    const video = page.video();
     await page.close();
+
+    if (video) {
+      const videoPath = await video.path();
+      await testInfo.attach('video', { path: videoPath, contentType: 'video/webm' });
+    }
+  },
+
+  loginPage: async ({ pooledPage }, use) => {
+    await use(new LoginPage(pooledPage));
+  },
+
+  faqPage: async ({ pooledPage }, use) => {
+    await use(new FaqPage(pooledPage));
+  },
+
+  liveChatPage: async ({ pooledPage }, use) => {
+    await use(new LiveChatPage(pooledPage));
+  },
+
+  mctFormPage: async ({ pooledPage }, use) => {
+    await use(new MctFormPage(pooledPage));
+  },
+
+  feedbackFormPage: async ({ pooledPage }, use) => {
+    await use(new FeedbackFormPage(pooledPage));
+  },
+
+  homePage: async ({ pooledPage }, use) => {
+    await use(new HomePage(pooledPage));
+  },
+
+  productAlertsPage: async ({ pooledPage }, use) => {
+    await use(new ProductAlertsPage(pooledPage));
+  },
+
+  helpRequestFormPage: async ({ pooledPage }, use) => {
+    await use(new HelpRequestFormPage(pooledPage));
+  },
+
+  supportResourceRequestPage: async ({ pooledPage }, use) => {
+    await use(new SupportResourceRequestPage(pooledPage));
+  },
+
+  rcProductUpdatePage: async ({ pooledPage }, use) => {
+    await use(new RcProductUpdatePage(pooledPage));
+  },
+
+  yomiuriPage: async ({ pooledPage }, use) => {
+    await use(new YomiuriPage(pooledPage));
   },
 });
 

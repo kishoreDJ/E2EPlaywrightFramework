@@ -128,6 +128,7 @@ export class BrowserLaunchOptionsManager {
     const base: BrowserContextConfig = {
       viewport: this.globalViewport ?? VIEWPORT_PRESETS.FULL_HD,
       ignoreHTTPSErrors: false,
+      recordVideo: { dir: 'test-results/videos' },
     };
 
     return { ...base, ...overrides };

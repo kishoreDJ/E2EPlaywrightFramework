@@ -15,6 +15,7 @@ export class FeedbackFormPage extends BasePage {
   private readonly emailInput: Locator;
   private readonly productDropdown: Locator;
   private readonly messageTextarea: Locator;
+  private readonly addAttachmentButton: Locator;
   private readonly attachmentInput: Locator;
   private readonly submitButton: Locator;
   public readonly successMessage: Locator;
@@ -31,6 +32,7 @@ export class FeedbackFormPage extends BasePage {
     this.emailInput = page.locator('#email');
     this.productDropdown = page.locator('[role="combobox"]').first();
     this.messageTextarea = page.locator('#message');
+    this.addAttachmentButton = page.getByText('ADD ATTACHMENT', { exact: true });
     this.attachmentInput = page.locator('#attachment');
     this.submitButton = page.getByText('SUBMIT', { exact: true });
     this.successMessage = page.getByText('Thank you for your feedback.');
@@ -44,6 +46,7 @@ export class FeedbackFormPage extends BasePage {
   public async openForSlug(slug: string): Promise<void> {
     await this.goto(`/feedback/${slug}`);
     await this.waitForPageLoad();
+    await this.closePopupIfPresent();
   }
 
   public async fillForm(fields: FeedbackFormFields): Promise<void> {
@@ -60,7 +63,10 @@ export class FeedbackFormPage extends BasePage {
   }
 
   public async uploadFiles(filePaths: string[]): Promise<void> {
-    await this.attachmentInput.setInputFiles(filePaths);
+    await this.closePopupIfPresent();
+    const [chooser] = await Promise.all([this.page.waitForEvent('filechooser'), this.addAttachmentButton.click()]);
+    await chooser.setFiles(filePaths);
+    await this.page.waitForTimeout(1000);
   }
 
   public async clickSubmit(): Promise<void> {

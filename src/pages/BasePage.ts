@@ -27,4 +27,12 @@ export class BasePage {
     await this.page.getByText(linkText, { exact: true }).first().click();
     await this.waitForPageLoad();
   }
+
+  /** Closes an overlay/modal if one happens to be visible, otherwise no-ops. */
+  public async closePopupIfPresent(closeButtonText: string = 'Close'): Promise<void> {
+    const closeButton = this.page.getByText(closeButtonText, { exact: true });
+    if (await closeButton.isVisible().catch(() => false)) {
+      await closeButton.click();
+    }
+  }
 }

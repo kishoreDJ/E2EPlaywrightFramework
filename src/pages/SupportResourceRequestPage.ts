@@ -23,6 +23,7 @@ export class SupportResourceRequestPage extends BasePage {
   public async uploadViaFileChooser(filePath: string): Promise<void> {
     const [chooser] = await Promise.all([this.page.waitForEvent('filechooser'), this.addAttachmentButton.click()]);
     await chooser.setFiles(filePath);
+    await this.page.waitForTimeout(1000);
   }
 
   public getSelectedFileCount(): Promise<number> {

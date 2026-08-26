@@ -7,10 +7,10 @@ import { Page, Locator } from '@playwright/test';
 import { BasePage } from './BasePage';
 
 export class HelpRequestFormPage extends BasePage {
-  private readonly attentionOverlayCloseButton: Locator;
   private readonly helpRequestTab: Locator;
   private readonly factivaSourceRequestTab: Locator;
   private readonly rcProfileUpdateTab: Locator;
+  private readonly addAttachmentButton: Locator;
   private readonly attachmentInput: Locator;
   private readonly productCombobox: Locator;
   private readonly productAreaCombobox: Locator;
@@ -28,10 +28,10 @@ export class HelpRequestFormPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.attentionOverlayCloseButton = page.getByText('Close', { exact: true });
     this.helpRequestTab = page.getByRole('tab', { name: 'Help Request', exact: true });
     this.factivaSourceRequestTab = page.getByRole('tab', { name: 'Factiva Source Request' });
     this.rcProfileUpdateTab = page.getByRole('tab', { name: 'R&C profile update' });
+    this.addAttachmentButton = page.getByText('ADD ATTACHMENT', { exact: true });
     this.attachmentInput = page.locator('#attachment');
     this.productCombobox = page.locator('[role="combobox"]').filter({ has: page.locator('label[for="productLine"]') });
     this.productAreaCombobox = page
@@ -53,20 +53,21 @@ export class HelpRequestFormPage extends BasePage {
   public async open(): Promise<void> {
     await this.goto('/contact/eform');
     await this.waitForPageLoad();
-    if (await this.attentionOverlayCloseButton.isVisible().catch(() => false)) {
-      await this.attentionOverlayCloseButton.click();
-    }
+    await this.closePopupIfPresent();
   }
 
   public async openHelpRequestTab(): Promise<void> {
+    await this.closePopupIfPresent();
     await this.helpRequestTab.click();
   }
 
   public async openFactivaSourceRequestTab(): Promise<void> {
+    await this.closePopupIfPresent();
     await this.factivaSourceRequestTab.click();
   }
 
   public async openRcProfileUpdateTab(): Promise<void> {
+    await this.closePopupIfPresent();
     await this.rcProfileUpdateTab.click();
   }
 
@@ -88,7 +89,10 @@ export class HelpRequestFormPage extends BasePage {
   }
 
   public async uploadAttachment(filePath: string): Promise<void> {
-    await this.attachmentInput.setInputFiles(filePath);
+    await this.closePopupIfPresent();
+    const [chooser] = await Promise.all([this.page.waitForEvent('filechooser'), this.addAttachmentButton.click()]);
+    await chooser.setFiles(filePath);
+    await this.page.waitForTimeout(1000);
   }
 
   public async fillHelpRequest(fields: {

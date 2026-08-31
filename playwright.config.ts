@@ -1,13 +1,26 @@
-import { defineConfig, devices } from '@playwright/test';
-import { BrowserLaunchOptionsManager } from './src/browser/browser-launch-options';
-
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
 import dotenv from 'dotenv';
 import path from 'path';
-dotenv.config({ path: path.resolve(__dirname, '.env.djcss') });
+dotenv.config({ path: path.resolve(__dirname, '.env') });
+
+import { defineConfig, devices } from '@playwright/test';
+import { BrowserLaunchOptionsManager } from './src/browser/browser-launch-options';
+import { buildBrowserStackWsEndpoint, BS_CAPABILITY_PRESETS } from './src/browser/browserstack-config';
+
+const isBrowserStack = process.env.USE_BROWSERSTACK === 'true';
+
+function bsConnectOptions(presetKey: string): { wsEndpoint: string } {
+  const username = process.env.BROWSERSTACK_USERNAME;
+  const accessKey = process.env.BROWSERSTACK_ACCESS_KEY;
+  if (!username || !accessKey) {
+    throw new Error('USE_BROWSERSTACK=true but BROWSERSTACK_USERNAME or BROWSERSTACK_ACCESS_KEY is missing.');
+  }
+  const caps = {
+    ...BS_CAPABILITY_PRESETS[presetKey],
+    build: process.env.BS_BUILD_NAME ?? 'local',
+    project: process.env.BS_PROJECT_NAME ?? 'E2EFrameworkOne',
+  };
+  return { wsEndpoint: buildBrowserStackWsEndpoint({ credentials: { username, accessKey }, capabilities: caps }) };
+}
 
 const isHeadless = process.env.HEADLESS !== 'false';
 
@@ -39,36 +52,71 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'Chrome',
-      use: {
-        ...devices['Desktop Chrome'],
-        channel: 'chrome',
-        launchOptions: BrowserLaunchOptionsManager.getOptions('chrome', { headless: isHeadless }),
+    // ---- Local browser projects (default) ----
+    ...(isBrowserStack ? [] : [
+      {
+        name: 'Chrome',
+        use: {
+          ...devices['Desktop Chrome'],
+          channel: 'chrome',
+          launchOptions: BrowserLaunchOptionsManager.getOptions('chrome', { headless: isHeadless }),
+        },
       },
-    },
-    {
-      name: 'Firefox',
-      use: {
-        ...devices['Desktop Firefox'],
-        launchOptions: BrowserLaunchOptionsManager.getOptions('firefox', { headless: isHeadless }),
+      {
+        name: 'Firefox',
+        use: {
+          ...devices['Desktop Firefox'],
+          launchOptions: BrowserLaunchOptionsManager.getOptions('firefox', { headless: isHeadless }),
+        },
       },
-    },
-    {
-      name: 'Safari',
-      use: {
-        ...devices['Desktop Safari'],
-        launchOptions: BrowserLaunchOptionsManager.getOptions('webkit', { headless: isHeadless }),
+      {
+        name: 'Safari',
+        use: {
+          ...devices['Desktop Safari'],
+          launchOptions: BrowserLaunchOptionsManager.getOptions('webkit', { headless: isHeadless }),
+        },
       },
-    },
-    {
-      name: 'Edge',
-      use: {
-        ...devices['Desktop Edge'],
-        channel: 'msedge',
-        launchOptions: BrowserLaunchOptionsManager.getOptions('edge', { headless: isHeadless }),
+      {
+        name: 'Edge',
+        use: {
+          ...devices['Desktop Edge'],
+          channel: 'msedge',
+          launchOptions: BrowserLaunchOptionsManager.getOptions('edge', { headless: isHeadless }),
+        },
       },
-    },
+    ]),
+
+    // ---- BrowserStack remote projects (USE_BROWSERSTACK=true) ----
+    ...(isBrowserStack ? [
+      {
+        name: 'BS-Chrome-Windows11',
+        use: {
+          ...devices['Desktop Chrome'],
+          connectOptions: bsConnectOptions('chrome-windows-11'),
+        },
+      },
+      {
+        name: 'BS-Chrome-MacSequoia',
+        use: {
+          ...devices['Desktop Chrome'],
+          connectOptions: bsConnectOptions('chrome-mac-sequoia'),
+        },
+      },
+      {
+        name: 'BS-Firefox-Windows11',
+        use: {
+          ...devices['Desktop Firefox'],
+          connectOptions: bsConnectOptions('firefox-windows-11'),
+        },
+      },
+      {
+        name: 'BS-Edge-Windows11',
+        use: {
+          ...devices['Desktop Edge'],
+          connectOptions: bsConnectOptions('edge-windows-11'),
+        },
+      },
+    ] : []),
 
     /* Test against mobile viewports. */
     // {

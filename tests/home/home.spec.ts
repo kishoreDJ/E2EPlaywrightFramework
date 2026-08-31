@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import { test, expect } from '../../src/fixtures/browser-fixture';
 
 // NOTE: the /Home folder has 1 Zephyr case (DJCSS-T167), verifying the DJCSS web app

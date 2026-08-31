@@ -23,7 +23,7 @@
     "@types/node": "^26.1.2",
     "allure-commandline": "^2.34.0",
     "allure-playwright": "^3.4.2",
-    "dotenv": "^16.4.5",
+    "dotenv": "^17.4.2",
     "jsonpath-plus": "^10.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^7.0.2"

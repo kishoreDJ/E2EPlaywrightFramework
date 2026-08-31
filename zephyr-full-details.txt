@@ -1,0 +1,81 @@
+﻿========= DJCSS-T69 =========
+Key: DJCSS-T69
+Name: Add product to product status page
+Status: Draft
+Precondition: admin  user must be logged into the application
+Objective: To verify that the new product can be successfully added to the product 
+status
+Folder: /DJCSS-Admin Page
+Priority: Normal
+Owner: 712020:d4b44ef5-1b19-4c69-9821-dd8f711e68e5
+Coverage (Issues): DJCSS-1079
+Automation Status: Not Automated
+Test Script (Step-by-Step) - Step: Navigate to the product status page
+Test Script (Step-by-Step) - Test Data: admin user details required
+
+========= DJCSS-T70 =========
+Key: DJCSS-T70
+Name: Remove product from the product status page
+Status: Draft
+Precondition: user must be logged into the CMS application
+Objective: to verify that the existing product can be removed from the product status 
+page
+Folder: /DJCSS-Admin Page
+Priority: Normal
+Owner: 712020:d4b44ef5-1b19-4c69-9821-dd8f711e68e5
+Coverage (Issues): DJCSS-1079
+Automation Status: Not Automated
+Test Script (Step-by-Step) - Step: Navigate to the product status page
+
+========= DJCSS-T74 =========
+Key: DJCSS-T74
+Name: Verify export email displays current copyright year.
+Status: Draft
+Precondition: export email feature is enabled
+Objective: Update the copyright year in the export email to the current year when a 
+user exports content via email.
+Folder: /FAQ
+Priority: Normal
+Owner: 712020:d4b44ef5-1b19-4c69-9821-dd8f711e68e5
+Coverage (Issues): DJCSS-1108
+Automation Status: Not Automated
+Test Script (Step-by-Step) - Step: Navigate to the FAQ/learning page and send a export email.
+
+========= DJCSS-T153 =========
+Key: DJCSS-T153
+Name: Verify addition of new products to the Product Alert list
+Status: Draft
+Precondition: Login in Alfresco
+Folder: /Product Alerts
+Priority: Normal
+Coverage (Issues): DJCSS-1141
+Automation Status: Not Automated
+Test Script (Step-by-Step) - Step: Login to Alfrensco
+Test Script (Step-by-Step) - Expected Result: User should be able to login to Alfrensco
+
+========= DJCSS-T161 =========
+Key: DJCSS-T161
+Name: Verify whether products with no content are hidden on Product filters and Advanced search
+Status: Draft
+Precondition: Login to DJCSS QA page
+Folder: /FAQ
+Priority: Normal
+Coverage (Issues): DJCSS-1135
+Automation Status: Not Automated
+Test Script (Step-by-Step) - Step: Login to DJCSS QA
+Test Script (Step-by-Step) - Expected Result: User should land on DJCSS Home page
+
+========= DJCSS-T164 =========
+Key: DJCSS-T164
+Name: Verify Dragonfly Intelligence Product Filter Name Update on CMS, Product alert page and alert Email template
+Status: Draft
+Precondition: Login to Knowlede Base and DJCSS
+Objective: Verify the product filter name is correctly updated in the Product Alert 
+page, Email template, CMS and that it successfully returns the expected 
+results when applied.
+Folder: /Product Alerts
+Priority: Normal
+Automation Status: Not Automated
+Test Script (Step-by-Step) - Step: Login to Alfrensco
+Test Script (Step-by-Step) - Expected Result: User should be able to login to Alfrensco
+

@@ -1,0 +1,148 @@
+﻿--- DJCSS-T58 ---
+Name: Product Status Page Changes for Product Status, Scheduled Maintenance, and Source Status-the number is not centered in the background icon that appears. 
+Folder: /Product Status 
+Precondition: Chrome, safari, Firefox and iPhone, iPadmini and SamsugS22 and Android tab
+
+--- DJCSS-T69 ---
+Name: Add product to product status page
+Folder: /DJCSS-Admin Page
+Precondition: admin  user must be logged into the application
+
+--- DJCSS-T70 ---
+Name: Remove product from the product status page
+Folder: /DJCSS-Admin Page
+Precondition: user must be logged into the CMS application
+
+--- DJCSS-T74 ---
+Name: Verify export email displays current copyright year.
+Folder: /FAQ
+Precondition: export email feature is enabled
+
+--- DJCSS-T82 ---
+Name: Verify Update Acceptance Modal for Quality Assurance FAQ new Content
+Folder: /FAQ
+Precondition: Logged into DJCSS QA
+
+--- DJCSS-T84 ---
+Name: Verify Update Acceptance Modal for Quality Assurance FAQ new logic for different year
+Folder: /FAQ
+Precondition: Logged into DJCSS QA and update the year of the pdf attached in the link to 
+different year
+
+--- DJCSS-T90 ---
+Name: Verify updated logo on Factiva Product Update Email Template
+Folder: /Recycle
+Precondition: Campaign Monitor -> Lists and subscribers -> Whats New In Factiva -> check 
+whether you subscribed else subscribe( Add new subscriber -> type email id 
+-> next)
+
+--- DJCSS-T91 ---
+Name: Verify updated logo on DJID Updates Email Template
+Folder: /Recycle
+Precondition: Campaign Monitor -> Lists and subscribers -> DJID Updates -> check whether 
+subscribed else subscribe( Add new subscriber -> type email id -> next)
+
+--- DJCSS-T92 ---
+Name: Verify updated logo on Newswire Product Update Email Template
+Folder: /Recycle
+Precondition: Campaign Monitor -> Lists and subscribers -> Newswire Product Update -> 
+check whether you subscribed else subscribe( Add new subscriber -> type 
+email id -> next)
+
+--- DJCSS-T93 ---
+Name: Verify updated logo on IMS Product Update Email Template
+Folder: /Recycle
+Precondition: Campaign Monitor -> Lists and subscribers -> IMS Product Update -> check 
+whether subscribed else subscribe( Add new subscriber -> type email id -> 
+next)
+
+--- DJCSS-T94 ---
+Name: Verify updated logo on Factiva content update email template
+Folder: /Recycle
+Precondition: Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check 
+whether you subscribed else subscribe( Add new subscriber -> type email id 
+-> next)
+
+--- DJCSS-T122 ---
+Name: Verify Updated Factiva Scheduled Maintenance Notification Email
+Folder: /Scheduled Maintenance
+Precondition: Campaign Monitor -> Lists and subscribers -> DJCSS RC Product Updates -> 
+check whether subscribed else subscribe( Add new subscriber -> type email 
+id -> next)
+
+--- DJCSS-T123 ---
+Name: Verify Updated Newswires Scheduled Maintenance Notification Email
+Folder: /Scheduled Maintenance
+Precondition: Campaign Monitor -> Lists and subscribers -> DJCSS RC Product Updates -> 
+check whether subscribed else subscribe( Add new subscriber -> type email 
+id -> next)
+
+--- DJCSS-T124 ---
+Name: Verify Updated Risk and Compliance Scheduled Maintenance Notification Email
+Folder: /Scheduled Maintenance
+Precondition: Campaign Monitor -> Lists and subscribers -> DJCSS RC Product Updates -> 
+check whether subscribed else subscribe( Add new subscriber -> type email 
+id -> next)
+
+--- DJCSS-T126 ---
+Name: Verify Unrestricted Upload of File for Factiva Feedback form
+Folder: /Factiva Feedback Form
+Precondition: Launch the URL : https://customer.qa.dowjones.com/ using creds: 
+lisaadmin/lisaadmin
+
+--- DJCSS-T153 ---
+Name: Verify addition of new products to the Product Alert list
+Folder: /Product Alerts
+Precondition: Login in Alfresco
+
+--- DJCSS-T154 ---
+Name: Verify logo on Oxford Analytica Alert Email Template
+Folder: /Product Alerts
+Precondition: Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check 
+whether you subscribed else subscribe( Add new subscriber -> type email id 
+-> next)
+
+--- DJCSS-T155 ---
+Name: Verify logo on Global Risk Monitor  Alert Email Template
+Folder: /Product Alerts
+Precondition: Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check 
+whether you subscribed else subscribe( Add new subscriber -> type email id 
+-> next)
+
+--- DJCSS-T156 ---
+Name: Verify logo on Dragonfly SIAS Alert Email Template
+Folder: /Product Alerts
+Precondition: Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check 
+whether you subscribed else subscribe( Add new subscriber -> type email id 
+-> next)
+
+--- DJCSS-T158 ---
+Name: Verify FAQ & Learning Article Search for Oxford Analytica
+Folder: /FAQ
+Precondition: Login in to Knowledge Base QA and DJCSS QA page
+
+--- DJCSS-T159 ---
+Name: Verify FAQ & Learning Article Search for Global Risk Monitor
+Folder: /FAQ
+Precondition: Login in to Knowledge Base QA and DJCSS QA page
+
+--- DJCSS-T160 ---
+Name: Verify FAQ & Learning Article Search for Dragonfly SIAS
+Folder: /FAQ
+Precondition: Login to Knowledge Base QA and DJCSS QA page
+
+--- DJCSS-T161 ---
+Name: Verify whether products with no content are hidden on Product filters and Advanced search
+Folder: /FAQ
+Precondition: Login to DJCSS QA page
+
+--- DJCSS-T163 ---
+Name: Verify Dragonfly Intelligence Product Filter Name Update on Knowledge base and FAQ page
+Folder: /FAQ
+Precondition: Login to Knowlede Base and DJCSS
+
+--- DJCSS-T164 ---
+Name: Verify Dragonfly Intelligence Product Filter Name Update on CMS, Product alert page and alert Email template
+Folder: /Product Alerts
+Precondition: Login to Knowlede Base and DJCSS
+

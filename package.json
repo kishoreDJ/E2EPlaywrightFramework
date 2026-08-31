@@ -12,7 +12,9 @@
     "test:edge": "npx playwright test --project=Edge",
     "test:all-browsers": "npx playwright test --project=Chrome --project=Firefox --project=Safari --project=Edge",
     "db:schema": "npx tsc && node -e \"require('dotenv').config(); require('./dist/src/helpers/readSchema.js')\"",
-    "db:schema:refresh": "node -e \"try{require('fs').unlinkSync('db-schema.txt')}catch(e){}\" && npm run db:schema"
+    "db:schema:refresh": "node -e \"try{require('fs').unlinkSync('db-schema.txt')}catch(e){}\" && npm run db:schema",
+    "allure:generate": "npx allure generate allure-results --clean -o allure-report",
+    "allure:open": "npx allure open allure-report"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +24,8 @@
     "@playwright/test": "^1.62.0",
     "@types/node": "^26.1.2",
     "@types/pg": "^8.20.4",
+    "allure-commandline": "^2.34.0",
+    "allure-playwright": "^3.4.2",
     "jsonpath-plus": "^10.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^7.0.2"

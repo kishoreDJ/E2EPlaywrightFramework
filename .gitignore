@@ -7,8 +7,13 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 
+# Allure
+/allure-results/
+/allure-report/
+
 # Environment and secrets
 .env
+.env.djcss
 
 # DB schema (project-specific, generated locally)
 db-schema.txt
@@ -18,3 +23,5 @@ dist/
 
 # Test data (local only, contains environment-specific UUIDs)
 test-data.md
+
+.DS_Store

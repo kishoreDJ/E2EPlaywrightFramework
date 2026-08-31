@@ -1,0 +1,578 @@
+HomeMy FilesShared FilesSites▾Tasks▾PeopleRepositoryAdmin Tools
+  
+ 
+Administrator▾
+You're using Share Services version 17.183. For Share to run correctly you need to use version 6.0.0.
+djcss
+Public
+▾
+Site DashboardDocument LibrarySite Members
+Documents
+All Documents
+I'm Editing
+Others are Editing
+Recently Modified
+Recently Added
+My Favorites
+Library
+ 
+	Documents
+	
+ 
+	Articles
+	
+ 
+	Assets
+	
+ 
+	Banner Content
+	
+ 
+	DJID Code Updates
+	
+ 
+	Factiva Content Updates
+	
+ 
+	FAQs
+	
+ 
+	IMS Product Update
+	
+ 
+	January 2099
+	
+ 
+	June 2027
+	
+ 
+	Learning Guides
+	
+ 
+	May 2029
+	
+ 
+	Newswire Product Updates
+	
+ 
+	Phone Contact Hours
+	
+ 
+	R&C Product Updates
+	
+ 
+	Scheduled Maintenances
+	
+ 
+	Source Updates
+	
+ 
+	Whats New in Factiva
+Categories
+ 
+	Category Root
+Tags
+Select ▾
+Create... ▾
+Upload
+Selected Items... ▾
+Options ▾
+Created ▾
+ 
+Documents
+Check Banner Content
+	
+	
+	
+Banner Content
+Modified 7 hours ago by Administrator
+No Description
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check January 2099
+	
+	
+	
+January 2099(Dow Jones Risk Journal Test2)
+Modified about a year ago by Administrator
+No Description
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check FAQs
+	
+	
+	
+FAQs
+Modified 12 days ago by Administrator
+No Description
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check IMS Product Update
+	
+	
+	
+IMS Product Update
+Modified 3 months ago by Administrator
+No Description
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check May 2029
+	
+	
+	
+May 2029(Newswires Notification)
+Modified over 3 years ago by Administrator
+No Description
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check June 2027
+	
+	
+	
+June 2027(Newswires Email Notification pages)
+Modified over 3 years ago by Administrator
+No Description
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check Newswire Product Updates
+	
+	
+	
+Newswire Product Updates
+Modified 3 months ago by Administrator
+No Description
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check Whats New in Factiva
+	
+	
+	
+Whats New in Factiva
+Modified 21 days ago by Administrator
+No Description
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check Factiva Content Updates
+	
+	
+	
+Factiva Content Updates
+Modified 8 months ago by Administrator
+Folder to create Factiva content Update Documents, including source updates.
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check R&C Product Updates
+	
+	
+	
+R&C Product Updates
+Modified over 3 years ago by Administrator
+R&C Product Updates
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check DJID Code Updates
+	
+	
+	
+DJID Code Updates
+Modified over 5 years ago by Administrator
+No Description
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check Phone Contact Hours
+	
+	
+	
+Phone Contact Hours
+Modified over 4 years ago by Administrator
+No Description
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check Articles
+	
+	
+	
+Articles
+Modified about a day ago by Administrator
+No Description
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check Source Updates
+	
+	
+	
+Source Updates
+Modified over 4 years ago by Administrator
+No Description
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check Scheduled Maintenances
+	
+	
+	
+Scheduled Maintenances
+Modified 3 months ago by Administrator
+No Description
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check Learning Guides
+	
+	
+	
+Learning Guides
+Modified 12 days ago by Administrator
+No Description
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check Assets
+	
+	
+	
+Assets
+Modified 3 months ago by Administrator
+No Description
+No Tags
+Favorite
+Like0
+Comment
+	
+
+
+Check 39f9173b-d9fb-4840-b6eb-f391c1fa24f1
+	
+	
+	
+39f9173b-d9fb-4840-b6eb-f391c1fa24f1(Testing Outlook logo for Dowjones)
+Created 21 days ago by Administrator
+61 bytes
+No Description
+No Tags
+Favorite
+Like0
+Comment
+Share
+	
+
+
+Check Article Update - Oxford Analytica
+	
+	
+	
+Article Update - Oxford Analytica(QA Testing - Oxford Analytica)
+Created 4 months ago by Administrator
+34 bytes
+No Description
+No Tags
+Favorite
+Like0
+Comment
+Share
+	
+
+
+Check Dragonfly SIAS - New Product QA testing
+	
+	
+	
+Dragonfly SIAS - New Product QA testing(Dragonfly SIAS Product - Alert template)
+Created 4 months ago by Administrator
+842 bytes
+No Description
+No Tags
+Favorite
+Like0
+Comment
+Share
+	
+
+
+Check QA Testing - New GRI Products
+	
+	
+	
+QA Testing - New GRI Products(QA Testing - New GRI products - Oxford)
+Created 4 months ago by Administrator
+842 bytes
+No Description
+No Tags
+Favorite
+Like0
+Comment
+Share
+	
+
+
+Check cf12b270-4d24-42f0-9ce3-b1748e152d2d
+	
+	
+	
+cf12b270-4d24-42f0-9ce3-b1748e152d2d
+Modified about a year ago by Administrator
+21 bytes
+No Description
+No Tags
+Favorite
+Like0
+Comment
+Share
+	
+
+
+Check Bulk_Request_Template.xlsx
+	
+	
+	
+Bulk_Request_Template.xlsx
+Created over 3 years ago by Administrator
+20 KB
+No Description
+No Tags
+Favorite
+Like0
+Comment
+Share
+	
+
+
+Check Front
+	
+	
+	
+Front
+Created over 4 years ago by Administrator
+816 bytes
+No Description
+No Tags
+Favorite
+Like0
+Comment
+Share
+	
+
+
+Check Great
+	
+	
+	
+Great
+Created over 4 years ago by Administrator
+622 bytes
+No Description
+No Tags
+Favorite
+Like0
+Comment
+Share
+	
+
+
+Check Doc
+	
+	
+	
+Doc
+Created over 4 years ago by Administrator
+24 bytes
+No Description
+No Tags
+Favorite
+Like0
+Comment
+Share
+	
+
+
+Check 398ad05d-5a75-445a-9ede-9eaccbfe1fd2
+	
+	
+	
+398ad05d-5a75-445a-9ede-9eaccbfe1fd2(QAA DJCCS)
+Created over 4 years ago by Administrator
+24 bytes
+No Description
+No Tags
+Favorite
+Like0
+Comment
+Share
+	
+
+
+Check 26dc92aa-9cd7-414e-9188-818b9f0ebb57
+	
+	
+	
+26dc92aa-9cd7-414e-9188-818b9f0ebb57(QAA DJCCS)
+Created over 4 years ago by Administrator
+24 bytes
+No Description
+No Tags
+Favorite
+Like0
+Comment
+Share
+	
+
+
+Check DJID Change Tracking_March_2024.xlsx
+	
+	
+	
+DJID Change Tracking_March_2024.xlsx
+Modified over 5 years ago by Administrator
+2 MB
+https://customer.qa.dowjones.com/api/djcss/assets/codeupdates/march-2024.xlsx
+No Tags
+Favorite
+Like0
+Comment
+Share
+	
+
+
+Check test
+	
+	
+	
+test
+Created over 5 years ago by Administrator
+11 bytes
+d
+No Tags
+Favorite
+Like0
+Comment
+Share
+	
+
+
+Check SSL Certificate Update for the Dow Jones Risk & Compliance Feeds Site
+	
+	
+	
+SSL Certificate Update for the Dow Jones Risk & Compliance Feeds Site
+Created over 6 years ago by Administrator
+4 KB
+No Description
+No Tags
+Favorite
+Like0
+Comment
+Share
+	
+
+
+Check Screen Shot 2020-06-05 at 10.44.29 AM.png
+	
+	
+	
+Screen Shot 2020-06-05 at 10.44.29 AM.png
+Modified over 5 years ago by Administrator
+39 KB
+https://customer.dev1.dowjones.com/api/djcss/assets/Screen_Shot_2020-06-05_at_10.44.29_AM.png
+No Tags
+Favorite
+Like0
+Comment
+Share
+	
+
+
+Check test image.png
+	
+	
+	
+test image.png
+Modified over 5 years ago by Administrator
+65 KB
+https://ricardorsbucket.s3.ap-northeast-1.amazonaws.com/Assets/test_image.png
+No Tags
+Favorite
+Like0
+Comment
+Share
+	
+ 
+1 - 33 of 33   << 1 >>
+ Supplied free of charge with no support, no certification, no maintenance, no warranty and no indemnity by Alfresco or its Certified Partners. Click here for support.
+Alfresco Software Inc. © 2005-2018 All rights reserved.

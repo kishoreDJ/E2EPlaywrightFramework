@@ -340,7 +340,7 @@ export class RequestBuilder {
 
     // Add form fields
     this.formFields.forEach(({ name, value }) => {
-      formData.append(name, value);
+      formData.append(name, String(value));
     });
 
     // Add file uploads

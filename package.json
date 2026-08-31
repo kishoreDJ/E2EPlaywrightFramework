@@ -10,7 +10,9 @@
     "test:firefox": "npx playwright test --project=Firefox",
     "test:safari": "npx playwright test --project=Safari",
     "test:edge": "npx playwright test --project=Edge",
-    "test:all-browsers": "npx playwright test --project=Chrome --project=Firefox --project=Safari --project=Edge"
+    "test:all-browsers": "npx playwright test --project=Chrome --project=Firefox --project=Safari --project=Edge",
+    "db:schema": "npx tsc && node -e \"require('dotenv').config(); require('./dist/src/helpers/readSchema.js')\"",
+    "db:schema:refresh": "node -e \"try{require('fs').unlinkSync('db-schema.txt')}catch(e){}\" && npm run db:schema"
   },
   "keywords": [],
   "author": "",
@@ -19,8 +21,15 @@
   "devDependencies": {
     "@playwright/test": "^1.62.0",
     "@types/node": "^26.1.2",
+    "@types/pg": "^8.20.4",
     "jsonpath-plus": "^10.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@anthropic-ai/bedrock-sdk": "^0.32.0",
+    "@anthropic-ai/sdk": "^0.115.0",
+    "dotenv": "^17.4.2",
+    "pg": "^8.22.0"
   }
 }

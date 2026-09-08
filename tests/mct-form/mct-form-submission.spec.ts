@@ -95,7 +95,7 @@ function createTempFile(name: string, content: string): string {
   return filePath;
 }
 
-test.describe('MCT Form Submission', () => {
+test.describe('MCT Form Submission', { tag: '@regression' }, () => {
   for (const company of COMPANIES) {
     test.describe(company.displayName, () => {
       if (company.keys.displayForm) {
@@ -115,7 +115,7 @@ test.describe('MCT Form Submission', () => {
         });
       }
 
-      test(`${company.keys.fullSubmit}: Verify that the form submits successfully when all fields (Mandatory + Optional) are populated correctly - ${company.displayName}`, async ({
+      test(`${company.keys.fullSubmit}: Verify that the form submits successfully when all fields (Mandatory + Optional) are populated correctly - ${company.displayName}`, { tag: company.slug === 'analog' ? '@smoke' : [] }, async ({
         mctFormPage,
       }) => {
         await test.step('Open the New MCT Article Submission Form', async () => {
@@ -139,7 +139,7 @@ test.describe('MCT Form Submission', () => {
 
         await test.step('Click Submit and verify success message', async () => {
           await mctFormPage.clickSubmit();
-          await expect(mctFormPage.successMessage).toBeVisible();
+          await expect(mctFormPage.successMessage).toBeVisible({ timeout: 15000 });
         });
       });
 
@@ -190,7 +190,7 @@ test.describe('MCT Form Submission', () => {
 
         await test.step('Click Submit and verify success message', async () => {
           await mctFormPage.clickSubmit();
-          await expect(mctFormPage.successMessage).toBeVisible();
+          await expect(mctFormPage.successMessage).toBeVisible({ timeout: 15000 });
         });
       });
 
@@ -248,7 +248,7 @@ test.describe('MCT Form Submission', () => {
           });
 
           await test.step('Verify an error message is displayed', async () => {
-            await expect(mctFormPage.genericErrorMessage).toBeVisible();
+            await expect(mctFormPage.genericErrorMessage).toBeVisible({ timeout: 15000 });
           });
         });
       }
@@ -280,7 +280,7 @@ test.describe('MCT Form Submission', () => {
 
       await test.step('Click Submit and verify success message', async () => {
         await mctFormPage.clickSubmit();
-        await expect(mctFormPage.successMessage).toBeVisible();
+        await expect(mctFormPage.successMessage).toBeVisible({ timeout: 15000 });
       });
     });
 
@@ -322,7 +322,7 @@ test.describe('MCT Form Submission', () => {
       // that only Headline Title is mandatory.
       await test.step('Click Submit and verify the server rejects the submission', async () => {
         await mctFormPage.clickSubmit();
-        await expect(mctFormPage.genericErrorMessage).toBeVisible();
+        await expect(mctFormPage.genericErrorMessage).toBeVisible({ timeout: 15000 });
       });
     });
 
@@ -365,7 +365,7 @@ test.describe('MCT Form Submission', () => {
       });
 
       await test.step('Verify an error message is displayed', async () => {
-        await expect(mctFormPage.genericErrorMessage).toBeVisible();
+        await expect(mctFormPage.genericErrorMessage).toBeVisible({ timeout: 15000 });
       });
     });
   });

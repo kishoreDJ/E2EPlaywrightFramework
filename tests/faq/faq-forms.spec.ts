@@ -14,7 +14,7 @@ import { test, expect } from '../../src/fixtures/browser-fixture';
 // modal" scenario is therefore no longer reproducible with the access available here.
 // DJCSS-T83 (verify the modal does NOT reappear on a later visit, same PDF year) remains
 // valid and is automated below, using that now-accepted state.
-test.describe('FAQ Forms', () => {
+test.describe('FAQ Forms', { tag: '@regression' }, () => {
   test('DJCSS-T83: Verify Acceptance Modal does not reappear for an already-accepted PDF (same year)', async ({
     loginPage,
     faqPage,

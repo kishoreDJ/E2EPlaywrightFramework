@@ -1,7 +1,7 @@
 import { test, expect } from '../../src/fixtures/browser-fixture';
 
-test.describe('Live Chat', () => {
-  test('DJCSS-T55: Live Chat - Preferred Language selection is required', async ({
+test.describe('Live Chat', { tag: '@regression' }, () => {
+  test('DJCSS-T55: Live Chat - Preferred Language selection is required', { tag: '@smoke' }, async ({
     loginPage,
     liveChatPage,
   }) => {

@@ -38,7 +38,7 @@ export default defineConfig({
   /* Workers: allow enough parallelism for 50+ concurrent tests */
   workers: process.env.CI ? 4 : process.env.WORKERS ? parseInt(process.env.WORKERS) : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html'], ['allure-playwright', { resultsDir: 'allure-results' }]],
+  reporter: [['html'], ['allure-playwright', { resultsDir: process.env.ALLURE_RESULTS_DIR || 'allure-results' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */

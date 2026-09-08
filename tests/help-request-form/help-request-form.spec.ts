@@ -14,7 +14,7 @@ function createTempFile(name: string, content: string): string {
 // NOTE: the /Help Request Form folder has 3 Zephyr cases (DJCSS-T127, T129, T166). All 3
 // verify the DJCSS web app directly and are automated here - nothing in this folder is
 // blocked.
-test.describe('Help Request Form', () => {
+test.describe('Help Request Form', { tag: '@regression' }, () => {
   test('DJCSS-T127: Verify unrestricted file upload is rejected on the Support Resource Request form', async ({
     loginPage,
     supportResourceRequestPage,
@@ -66,7 +66,7 @@ test.describe('Help Request Form', () => {
     });
   });
 
-  test('DJCSS-T166: Verify Product Area dropdown reflects updated product names for Global Risk Insights', async ({
+  test('DJCSS-T166: Verify Product Area dropdown reflects updated product names for Global Risk Insights', { tag: '@smoke' }, async ({
     loginPage,
     helpRequestFormPage,
   }) => {

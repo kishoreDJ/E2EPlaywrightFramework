@@ -5,6 +5,7 @@
  */
 
 import { test as base, Browser, BrowserContext, Page, chromium, firefox, webkit } from '@playwright/test';
+import { parentSuite } from 'allure-js-commons';
 import { BrowserPoolRegistry } from '../browser/browser-pool';
 import { BrowserLaunchOptionsManager, BrowserContextOptionsBuilder } from '../browser/browser-launch-options';
 import { buildBrowserStackWsEndpoint, BS_CAPABILITY_PRESETS } from '../browser/browserstack-config';
@@ -27,6 +28,8 @@ import { YomiuriPage } from '../pages/YomiuriPage';
 // ==========================================
 
 export type BrowserFixtures = {
+  /** Sets the Allure parent suite label from the test's @smoke/@regression tag */
+  allureSuiteLabel: void;
   pooledBrowser: Browser;
   pooledContext: BrowserContext;
   pooledPage: Page;
@@ -81,6 +84,18 @@ export const test = base.extend<BrowserFixtures, BrowserWorkerFixtures>({
   ],
 
   // ---- Test-scoped fixtures ----
+
+  allureSuiteLabel: [
+    async ({}, use, testInfo) => {
+      if (testInfo.tags.includes('@smoke')) {
+        await parentSuite('Smoke Test Suite');
+      } else if (testInfo.tags.includes('@regression')) {
+        await parentSuite('Regression Test Suite');
+      }
+      await use();
+    },
+    { auto: true },
+  ],
 
   contextConfig: async ({}, use) => {
     await use(BrowserLaunchOptionsManager.getContextOptions());

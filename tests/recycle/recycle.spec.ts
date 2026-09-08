@@ -5,7 +5,7 @@ import { test, expect } from '../../src/fixtures/browser-fixture';
 // The remaining 5 (DJCSS-T90-T94) require creating/publishing articles in Alfresco CMS
 // and verifying email templates via Campaign Monitor subscribers - external systems
 // this framework has no credentials or integration for, and are blocked pending access.
-test.describe('Recycle', () => {
+test.describe('Recycle', { tag: '@regression' }, () => {
   test('DJCSS-T85: Verify updated Top Left Site Logo on DJCSS', async ({ loginPage, homePage }) => {
     await test.step('Login to DJCSS application', async () => {
       await loginPage.goto('/');

@@ -369,4 +369,92 @@ test.describe('MCT Form Submission', { tag: '@regression' }, () => {
       });
     });
   });
+
+  // These document live QA behavior for cases not covered by the per-company Zephyr steps:
+  // browser-native field validation, the Publication Date upper bound, and duplicate-click safety.
+  test.describe('Form Validation Edge Cases', () => {
+    test('Verify submission is blocked when Email Address is not a valid format', async ({
+      mctFormPage,
+    }) => {
+      await test.step('Open the New MCT Article Submission Form', async () => {
+        await mctFormPage.openForCompany('analog');
+      });
+
+      await test.step('Fill all mandatory fields with an invalid email address', async () => {
+        await mctFormPage.fillForm({
+          yourName: 'Automated Test User',
+          email: 'not-an-email',
+          headlineTitle: 'Automated Test Headline',
+          publicationName: 'Automated Test Publication',
+          publicationDate: '2026-08-01',
+          optIn: true,
+        });
+      });
+
+      await test.step('Click Submit and verify the form does not submit', async () => {
+        await mctFormPage.clickSubmit();
+        await expect(mctFormPage.successMessage).not.toBeVisible();
+        await expect(mctFormPage.genericErrorMessage).not.toBeVisible();
+      });
+    });
+
+    // NOTE: the Publication Date field renders as a native <input type="date" max="2099-12-12">,
+    // but the max bound is not enforced on submit - a date past the max is accepted and the form
+    // succeeds. This test documents the current (unvalidated) behavior rather than the expected
+    // constraint, so a future fix that starts rejecting out-of-range dates will be caught here.
+    test('Verify a Publication Date beyond the field max is currently accepted on submission', async ({
+      mctFormPage,
+    }) => {
+      await test.step('Open the New MCT Article Submission Form', async () => {
+        await mctFormPage.openForCompany('analog');
+      });
+
+      await test.step('Fill all mandatory fields with a Publication Date past the max bound', async () => {
+        await mctFormPage.fillForm({
+          yourName: 'Automated Test User',
+          email: 'automated.test@example.com',
+          headlineTitle: 'Automated Test Headline',
+          publicationName: 'Automated Test Publication',
+          publicationDate: '2099-12-31',
+          optIn: true,
+        });
+      });
+
+      await test.step('Click Submit and verify the form still succeeds', async () => {
+        await mctFormPage.clickSubmit();
+        await expect(mctFormPage.successMessage).toBeVisible({ timeout: 15000 });
+      });
+    });
+
+    test('Verify rapid double-click on Submit does not create a duplicate submission', async ({
+      mctFormPage,
+    }) => {
+      let submitRequestCounter: { get: () => number };
+
+      await test.step('Open the New MCT Article Submission Form', async () => {
+        await mctFormPage.openForCompany('analog');
+        submitRequestCounter = mctFormPage.countSubmissionRequests();
+      });
+
+      await test.step('Fill in all mandatory fields', async () => {
+        await mctFormPage.fillForm({
+          yourName: 'Automated Test User',
+          email: 'automated.test@example.com',
+          headlineTitle: 'Automated Test Headline',
+          publicationName: 'Automated Test Publication',
+          publicationDate: '2026-08-01',
+          optIn: true,
+        });
+      });
+
+      await test.step('Click Submit twice in rapid succession', async () => {
+        await Promise.all([mctFormPage.clickSubmit(), mctFormPage.clickSubmit()]);
+        await expect(mctFormPage.successMessage).toBeVisible({ timeout: 15000 });
+      });
+
+      await test.step('Verify only a single submission request was sent', async () => {
+        expect(submitRequestCounter.get()).toBe(1);
+      });
+    });
+  });
 });

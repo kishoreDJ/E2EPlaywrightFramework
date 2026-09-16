@@ -16,7 +16,7 @@ async function runTest(): Promise<void> {
     os: 'Windows',
     os_version: '11',
     name: 'Basic TypeScript Connection Test',
-    'browserstack.username': 'syamkishorerapak1';
+    'browserstack.username': 'syamkishorerapak1',
     'browserstack.accessKey': 'qzPK4rH3Svf1JmwTp9ya',
   };
 

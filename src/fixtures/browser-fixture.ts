@@ -22,6 +22,9 @@ import { HelpRequestFormPage } from '../pages/HelpRequestFormPage';
 import { SupportResourceRequestPage } from '../pages/SupportResourceRequestPage';
 import { RcProductUpdatePage } from '../pages/RcProductUpdatePage';
 import { YomiuriPage } from '../pages/YomiuriPage';
+import { AdministrationPage } from '../pages/AdministrationPage';
+import { AlfrescoContentUpdatePage } from '../pages/AlfrescoContentUpdatePage';
+import { FactivaUpdatesPage } from '../pages/FactivaUpdatesPage';
 
 // ==========================================
 // Fixture types
@@ -47,6 +50,9 @@ export type BrowserFixtures = {
   supportResourceRequestPage: SupportResourceRequestPage;
   rcProductUpdatePage: RcProductUpdatePage;
   yomiuriPage: YomiuriPage;
+  administrationPage: AdministrationPage;
+  alfrescoContentUpdatePage: AlfrescoContentUpdatePage;
+  factivaUpdatesPage: FactivaUpdatesPage;
 };
 
 export type BrowserWorkerFixtures = {
@@ -220,6 +226,18 @@ export const test = base.extend<BrowserFixtures, BrowserWorkerFixtures>({
 
   yomiuriPage: async ({ pooledPage }, use) => {
     await use(new YomiuriPage(pooledPage));
+  },
+
+  administrationPage: async ({ pooledPage }, use) => {
+    await use(new AdministrationPage(pooledPage));
+  },
+
+  alfrescoContentUpdatePage: async ({ pooledPage }, use) => {
+    await use(new AlfrescoContentUpdatePage(pooledPage));
+  },
+
+  factivaUpdatesPage: async ({ pooledPage }, use) => {
+    await use(new FactivaUpdatesPage(pooledPage));
   },
 });
 

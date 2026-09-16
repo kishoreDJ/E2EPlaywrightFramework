@@ -62,6 +62,10 @@ function createTempFile(name: string, content: string): string {
 // external Jira POC instance outside DJCSS and is not automatable here - these tests
 // cover the in-app form submission and success message only.
 test.describe('RC Feedback Forms', { tag: '@regression' }, () => {
+  // Login-required cases go through the DJCSS -> SSO redirect and networkidle wait,
+  // which can exceed the default 30s test timeout under load.
+  test.setTimeout(60_000);
+
   for (const form of FEEDBACK_FORMS) {
     test(`${form.key}: Verify form submission for RC DJCSS ${form.displayName}`, { tag: form.key === 'DJCSS-T170' ? '@smoke' : [] }, async ({
       loginPage,

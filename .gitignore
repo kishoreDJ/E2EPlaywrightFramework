@@ -10,6 +10,11 @@ node_modules/
 # Allure
 /allure-results/
 /allure-report/
+/allure-report~/
+
+# Playwright report extract
+/pw-report-extract/
+pw-report.zip
 
 # Environment secrets
 .env.djcss

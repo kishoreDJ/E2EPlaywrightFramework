@@ -7,8 +7,8 @@ import { test, expect } from '../../src/fixtures/browser-fixture';
 // script (Status: Draft) only specifies "Login to Alfresco" as its test step - it is
 // automated as written, not as its title ("Verify addition of new products...") might
 // imply, since no further steps are documented in the test case.
-test.describe('Product Alerts', () => {
-  test('DJCSS-T61: Verify Product filter Checkbox Menu items are present in the table', async ({
+test.describe('Product Alerts', { tag: '@regression' }, () => {
+  test('DJCSS-T61: Verify Product filter Checkbox Menu items are present in the table', { tag: '@smoke' }, async ({
     loginPage,
     productAlertsPage,
   }) => {

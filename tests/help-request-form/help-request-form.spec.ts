@@ -14,7 +14,7 @@ function createTempFile(name: string, content: string): string {
 // NOTE: the /Help Request Form folder has 3 Zephyr cases (DJCSS-T127, T129, T166). All 3
 // verify the DJCSS web app directly and are automated here - nothing in this folder is
 // blocked.
-test.describe('Help Request Form', () => {
+test.describe('Help Request Form', { tag: '@regression' }, () => {
   test('DJCSS-T127: Verify unrestricted file upload is rejected on the Support Resource Request form', async ({
     loginPage,
     supportResourceRequestPage,
@@ -66,7 +66,7 @@ test.describe('Help Request Form', () => {
     });
   });
 
-  test('DJCSS-T166: Verify Product Area dropdown reflects updated product names for Global Risk Insights', async ({
+  test('DJCSS-T166: Verify Product Area dropdown reflects updated product names for Global Risk Insights', { tag: '@smoke' }, async ({
     loginPage,
     helpRequestFormPage,
   }) => {
@@ -91,6 +91,39 @@ test.describe('Help Request Form', () => {
       ]) {
         expect(options).toContain(expected);
       }
+    });
+  });
+
+  test('Verify the Help Request form can be filled and submitted successfully on a mobile viewport', async ({
+    loginPage,
+    helpRequestFormPage,
+    pooledPage,
+  }) => {
+    await test.step('Set a mobile viewport size', async () => {
+      await pooledPage.setViewportSize({ width: 375, height: 667 });
+    });
+
+    await test.step('Login to DJCSS application', async () => {
+      await loginPage.goto('/');
+      await loginPage.login(process.env.DJCSS_USERNAME!, process.env.DJCSS_PASSWORD!);
+    });
+
+    await test.step('Open the Help Request form and fill in the required fields', async () => {
+      await helpRequestFormPage.open();
+      await helpRequestFormPage.fillHelpRequest({
+        firstName: 'MobileTest',
+        lastName: 'User',
+        email: 'mobiletest@example.com',
+        phone: '1234567890',
+        message: 'Mobile viewport submission test',
+      });
+      await helpRequestFormPage.selectProduct('Factiva');
+      await helpRequestFormPage.selectLanguage('English');
+    });
+
+    await test.step('Click Submit and verify the Thank you page is shown', async () => {
+      await helpRequestFormPage.clickSubmit();
+      await expect(helpRequestFormPage.thankYouHeading).toBeVisible({ timeout: 15000 });
     });
   });
 });

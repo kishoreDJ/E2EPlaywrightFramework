@@ -1,7 +1,7 @@
 import { test, expect } from '../../src/fixtures/browser-fixture';
 
-test.describe('FAQ Navigation', () => {
-  test('DJCSS-T105: Verify the FAQ URL redirection on FAQ Menu on the Navigation bar', async ({
+test.describe('FAQ Navigation', { tag: '@regression' }, () => {
+  test('DJCSS-T105: Verify the FAQ URL redirection on FAQ Menu on the Navigation bar', { tag: '@smoke' }, async ({
     pooledPage,
     loginPage,
     faqPage,

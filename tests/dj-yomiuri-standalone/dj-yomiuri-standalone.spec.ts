@@ -2,8 +2,8 @@ import { test, expect } from '../../src/fixtures/browser-fixture';
 
 // NOTE: the /DJ Yomiuri Standalone folder has 1 Zephyr case (DJCSS-T151), verifying the
 // DJCSS web app directly, automated here.
-test.describe('DJ Yomiuri Standalone', () => {
-  test('DJCSS-T151: Verify DJ Yomiuri logo is displayed correctly across viewport sizes', async ({
+test.describe('DJ Yomiuri Standalone', { tag: '@regression' }, () => {
+  test('DJCSS-T151: Verify DJ Yomiuri logo is displayed correctly across viewport sizes', { tag: '@smoke' }, async ({
     loginPage,
     yomiuriPage,
     pooledPage,

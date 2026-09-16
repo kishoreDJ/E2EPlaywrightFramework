@@ -3,8 +3,8 @@ import { test, expect } from '../../src/fixtures/browser-fixture';
 
 // NOTE: the /Home folder has 1 Zephyr case (DJCSS-T167), verifying the DJCSS web app
 // directly, automated here.
-test.describe('Home', () => {
-  test('DJCSS-T167: Verify Advanced Search product filter navigates to filtered results', async ({
+test.describe('Home', { tag: '@regression' }, () => {
+  test('DJCSS-T167: Verify Advanced Search product filter navigates to filtered results', { tag: '@smoke' }, async ({
     loginPage,
     homePage,
     pooledPage,

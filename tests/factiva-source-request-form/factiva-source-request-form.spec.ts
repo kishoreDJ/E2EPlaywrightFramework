@@ -2,8 +2,8 @@ import { test, expect } from '../../src/fixtures/browser-fixture';
 
 // NOTE: the /Factiva Source Request Form folder has 1 Zephyr case (DJCSS-T56), verifying
 // the DJCSS web app directly, automated here.
-test.describe('Factiva Source Request Form', () => {
-  test('DJCSS-T56: Verify Source Name field enforces a 160 character limit', async ({
+test.describe('Factiva Source Request Form', { tag: '@regression' }, () => {
+  test('DJCSS-T56: Verify Source Name field enforces a 160 character limit', { tag: '@smoke' }, async ({
     loginPage,
     helpRequestFormPage,
   }) => {

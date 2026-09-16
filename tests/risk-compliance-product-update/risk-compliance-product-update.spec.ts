@@ -14,8 +14,8 @@ function createTempFile(name: string, content: string): string {
 // NOTE: the /Risk&Compliance Product Update folder has 2 Zephyr cases total (DJCSS-T57,
 // DJCSS-T125). Both verify the DJCSS web app directly and are automated here - nothing in
 // this folder is blocked.
-test.describe('Risk & Compliance Product Update', () => {
-  test('DJCSS-T57: Verify Dow Jones Risk Journal is listed under the Product section', async ({
+test.describe('Risk & Compliance Product Update', { tag: '@regression' }, () => {
+  test('DJCSS-T57: Verify Dow Jones Risk Journal is listed under the Product section', { tag: '@smoke' }, async ({
     loginPage,
     rcProductUpdatePage,
   }) => {

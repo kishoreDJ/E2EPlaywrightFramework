@@ -72,6 +72,17 @@ export class MctFormPage extends BasePage {
     await this.submitButton.first().click();
   }
 
+  /** Counts POSTs to the form submission endpoint made after this call, to detect duplicate submissions. */
+  public countSubmissionRequests(): { get: () => number } {
+    let count = 0;
+    this.page.on('request', (request) => {
+      if (request.method() === 'POST' && request.url().includes('myCompanyTodayForm')) {
+        count += 1;
+      }
+    });
+    return { get: () => count };
+  }
+
   public async getFieldLabelTexts(): Promise<string[]> {
     return (await this.fieldLabels.allTextContents()).map((t) => t.trim()).filter((t) => t.length > 0);
   }

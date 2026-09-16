@@ -5,6 +5,7 @@
  */
 
 import { test as base, Browser, BrowserContext, Page, chromium, firefox, webkit } from '@playwright/test';
+import { parentSuite } from 'allure-js-commons';
 import { BrowserPoolRegistry } from '../browser/browser-pool';
 import { BrowserLaunchOptionsManager, BrowserContextOptionsBuilder } from '../browser/browser-launch-options';
 import { buildBrowserStackWsEndpoint, BS_CAPABILITY_PRESETS } from '../browser/browserstack-config';
@@ -21,12 +22,17 @@ import { HelpRequestFormPage } from '../pages/HelpRequestFormPage';
 import { SupportResourceRequestPage } from '../pages/SupportResourceRequestPage';
 import { RcProductUpdatePage } from '../pages/RcProductUpdatePage';
 import { YomiuriPage } from '../pages/YomiuriPage';
+import { AdministrationPage } from '../pages/AdministrationPage';
+import { AlfrescoContentUpdatePage } from '../pages/AlfrescoContentUpdatePage';
+import { FactivaUpdatesPage } from '../pages/FactivaUpdatesPage';
 
 // ==========================================
 // Fixture types
 // ==========================================
 
 export type BrowserFixtures = {
+  /** Sets the Allure parent suite label from the test's @smoke/@regression tag */
+  allureSuiteLabel: void;
   pooledBrowser: Browser;
   pooledContext: BrowserContext;
   pooledPage: Page;
@@ -44,6 +50,9 @@ export type BrowserFixtures = {
   supportResourceRequestPage: SupportResourceRequestPage;
   rcProductUpdatePage: RcProductUpdatePage;
   yomiuriPage: YomiuriPage;
+  administrationPage: AdministrationPage;
+  alfrescoContentUpdatePage: AlfrescoContentUpdatePage;
+  factivaUpdatesPage: FactivaUpdatesPage;
 };
 
 export type BrowserWorkerFixtures = {
@@ -81,6 +90,18 @@ export const test = base.extend<BrowserFixtures, BrowserWorkerFixtures>({
   ],
 
   // ---- Test-scoped fixtures ----
+
+  allureSuiteLabel: [
+    async ({}, use, testInfo) => {
+      if (testInfo.tags.includes('@smoke')) {
+        await parentSuite('Smoke Test Suite');
+      } else if (testInfo.tags.includes('@regression')) {
+        await parentSuite('Regression Test Suite');
+      }
+      await use();
+    },
+    { auto: true },
+  ],
 
   contextConfig: async ({}, use) => {
     await use(BrowserLaunchOptionsManager.getContextOptions());
@@ -205,6 +226,18 @@ export const test = base.extend<BrowserFixtures, BrowserWorkerFixtures>({
 
   yomiuriPage: async ({ pooledPage }, use) => {
     await use(new YomiuriPage(pooledPage));
+  },
+
+  administrationPage: async ({ pooledPage }, use) => {
+    await use(new AdministrationPage(pooledPage));
+  },
+
+  alfrescoContentUpdatePage: async ({ pooledPage }, use) => {
+    await use(new AlfrescoContentUpdatePage(pooledPage));
+  },
+
+  factivaUpdatesPage: async ({ pooledPage }, use) => {
+    await use(new FactivaUpdatesPage(pooledPage));
   },
 });
 

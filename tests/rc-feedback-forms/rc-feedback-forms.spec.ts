@@ -61,9 +61,13 @@ function createTempFile(name: string, content: string): string {
 // Jira "Needs review" ticket entry for the submission. That verification targets an
 // external Jira POC instance outside DJCSS and is not automatable here - these tests
 // cover the in-app form submission and success message only.
-test.describe('RC Feedback Forms', () => {
+test.describe('RC Feedback Forms', { tag: '@regression' }, () => {
+  // Login-required cases go through the DJCSS -> SSO redirect and networkidle wait,
+  // which can exceed the default 30s test timeout under load.
+  test.setTimeout(60_000);
+
   for (const form of FEEDBACK_FORMS) {
-    test(`${form.key}: Verify form submission for RC DJCSS ${form.displayName}`, async ({
+    test(`${form.key}: Verify form submission for RC DJCSS ${form.displayName}`, { tag: form.key === 'DJCSS-T170' ? '@smoke' : [] }, async ({
       loginPage,
       feedbackFormPage,
     }) => {
@@ -100,18 +104,11 @@ test.describe('RC Feedback Forms', () => {
 
       await test.step('Click Submit and verify the success message', async () => {
         await feedbackFormPage.clickSubmit();
-        await expect(feedbackFormPage.successMessage).toBeVisible();
+        await expect(feedbackFormPage.successMessage).toBeVisible({ timeout: 15000 });
       });
     });
   }
 
-  // NOTE: on this QA build, submitting the riskjournal feedback form with valid,
-  // fully-populated fields (with or without an attachment) consistently returns
-  // "There was an error processing your request, please try again later." instead of
-  // the expected success message. This is reproducible and appears to be a genuine
-  // backend defect specific to this slug, not a form-filling issue - it does not occur
-  // on any of the other RC Feedback Forms slugs. This test documents the actual live
-  // behavior rather than the Zephyr step's assumption of a successful submission.
   test('DJCSS-T177: Verify form submission for RC DJCSS RiskJournal', async ({
     loginPage,
     feedbackFormPage,
@@ -136,10 +133,9 @@ test.describe('RC Feedback Forms', () => {
       await feedbackFormPage.uploadFiles([filePath]);
     });
 
-    await test.step('Click Submit and verify the server rejects the submission', async () => {
+    await test.step('Click Submit and verify the success message', async () => {
       await feedbackFormPage.clickSubmit();
-      await expect(feedbackFormPage.genericErrorMessage).toBeVisible();
-      await expect(feedbackFormPage.successMessage).not.toBeVisible();
+      await expect(feedbackFormPage.successMessage).toBeVisible({ timeout: 15000 });
     });
   });
 
@@ -165,7 +161,7 @@ test.describe('RC Feedback Forms', () => {
 
     await test.step('Click Submit and verify the success message', async () => {
       await feedbackFormPage.clickSubmit();
-      await expect(feedbackFormPage.successMessage).toBeVisible();
+      await expect(feedbackFormPage.successMessage).toBeVisible({ timeout: 15000 });
     });
   });
 

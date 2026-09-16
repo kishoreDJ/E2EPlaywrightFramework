@@ -6,8 +6,8 @@ import { test, expect } from '../../src/fixtures/browser-fixture';
 // framework has no credentials or integration for. Only the 3 cases below verify the
 // DJCSS web app directly and are automated here. The rest are blocked pending
 // Alfresco/Campaign Monitor access.
-test.describe('Logo Updates', () => {
-  test('DJCSS-T95: Verify updated Top Left Site Logo on DJCSS', async ({ loginPage, homePage }) => {
+test.describe('Logo Updates', { tag: '@regression' }, () => {
+  test('DJCSS-T95: Verify updated Top Left Site Logo on DJCSS', { tag: '@smoke' }, async ({ loginPage, homePage }) => {
     await test.step('Login to DJCSS application', async () => {
       await loginPage.goto('/');
       await loginPage.login(process.env.DJCSS_USERNAME!, process.env.DJCSS_PASSWORD!);

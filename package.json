@@ -20,7 +20,8 @@
     "allure:generate:regression:single": "npx allure generate allure-results/regression --clean --single-file -o allure-report/regression-single",
     "allure:open": "npx allure open allure-report",
     "allure:open:smoke": "npx allure open allure-report/smoke",
-    "allure:open:regression": "npx allure open allure-report/regression"
+    "allure:open:regression": "npx allure open allure-report/regression",
+    "publish:report": "node scripts/report-deploy.js"
   },
   "keywords": [],
   "author": "",

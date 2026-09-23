@@ -5,6 +5,8 @@ import { query, closeDb } from '../../src/helpers/dbHelper';
 import { allure } from 'allure-playwright';
 import * as fs from 'fs';
 import * as path from 'path';
+import { validateResponse } from '../../src/schema-validation/validator';
+import { GetListResponseSchema, WriteResponseSchema, ErrorResponseSchema } from './schemas/application-registration.schema';
 
 const BASE_PATH = '/api/v1/customer-data-privacy/application/registration/';
 const DELETE_PATH = '/api/v1/customer-data-privacy/application/';
@@ -109,6 +111,7 @@ test.describe('GET /registration/', () => {
     await attachToAllure('Response Body', body);
 
     expect(response.statusCode).toBe(200);
+    await validateResponse(GetListResponseSchema, body);
     expect(body.data).toBeDefined();
     expect(body.data.type).toBeDefined();
     expect(body.data.attributes.payload.dataPrivacyRegistration).toBeInstanceOf(Array);
@@ -128,6 +131,7 @@ test.describe('GET /registration/', () => {
     await attachToAllure('Response Body', body);
 
     expect(response.statusCode).toBe(200);
+    await validateResponse(GetListResponseSchema, body);
     const registrations = body.data.attributes.payload.dataPrivacyRegistration;
     expect(registrations.length).toBeGreaterThan(0);
 
@@ -156,6 +160,7 @@ test.describe('GET /registration/', () => {
     await attachToAllure('Response Body', body);
 
     expect(response.statusCode).toBe(200);
+    await validateResponse(GetListResponseSchema, body);
     expect(body.data.attributes.payload.dataPrivacyRegistration.length).toBeLessThanOrEqual(5);
     expect(body.data.attributes.payload.currentPage).toBe(1);
   });
@@ -179,6 +184,7 @@ test.describe('GET /registration/', () => {
     await attachToAllure('Response Body', body);
 
     expect(response.statusCode).toBe(200);
+    await validateResponse(GetListResponseSchema, body);
     const registrations = body.data.attributes.payload.dataPrivacyRegistration;
     expect(registrations.length).toBeGreaterThan(0);
     registrations.forEach((reg: any) => {
@@ -204,6 +210,7 @@ test.describe('GET /registration/', () => {
     await attachToAllure('Response Body', body);
 
     expect(response.statusCode).toBe(200);
+    await validateResponse(GetListResponseSchema, body);
     const registrations = body.data.attributes.payload.dataPrivacyRegistration;
     expect(registrations.length).toBeGreaterThan(0);
     expect(registrations[0].applicationName).toBe(appName);
@@ -219,6 +226,7 @@ test.describe('GET /registration/', () => {
 
     await attachToAllure('Response Body', body);
     expect(response.statusCode).toBe(200);
+    await validateResponse(GetListResponseSchema, body);
 
     const apiRegistrations = body.data.attributes.payload.dataPrivacyRegistration;
 
@@ -279,7 +287,7 @@ test.describe('GET /registration/', () => {
     await attachToAllure('Response Body', body);
 
     expect(response.statusCode).toBe(404);
-    expect(body.error).toBeDefined();
+    await validateResponse(ErrorResponseSchema, body);
     expect(body.error.attributes.payload.errorMessage).toBe('No customer data found.');
   });
 
@@ -647,6 +655,7 @@ test.describe('PUT /registration/{applicationId}', () => {
       await attachToAllure('Response Body (PUT)', putBody);
 
       expect(putResponse.statusCode).toBe(200);
+      await validateResponse(WriteResponseSchema, putBody);
       expect(putBody.data.attributes.payload.applicationId).toBe(appId);
       expect(putBody.data.attributes.payload.applicationName).toBe('App After Update');
       expect(putBody.data.attributes.payload.supportEmail).toBe('after-update@dowjones.com');

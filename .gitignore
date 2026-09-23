@@ -29,4 +29,7 @@ dist/
 # Test data (local only, contains environment-specific UUIDs)
 test-data.md
 
+# API spec (local only, not for git)
+docs/DDRAPIs.json
+
 .DS_Store

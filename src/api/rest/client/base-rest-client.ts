@@ -8,6 +8,16 @@ import { RestConnection } from '../connection/rest-connection';
 import fs from 'fs';
 import path from 'path';
 
+// Allure attachment helper — no-ops gracefully if allure-playwright is not available
+async function allureAttach(name: string, data: unknown): Promise<void> {
+  try {
+    const { allure } = await import('allure-playwright');
+    await allure.attachment(name, JSON.stringify(data, null, 2), 'application/json');
+  } catch {
+    // allure not available in this context — skip silently
+  }
+}
+
 // ==========================================
 // Types & Interfaces
 // ==========================================
@@ -17,6 +27,7 @@ export interface RequestOptions {
   queryParams?: Record<string, string | number | boolean>;
   retryCount?: number;
   retryDelay?: number;
+  headers?: Record<string, string>;
 }
 
 export interface FormField {
@@ -448,6 +459,20 @@ export class RequestBuilder {
           `${this.method} ${url} => ${response.status()} (${executionTime}ms)`
         );
 
+        // Auto-attach request and response details to Allure
+        await allureAttach('API Request', {
+          method: this.method,
+          url,
+          headers: allHeaders,
+          body: this.body ? JSON.parse(this.body) : null,
+        });
+        await allureAttach('API Response', {
+          status: response.status(),
+          statusText: response.statusText(),
+          responseTimeMs: executionTime,
+          body: (() => { try { return JSON.parse(responseBody); } catch { return responseBody; } })(),
+        });
+
         return new RestResponse(response, responseBody, executionTime);
       } catch (error) {
         lastError = error as Error;
@@ -620,6 +645,12 @@ export class BaseRestClient {
 
     if (options?.retryCount !== undefined) {
       builder.retry(options.retryCount, options?.retryDelay);
+    }
+
+    if (options?.headers) {
+      Object.entries(options.headers).forEach(([key, value]) => {
+        builder.addHeader(key, value);
+      });
     }
 
     return builder.execute();

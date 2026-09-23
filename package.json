@@ -12,6 +12,8 @@
     "test:smoke:chrome": "node scripts/allure-carry-history.js allure-results/smoke allure-report/smoke && node scripts/run-with-allure.js allure-results/smoke allure-report/smoke -- npx playwright test --grep @smoke --project=Chrome",
     "test:regression": "node scripts/allure-carry-history.js allure-results/regression allure-report/regression && node scripts/run-with-allure.js allure-results/regression allure-report/regression -- npx playwright test --grep @regression",
     "test:regression:chrome": "node scripts/allure-carry-history.js allure-results/regression allure-report/regression && node scripts/run-with-allure.js allure-results/regression allure-report/regression -- npx playwright test --grep @regression --project=Chrome",
+    "db:schema": "npx tsc && node -e \"require('dotenv').config(); require('./dist/src/helpers/readSchema.js')\"",
+    "db:schema:refresh": "node -e \"try{require('fs').unlinkSync('db-schema.txt')}catch(e){}\" && npm run db:schema",
     "allure:generate": "npx allure generate allure-results --clean -o allure-report",
     "allure:generate:single": "npx allure generate allure-results --clean --single-file -o allure-report",
     "allure:generate:smoke": "npx allure generate allure-results/smoke --clean -o allure-report/smoke",
@@ -30,13 +32,24 @@
   "devDependencies": {
     "@playwright/test": "^1.62.0",
     "@types/node": "^26.1.2",
+    "@types/pg": "^8.20.4",
     "allure-commandline": "^2.34.0",
     "allure-js-commons": "^3.10.2",
     "allure-playwright": "^3.4.2",
-    "dotenv": "^16.4.5",
     "jsonpath-plus": "^10.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^7.0.2",
     "xlsx": "^0.18.5"
+  },
+  "dependencies": {
+    "@anthropic-ai/bedrock-sdk": "^0.32.0",
+    "@anthropic-ai/sdk": "^0.115.0",
+    "@types/mysql": "^2.15.27",
+    "@types/uuid": "^10.0.0",
+    "dotenv": "^17.4.2",
+    "mysql2": "^3.24.4",
+    "pg": "^8.22.0",
+    "uuid": "^14.0.2",
+    "zod": "^4.6.5"
   }
 }

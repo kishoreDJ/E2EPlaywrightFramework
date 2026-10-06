@@ -10,6 +10,6 @@
     "rootDir": ".",
     "types": ["node"]
   },
-  "include": ["src/**/*", "playwright.config.ts"],
+  "include": ["src/**/*", "tests/**/*", "playwright.config.ts"],
   "exclude": ["node_modules", "dist"]
 }

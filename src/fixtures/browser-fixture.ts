@@ -129,7 +129,7 @@ export const test = base.extend<BrowserFixtures, BrowserWorkerFixtures>({
         name: testInfo.title,
       };
       const wsEndpoint = buildBrowserStackWsEndpoint({ credentials: { username, accessKey }, capabilities: caps });
-      const launcher = caps.browser === 'firefox' ? firefox : caps.browser === 'playwright-webkit' ? webkit : chromium;
+      const launcher = caps.browser === 'playwright-firefox' ? firefox : caps.browser === 'playwright-webkit' ? webkit : chromium;
       const browser = await launcher.connect(wsEndpoint);
       await use(browser);
       await browser.close();

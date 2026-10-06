@@ -73,7 +73,7 @@ export const BS_CAPABILITY_PRESETS: Record<string, BrowserStackCapabilities> = {
     'browserstack.video': true,
   },
   'firefox-windows-11': {
-    browser: 'firefox',
+    browser: 'playwright-firefox',
     browser_version: 'latest',
     os: 'Windows',
     os_version: '11',

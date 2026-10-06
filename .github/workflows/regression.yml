@@ -8,7 +8,7 @@ on:
         required: true
         default: qa
         type: choice
-        options: [staging, production]
+        options: [qa, production]
       browser_preset:
         description: BrowserStack capability preset
         required: true

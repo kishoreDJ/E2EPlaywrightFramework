@@ -95,3 +95,34 @@ export interface PoolStats {
   queued: number;
   evicted: number;
 }
+
+// ==========================================
+// BrowserStack
+// ==========================================
+
+export interface BrowserStackCredentials {
+  username: string;
+  accessKey: string;
+}
+
+export interface BrowserStackCapabilities {
+  browser: 'chrome' | 'firefox' | 'edge' | 'playwright-chromium' | 'playwright-firefox' | 'playwright-webkit';
+  browser_version?: string;
+  os: 'Windows' | 'OS X';
+  os_version: string;
+  device?: string;
+  real_mobile?: boolean;
+  name?: string;
+  build?: string;
+  project?: string;
+  'browserstack.local'?: boolean;
+  'browserstack.debug'?: boolean;
+  'browserstack.networkLogs'?: boolean;
+  'browserstack.video'?: boolean;
+  'browserstack.console'?: 'errors' | 'warnings' | 'info' | 'verbose' | 'disable';
+}
+
+export interface BrowserStackConfig {
+  credentials: BrowserStackCredentials;
+  capabilities: BrowserStackCapabilities;
+}

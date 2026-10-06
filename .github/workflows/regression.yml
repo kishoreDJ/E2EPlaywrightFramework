@@ -1,0 +1,79 @@
+name: Manual Regression — BrowserStack + Allure Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        required: true
+        default: qa
+        type: choice
+        options: [staging, production]
+      browser_preset:
+        description: BrowserStack capability preset
+        required: true
+        default: chrome-windows-11
+        type: choice
+        options:
+          - chrome-windows-11
+          - chrome-mac-sequoia
+          - firefox-windows-11
+          - edge-windows-11
+
+jobs:
+  regression:
+    name: Regression on BrowserStack (${{ inputs.browser_preset }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    environment: ${{ inputs.environment }}
+
+    env:
+      CI: true
+      USE_BROWSERSTACK: true
+      BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
+      BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+      BS_PROJECT_NAME: ${{ vars.BS_PROJECT_NAME }}
+      BS_BUILD_NAME: manual-${{ inputs.environment }}-${{ github.run_number }}
+      BS_CAPABILITY_PRESET: ${{ inputs.browser_preset }}
+      DJCSS_BASE_URL: ${{ secrets.DJCSS_BASE_URL }}
+      DJCSS_USERNAME: ${{ secrets.DJCSS_USERNAME }}
+      DJCSS_PASSWORD: ${{ secrets.DJCSS_PASSWORD }}
+      TEST_ENV: ${{ vars.TEST_ENV }}
+      HEADLESS: true
+      DEBUG: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright (Chromium only — BrowserStack runs remote)
+        run: npx playwright install --with-deps chromium
+
+      - name: Run selected tests on BrowserStack
+        run: |
+          npx playwright test \
+            tests/home/home.spec.ts \
+            tests/live-chat/live-chat.spec.ts \
+            tests/product-alerts/product-alerts.spec.ts
+
+      - name: Generate Allure report
+        if: always()
+        run: npx allure generate allure-results/regression --clean -o allure-report/regression
+
+      - name: Upload Allure report as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report-${{ github.run_number }}
+          path: allure-report/regression/
+          retention-days: 30
+

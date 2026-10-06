@@ -1,0 +1,1928 @@
+[
+  {
+    "key": "DJCSS-T1",
+    "name": "Product Status: Add new product 'Factiva Sentiment Signals API all browsers and mobile devices",
+    "folder": "/Product Status ",
+    "auto": null,
+    "precond": "Chrome, FireFox, Edge, Safari, SamsungS22, Samsung tab and iPhone and \niPadmini\n\n",
+    "objective": "Able to add new product 'Factiva Sentiment Signals API",
+    "steps": [
+      {
+        "step": "Login to DJCSS",
+        "data": "lisaadmin/lisaadmin\n\n",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on Status button->Click on Product Status title",
+        "data": null,
+        "expected": "Product Status page displayed successfully"
+      },
+      {
+        "step": "Click on API check box in product list",
+        "data": null,
+        "expected": "User should be able to validate the new product added Factiva Sentiment \nSignals API displayed successfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T3",
+    "name": "DJID Download Button all browsers  and mobile devices",
+    "folder": "/DJID Updates",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, edge, safari, firefox, iPadmini, Iphone 13,SamsungS22, Samsung Tab",
+    "objective": "DJID Download button",
+    "steps": [
+      {
+        "step": "Login to DJCSS",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on Notification button->Click on DJID Update title",
+        "data": null,
+        "expected": "1.User should be able to see the  DJID update home page displayed \nsuccessfully \n2.Validate the DJID Download button successfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T4",
+    "name": "DJID Header and Subscribe Button changes: Spacing adjustments all browsers  and mobile devices",
+    "folder": "/DJID Updates",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, FireFox, Edge, Safari, SamsungS22, Samsung tab and iPhone and \niPadmini\n\n",
+    "objective": "Able to verify Subscribe Button changes and Spacing adjustments\n\n",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": " lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on Notification button->Click on DJID Update title",
+        "data": "",
+        "expected": "1.User should be able to see the  DJID update home page displayed \nsuccessfully \n2.Validate reduce space between the text and subscribe button.\n\n"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T6",
+    "name": "Factiva Product Update: Divider Line Spacing all browsers and mobile devices",
+    "folder": "/Factiva Product Updates",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, FireFox, Edge, Safari, SamsungS22, Samsung tab and iPhone and \niPadmini\n\n",
+    "objective": "Able to verify Divider Line Spacing",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on Notification button ->Click on Factiva Product Update title",
+        "data": null,
+        "expected": "1. Factiva Product Update page displayed successfully \n2. Validate divider line spacing between articles title in Factiva Product \nUpdate page successfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T7",
+    "name": "Learning Page: Header and View Now Changes all browsers and mobile devices",
+    "folder": "/Learning ",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, FireFox, Edge, Safari, SamsungS22, Samsung tab and iPhone and \niPadmini\n\n",
+    "objective": "Header and View button",
+    "steps": [
+      {
+        "step": "Login to DJCSS",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on Learning button\n\n",
+        "data": null,
+        "expected": "1.Learning pages displayed successfully\n2. Validate the spacing on the header of this page as well as moving the \nView now button up to better match the text next to it in Learning pages \nsuccessfully."
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T8",
+    "name": "Clicking the R&C Profile Update button does not trigger the tracking for the page in one browser, mobile and iPadmini",
+    "folder": "/Risk&Compliance Product Update",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, SamsungS22 and iPadmini",
+    "objective": "Clicking the R&C Profile Update button does not trigger the tracking for \nthe page",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully \n\n"
+      },
+      {
+        "step": "Click on Notification -> R&C Profile Update button",
+        "data": null,
+        "expected": "1.Validate trigger the tracking for the page after clicking the R&C Profile \nUpdate button\n2.R&C profile update page displayed successfully \n\n"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T9",
+    "name": "Global: Adjust the Footer Size in all the browsers and mobile devices",
+    "folder": "/Home",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, Edge, Firefox, Safari, iPhone13, iPadmini, Android Tab and \nSamsungS22 ",
+    "objective": "Adjust the Footer Size",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully \n\n"
+      },
+      {
+        "step": "Click on Home button",
+        "data": null,
+        "expected": "User should be able to validate the Adjusted the Footer Size cross in \nbottom of the home pages successful"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T10",
+    "name": "Learning Schedule Adjustments: Header Text Changes in all the browsers and mobile devices",
+    "folder": "/Learning ",
+    "auto": "Automation Not Required",
+    "precond": "\nChrome, FireFox, Edge, Safari, SamsungS22, Samsung tab and iPhone and \niPadmini\n\n",
+    "objective": "Header Text Changes",
+    "steps": [
+      {
+        "step": "Login to DJCSS\nClick on Learning button\n\n",
+        "data": "lisaddmin/lisaadmin",
+        "expected": "User should be able to login Successfully \n\n"
+      },
+      {
+        "step": "Click on Learning button",
+        "data": null,
+        "expected": "1.Learning pages displayed successfully \n2. Validate the highlighted text changed to a darker font rather then the \nblue text successfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T11",
+    "name": "LDJID Update: Add alternating color background to code lists in all the browsers and mobile devices",
+    "folder": "/DJID Updates",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, Safari, Edge, iPadmini, SamsungS22,Tab and iPhone13",
+    "objective": "Able to add alternating color background to code lists",
+    "steps": [
+      {
+        "step": "Login to DJCSS\nClick on Notification button\nClick on DJID Update title",
+        "data": "lisaadmin/lisaadmin\n\n",
+        "expected": "User should be able to login Successfully \n\n"
+      },
+      {
+        "step": "Click on Notification button->Click on DJID Update title",
+        "data": null,
+        "expected": "1.User should be able to see the  DJID update home page displayed \nsuccessfully \n2.Validate the alternating color background to code lists in under DJID \nupdate product."
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T13",
+    "name": "Factiva Source Request: Enhance Bulk Upload Validation one browsers",
+    "folder": "/Factiva Source Request Form",
+    "auto": "Automation Not Required",
+    "precond": "Chrome ",
+    "objective": "Able to Upload Enhance Bulk Excel sheet",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be login Successfully \n\n"
+      },
+      {
+        "step": "Click on Contact us button -> Click on Help Request form title",
+        "data": null,
+        "expected": "Help request form displayed successfully "
+      },
+      {
+        "step": " Click on Factive source request tab",
+        "data": null,
+        "expected": "User should be able to see the Factive source request form displayed "
+      },
+      {
+        "step": "Click on Bulk request button",
+        "data": null,
+        "expected": "User should be able to see the Bulk request form displayed "
+      },
+      {
+        "step": "Click on Browser button to uploaded bulk excel spreadsheet from local \ndrive-> click open",
+        "data": null,
+        "expected": "Validate uploaded bulk excel sheet from local drive in the bulk request \nform successfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T14",
+    "name": "The home page of the Safari browser The search box has moved to the right and needs to line up with the wording \"How can I help you in one browsers",
+    "folder": "/Home",
+    "auto": null,
+    "precond": "Safari",
+    "objective": "Wording need to fix How can I help you ",
+    "steps": [
+      {
+        "step": "Login to DJCSS\nClick on Home button\n",
+        "data": " lisaadmin/lisaadmin\n \n\n",
+        "expected": "User should be able to login Successfully \n\n"
+      },
+      {
+        "step": "Click on Home button",
+        "data": null,
+        "expected": "1.Home page displayed successfully \n2.Validate search box has moved to the right and line up with the wording \nhas been fixed in home page"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T15",
+    "name": "RC Marketing Updates Page - User's Product selection is not persisted\" all browsers and mobile devices ",
+    "folder": "/Risk&Compliance Product Update",
+    "auto": null,
+    "precond": "Chrome, FireFox, Edge, Safari, SamsungS22, Samsung tab and iPhone and \niPadmini\n\n",
+    "objective": "User's Product selection is not persisted",
+    "steps": [
+      {
+        "step": "Login to DJCSS",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully \n\n"
+      },
+      {
+        "step": "Click on Notification -> R&C Profile Update button",
+        "data": null,
+        "expected": "1. User should be able see the R&C Profile Update home page displayed \nsuccessfully \n2. Validate the User's Product selection is not persisted has  fixed in RC \nProduct updated successfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T16",
+    "name": "Completed Full regression testing for QA pages ",
+    "folder": "",
+    "auto": null,
+    "precond": "Chrome browser ",
+    "objective": "Full regression testing for QA pages ",
+    "steps": []
+  },
+  {
+    "key": "DJCSS-T17",
+    "name": "FAQ and Home page- Need to fix the Align on gray highlight bar bottom off the pages in all the Browsers and mobile devices",
+    "folder": "/FAQ",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, FireFox, Edge, Safari, SamsungS22, Samsung tab and iPhone and \niPadmini",
+    "objective": "Able to fix the Align on the gray highlight bar bottom of the FAQ page",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": " lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on FAQ button",
+        "data": null,
+        "expected": "1. FAQ page displayed successfully \n2. Validate the alignment has fixed on the gray highlight bar bottom of the \nFAQ page successfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T18",
+    "name": "DJID Update Create dynamic links for new codes one browsers ",
+    "folder": "/DJID Updates",
+    "auto": "Automation Not Required",
+    "precond": "Chrome",
+    "objective": "Able to Create dynamic links for new codes",
+    "steps": [
+      {
+        "step": "Login to DJCSS \n\n",
+        "data": " lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on Notification button->Click on DJID Update title",
+        "data": null,
+        "expected": "User should be able to see the  DJID update home page displayed \nsuccessfully "
+      },
+      {
+        "step": "Click on New Code",
+        "data": null,
+        "expected": "Validate the Create dynamics link under New code in DJID Update page \nsuccessfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T19",
+    "name": "Email Opt-In: Start capturing Namespace in Campaign Monitor one browsers",
+    "folder": "/Campaign Monitor",
+    "auto": "Automation Not Required",
+    "precond": "Campaign Monitor",
+    "objective": "Able to create Email opt capturing Namespace in Campaign Monitor\n\n",
+    "steps": [
+      {
+        "step": "Login to Campaign Monitor\n\n\n",
+        "data": "rajesh.nath@dowjones.com/Lansdale11!\n\n",
+        "expected": "User should be login Successfully \n\n\n"
+      },
+      {
+        "step": "Click on Create Mail is saved in drafts",
+        "data": null,
+        "expected": "1. User should be able to Validate whether mail is immediately sent to the \nuser if already subscribed.\n2. Validate the capturing Namespace Email opt in subscriber emails."
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T20",
+    "name": "Help Request Form: R&C Profile Update: Move the description copy to the top of the form all browsers  and mobile devices ",
+    "folder": "/R&C profile update Form",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, FireFox, Edge, Safari, SamsungS22, Samsung tab and iPhone and \niPadmini\n\n",
+    "objective": "Able to move the description copy to the top of the form in R&C Profile \nUpdate",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be login Successfully \n\n"
+      },
+      {
+        "step": "Click on Contact us->Click on Help request form",
+        "data": null,
+        "expected": "Help request form displayed successful \n\n"
+      },
+      {
+        "step": "Click on R&C Profile update",
+        "data": null,
+        "expected": "1.User should be able see the R&C Profile Update home page displayed \nsuccessfully \n2. Validate the description text are move to top of the form in R&C Profile \nUpdate successfully \n\n"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T21",
+    "name": "R&C Product Update: Change the naming format of the PDF's one browsers",
+    "folder": "/Risk&Compliance Product Update",
+    "auto": "Automation Not Required",
+    "precond": "Chrome",
+    "objective": "Change the naming format of the PDF'",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully \n\n"
+      },
+      {
+        "step": "Click on Notification -> Click on R&C product Update ",
+        "data": null,
+        "expected": "1. User should be able see the R&C Profile Update home page displayed \nsuccessfully \n2.Validate the change the naming format of the PDFs after downloading R&C \nproduct Update successfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T22",
+    "name": " FAQ & Learning PDF's: Can we remove the tags from the PDF's that are downloaded one browsers",
+    "folder": "/FAQ",
+    "auto": "Automation Not Required",
+    "precond": "Chrome",
+    "objective": "Remove the tags from the PDF's that are downloaded ",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on FAQ button ",
+        "data": null,
+        "expected": "1.FAQ page displayed successfully \n2.Click on any articles\n3.Validate the remove the tags from PDF's that are downloaded any articles  \nfrom FAQ successfully "
+      },
+      {
+        "step": "Click on Learning button",
+        "data": null,
+        "expected": "1.Learning page displayed successfully \n2.Click on any articles\n3.Validate the remove the tags from PDF's that are downloaded any articles  \nfrom learning pages successfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T23",
+    "name": "Product Status: Remove 'Sustainability Data Feed' from Product Status List in all the browsers and mobile devices",
+    "folder": "/Product Status ",
+    "auto": "Automation Not Required",
+    "precond": "Chrome and iPhone",
+    "objective": "Able Sustainability Data Feed from Product Status List ",
+    "steps": [
+      {
+        "step": "Login to DJCSS",
+        "data": "lisaadmin/lisaadmin\n\n",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on Status button->Click on Product Status title",
+        "data": null,
+        "expected": "Product Status page displayed sucessfully"
+      },
+      {
+        "step": "Click on Feed check box in product list",
+        "data": null,
+        "expected": "User should be able to validate the Remove 'Sustainability Data Feed \nproducts from the product status list successfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T24",
+    "name": "DJCSS - Support EU region in one Browsers and two mobile devices ",
+    "folder": "/Home",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, Samsung S21 and iPadmini",
+    "objective": "Support EU region",
+    "steps": [
+      {
+        "step": "Login to EU DJCSS\n",
+        "data": " Usernme:stropA/Pass:rncdev23",
+        "expected": "User should be able to login EU region with using EU credentials \nsuccessfully \n"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T25",
+    "name": "Djcss Page spinning for ever in all Browsers and mobile devices",
+    "folder": "/Home",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, Edge, safari  iPhone13,SamsungS22 and iPadmini",
+    "objective": "Page spinning ",
+    "steps": [
+      {
+        "step": "Login to DJCSS",
+        "data": "lissaadmin/lisaadmin",
+        "expected": "User should be able to verify the fixed djcss pages by login to djcss \nsuccessfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T26",
+    "name": " Bulk Request Option in all Browsers and mobile devices ",
+    "folder": "/Factiva Source Request Form",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, Edge, Safari, FireFox, iPhone13, SamsungS22 iPadmini",
+    "objective": "Bulk Request Option",
+    "steps": [
+      {
+        "step": "Login DJCSS",
+        "data": "lissadmin/lisaadmin",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on Contact us button then Click on Help Request form title",
+        "data": "",
+        "expected": "Help request form displayed successfully "
+      },
+      {
+        "step": "Click on Factive source request tab",
+        "data": "",
+        "expected": "User should be able to see the Factive source request form displayed "
+      },
+      {
+        "step": "Click on bulk request option button",
+        "data": "",
+        "expected": "User should be able to Validate Bulk Request Option under Factive source \nrequest in all browsers and mobile devices \n\n"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T27",
+    "name": "Bulk Request: Increase limit of requests from 100 to 200 in all Browsers and mobile devices",
+    "folder": "/Factiva Source Request Form",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, Edge, Safari, FireFox, iPhone13, iPadmini and SamsungS22",
+    "objective": "Increase word limit of requests from 100 to 200 ",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": " lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on Contact us button then Click on Help Request form title",
+        "data": "",
+        "expected": "Help request form displayed successfully "
+      },
+      {
+        "step": " Click on Factive source request tab",
+        "data": "",
+        "expected": "User should be able to see the Factive source request form displayed "
+      },
+      {
+        "step": "Fill out the customer Contact Information\n1.First Name\n2. Last Name\n3.Email\n4.Primary Industry\n5.Country Location\n\n\n\n",
+        "data": "",
+        "expected": "User should be able to enter first, last name, email, primary industry and \nCountry location successfully "
+      },
+      {
+        "step": "Fill out the Source Information section with following steps \n1. Sources Name\n2. Source Language\n3.Source Country\n4.Priority \n5. Publisher\n6.Source Industry\n7.Please provide details why you would like this source within Factiva and \ndetails of the content it covers Box\n\n\n",
+        "data": "",
+        "expected": "User should be able to enter Source Information field successfully "
+      },
+      {
+        "step": "Click on Submit button",
+        "data": "",
+        "expected": "User should be able to verify the Increase word limit of requests from 100 \nto 200 in the Factive bulk request form submitted successfully."
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T28",
+    "name": "Source Request Confirmation Email: Update Both Single and Bulk Confirmation Emails' in one Browsers ",
+    "folder": "/Factiva Source Request Form",
+    "auto": "Automation Not Required",
+    "precond": "Gmail, Chrome",
+    "objective": "Source and Bulk Request Confirmation Email",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully \n\n"
+      },
+      {
+        "step": "Click on Contact us button then Click on Help Request form title",
+        "data": "",
+        "expected": "Help request form displayed successfully "
+      },
+      {
+        "step": "Click on Factive source request tab",
+        "data": "",
+        "expected": "User should be able to see the Factive source request form displayed "
+      },
+      {
+        "step": "Click on bulk request option button",
+        "data": "",
+        "expected": "User should be able to see the bulk request form displayed "
+      },
+      {
+        "step": "Fill out the customer Contact Information\n1.First Name\n2. Last Name\n3.Email\n4.Primary Industry\n5.Country Location\n\n",
+        "data": "",
+        "expected": "User should be able to enter first, last name, email, primary industry and \nCountry location successfully "
+      },
+      {
+        "step": "Click on browser button",
+        "data": "",
+        "expected": "User should be able to upload files from the local drive successfully "
+      },
+      {
+        "step": "Click on Submit button",
+        "data": "",
+        "expected": "User should be able to verify Factive bulk request form submitted \nsuccessfully "
+      },
+      {
+        "step": "Email",
+        "data": "",
+        "expected": "User should be able to received email in their gmail account from source \nrequest forrm."
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T29",
+    "name": "Bulk Request: New Excel Template for Downloading in one Browsers and two mobile devices",
+    "folder": "/Factiva Source Request Form",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, iPadmini and SamsungS22",
+    "objective": "New Excel Template for Downloading",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": " lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully \n\n"
+      },
+      {
+        "step": "Click on Contact us button ->Click on Help Request form title",
+        "data": null,
+        "expected": "Help request form displayed successfully "
+      },
+      {
+        "step": " Click on Factive source request tab -> click on bulk request option ",
+        "data": null,
+        "expected": "User should be able to see the bulk request form displayed "
+      },
+      {
+        "step": "Click on XLS Template ",
+        "data": null,
+        "expected": "User should be able to download the XLS template in local drive \nsuccessfully."
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T30",
+    "name": "DJCSS Admin - Add 'Search' option on 'LISTS' page in one Browser",
+    "folder": "/DJCSS-Admin Page",
+    "auto": "Automation Not Required",
+    "precond": "Chrome ",
+    "objective": "Able to add Search option on the List page ",
+    "steps": [
+      {
+        "step": "Login to DJCSS Admin page",
+        "data": "rajesh.nath@dowjones.com/lisaadmin\n\n",
+        "expected": "User should be login Successfully "
+      },
+      {
+        "step": "Click on List button -> Search box",
+        "data": null,
+        "expected": "User should be able enter \"Search\" in search box results displayed \nsuccessfully"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T31",
+    "name": "DJCSS Admin - Product Status: Add new product 'R&C - Advanced Screening & Monitoring in All Browsers and mobile devices",
+    "folder": "/DJCSS-Admin Page",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, FireFox, Edge, Safari, SamsungS22, Samsung tab and iPhone and \niPadmini",
+    "objective": "Add new product 'R&C - Advanced Screening & Monitoring\n\n",
+    "steps": [
+      {
+        "step": "Login DJCSS Admin Page\n\n",
+        "data": "rajesh.nath@dowjones.com/lisaadmin\n\n",
+        "expected": "User should be login Successfully "
+      },
+      {
+        "step": "Click on Product status",
+        "data": null,
+        "expected": "1.User should be able to see the Product status home page\n2.Validate new product 'R&C - Advanced Screening & Monitoring title under \nProduct Status tab successfully\n\n"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T32",
+    "name": " Factiva Product Update: Images that are uploaded as assets aren't being rendered when on customer.factiva.com instead of customer.dowjones.com in one Browsers ",
+    "folder": "/Factiva Product Updates",
+    "auto": "Automation Not Required",
+    "precond": "Chrome",
+    "objective": "Able to uploaded as assets aren't being rendered when on \ncustomer.factiva.com ",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on Notification button -> Click on Factiva Product Update title\n\n",
+        "data": null,
+        "expected": "1. Factiva Product Update home page displayed successfully \n2.Validate the fix Images that are uploaded as assets aren't being rendered \nwhen on customer.factiva.com instead of customer.dowjones.com in \nsuccessfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T34",
+    "name": "Update DJID Template in one Browser ",
+    "folder": "/DJID Updates",
+    "auto": "Automation Not Required",
+    "precond": "Alfresco , Chrome",
+    "objective": "Create articles in DJID Template in Alfresco ",
+    "steps": [
+      {
+        "step": "Login Alfresco \n\n",
+        "data": "admin/admin",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on DJID product ->Create folder with any year",
+        "data": null,
+        "expected": " User should be able to Create folder with any year successfully "
+      },
+      {
+        "step": "Click on Article->Enter the input DJID template field->Click on Create",
+        "data": null,
+        "expected": "User should be see the article in under DJID Update update folder \nsuccessfully \n\n"
+      },
+      {
+        "step": "Login DJCSS",
+        "data": null,
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on Notification-> Click on DJID update title",
+        "data": null,
+        "expected": "1. Use should be able to see the DJID update home page displayed \n2. Click on DJID code\n3. Validate the DJID product article successfully"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T35",
+    "name": "Search on Home page and FAQ improvements one browsers in QA ",
+    "folder": "/Home",
+    "auto": "Automation Not Required",
+    "precond": "Chrome ",
+    "objective": "Search on Home page",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully \n\n"
+      },
+      {
+        "step": "Click on Home button",
+        "data": null,
+        "expected": " Home pages displayed successfully \n\n"
+      },
+      {
+        "step": "Enter \"Factive\" in search bar -> click search button",
+        "data": null,
+        "expected": "Validate the search bar in the home pages with Factive contents results \ndisplayed successfully."
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T36",
+    "name": "R&C Product Update: Add Support for 'Advanced Screening & Monitoring' as an additional product option all browser and mobile devices",
+    "folder": "/Risk&Compliance Product Update",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, FireFox, Edge, Safari, SamsungS22, Samsung tab and iPhone and \niPadmini\n\n",
+    "objective": "Able to see Advanced Screening & Monitoring",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully \n\n"
+      },
+      {
+        "step": "Click on Notification -> Click on R&C product Update ",
+        "data": null,
+        "expected": "User should be able see the R&C Profile Update home page "
+      },
+      {
+        "step": "Click on Advanced Screening & Monitoring check box in product option field",
+        "data": null,
+        "expected": "User to be able to validate the Advanced Screening & Monitoring product \ntitle in under Product section successfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T37",
+    "name": "DJY Standalone Page in QA  with one browser and two mobiles",
+    "folder": "/DJ Yomiuri Standalone ",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, iPadmini and Samsungs22",
+    "objective": "Verify DJY Standalone Page ",
+    "steps": [
+      {
+        "step": "Login to DJCSS \n\n",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be login Successfully "
+      },
+      {
+        "step": "Click on Contact US button->Standalone page link",
+        "data": "",
+        "expected": "1. User should be able see the DJY Standalone home page \n2. Validate DJY Standalone Page with correct Images, Email, Phone and \narticles contents"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T39",
+    "name": "Validate of Create Login FAQ Page in all  browser and mobile devices in QA ",
+    "folder": "/Login FAQ page",
+    "auto": "Automated",
+    "precond": "\nChrome, FireFox, Edge, Safari, SamsungS22, Samsung tab and iPhone and \niPadmini\n\n",
+    "objective": "Able to verify Create Login FAQ Page",
+    "steps": [
+      {
+        "step": "Login to DJCSS",
+        "data": "Create Login FAQ Page",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on Contact us -> Click on Login to FAQ",
+        "data": null,
+        "expected": "User should be able to validate the Login FAQ pages successfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T40",
+    "name": "Profile endpoint dependencies DJID in one browser in QA pages ",
+    "folder": "/DJID Updates",
+    "auto": "Automation Not Required",
+    "precond": "Chrome",
+    "objective": "Able to verify the endpoints dependencies ",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "\nUser should be able to login Successfully "
+      },
+      {
+        "step": "Login to Campaign Monitor",
+        "data": "rajesh.nath@dowjones.com/Lansdale12!",
+        "expected": "1.User should be able to see Campaign Monitor home page displayed \n2. Validate Check subscriber “Name” in campaign monitor on subscribing\na.R&C product update \nb.DJID updates \nc. schedule maintenance\n2.Browser Info page: account Id of the user\n\n"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T43",
+    "name": "DJY Pro Standalone FAQ: Update Logo in Top Left in one browser and two mobile devices in QA ",
+    "folder": "/DJ Yomiuri Standalone ",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, iPadmin and SamungS22",
+    "objective": "Update Logo in top left",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n\n",
+        "data": " lisaadmin/lisaadmin\n\n",
+        "expected": "User should be able to login Successfully \n\n"
+      },
+      {
+        "step": "Click on Contact us button ->Click on  Dowjones yomiuri title",
+        "data": null,
+        "expected": "1.User should be able see the DJ Yomiuri home page \n2. Validate DJY updated logo in the top left side of yomiuri pages.\n\n"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T44",
+    "name": "FAQ Search Page Improvement: Auto Scroll back to top when going to next page in one browser and two mobile devices in QA ",
+    "folder": "/FAQ",
+    "auto": "Automation Not Required",
+    "precond": "Browserstack, Chrome, ipadmini and Samsung",
+    "objective": "FAQ Search Page Improvement",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on FAQ button ",
+        "data": null,
+        "expected": "1.FAQ page displayed successfully \n2.Validate the Auto Scroll back to top when going to next page in FAQ \nsuccessfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T45",
+    "name": "Footer is partially hidden and Image is partially hidden in iPadmini in one mobile devices in QA ",
+    "folder": "/FAQ",
+    "auto": "Automation Not Required",
+    "precond": "iPadmini",
+    "objective": "Footer and Image is partially hidden",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on FAQ button",
+        "data": null,
+        "expected": "1. FAQ page displayed successfully \n2.Validate hidden images in FAQ pages in iPadmini successfully \n3.Validate hidden Footer in FAQ pages in iPadmini successfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T47",
+    "name": "Validate of Login FAQ: Force a standard width for the images so they are uniform in one browser and two mobile devices in QA ",
+    "folder": "/Login FAQ page",
+    "auto": null,
+    "precond": "Chrome, iPadmini and SamsungS22",
+    "objective": "Able to verify standard width for the images",
+    "steps": [
+      {
+        "step": "Login to DJCSS\n\n",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully \n\n"
+      },
+      {
+        "step": "Click on Contact us button -> Click on Login FAQ title",
+        "data": null,
+        "expected": "1. User should be able see the FAQ home page \n2. Validate FAQPage with correct width Images between paragraphs "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T50",
+    "name": "Help Request Form Update: Risk Journal in all browser and all the  mobile devices in QA ",
+    "folder": "/Help Request Form",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, Firefox, Edge, iPadmini, iphone13 and SamsungS22",
+    "objective": "New Product Risk Journal ",
+    "steps": [
+      {
+        "step": "Login to DJCSS",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on Contact us ->Click on Help request form",
+        "data": null,
+        "expected": "Help request form displayed successfully "
+      },
+      {
+        "step": "Click on product area->Select drop-down -> Click on Risk Journal ",
+        "data": null,
+        "expected": "User should be able to validate the Risk Journal product in the help \nrequest form successfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T52",
+    "name": "DJY Page Update: Dedicated Hotline Addition in all browser and all the  mobile devices in QA ",
+    "folder": "/DJ Yomiuri Standalone ",
+    "auto": null,
+    "precond": "Chrome, iPadmin and SamungS22",
+    "objective": "DJY Page Update: Dedicated Hotline Addition ",
+    "steps": [
+      {
+        "step": "Login to DJCSS",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on Contact us button ->Click on  Dowjones yomiuri title",
+        "data": null,
+        "expected": "1.User should be able see the DJ Yomiuri home page \n2. Validate DJY updated Dedicated Hotline Addition top of yomiuri pages.\n\n"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T53",
+    "name": "R&C Product Update: Temporarily update email copy  in  one browser in QA ",
+    "folder": "/Risk&Compliance Product Update",
+    "auto": "Automation Not Required",
+    "precond": "Chrome",
+    "objective": "Temporarily update email copy",
+    "steps": [
+      {
+        "step": "Login to Alfresco ",
+        "data": "Admin/admin",
+        "expected": "User should be login Successfully "
+      },
+      {
+        "step": "Click on Create button-> Select on R&C templates -> Click on Create button",
+        "data": null,
+        "expected": "R&C product updated templates Create Successfully "
+      },
+      {
+        "step": "Click on Manage rule-> Select on publish RC product updated -> Click on Run \nrule",
+        "data": null,
+        "expected": "1.Use should be able to see the run rule and published the RC product \nupdate successful \n2. Validate the update email copy successfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T54",
+    "name": "R&C Product Update: Auto Scroll Feature",
+    "folder": "/Risk&Compliance Product Update",
+    "auto": "Automation Not Required",
+    "precond": "Chrome, SamsungS22 and iPadmini",
+    "objective": "Clicking the R&C product Update title with Auto Scroll feature",
+    "steps": [
+      {
+        "step": "Login to DJCSS",
+        "data": "lisaadmin/lisaadmin",
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on Notification -> R&C Product Update button",
+        "data": null,
+        "expected": "1.Validate auto scroll feature after clicking the R&C product update title\n2. The article Auto Scroll to top page successfully "
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T59",
+    "name": "Verify Like/Dislike functionality on FAQ page",
+    "folder": "",
+    "auto": "Not Automated",
+    "precond": null,
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to DJCSS",
+        "data": null,
+        "expected": "User should be able to login Successfully "
+      },
+      {
+        "step": "Click on FAQ link on the top in the main menu",
+        "data": null,
+        "expected": "User should be able to /faq page"
+      },
+      {
+        "step": "Click on the product needed like Factiva/ Risk& Compliance",
+        "data": null,
+        "expected": "User clicked on the need tile and landed on /faq/list?product= \"chosen \nproduct\""
+      },
+      {
+        "step": "Click on any of the item",
+        "data": null,
+        "expected": "User navigates to that clicked item page."
+      },
+      {
+        "step": "Verify \"Was this Helpful feedback box with Like and Dislike buttons ",
+        "data": null,
+        "expected": "Feedback box and buttons should be available."
+      },
+      {
+        "step": "Verify the like and dislike button on the utility menu which is on the \nright of the page and beside the side scrollbar",
+        "data": null,
+        "expected": "Like and Dislike button should be added there\n"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T60",
+    "name": "Verify that user is staying on the notification modal while tabbing and not accessing the elements on the background",
+    "folder": "",
+    "auto": "Automation Not Required",
+    "precond": null,
+    "objective": null,
+    "steps": [
+      {
+        "step": "Open any of the notification modal",
+        "data": null,
+        "expected": " Notification modal is opened"
+      },
+      {
+        "step": "Using the tab on the key board verify the modal elements are highlighted."
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T62",
+    "name": "Test case for verifying zephyr",
+    "folder": "/Home",
+    "auto": null,
+    "precond": null,
+    "objective": null,
+    "steps": [
+      {
+        "step": "Click the input field for your name"
+      },
+      {
+        "step": "Input into the input field for your name with input \"Enova\""
+      },
+      {
+        "step": "Click the headline title input field"
+      },
+      {
+        "step": "Input into the headline title input field with input \"This is headline \ntitle\""
+      },
+      {
+        "step": "Click the source name input field"
+      },
+      {
+        "step": "Input into the source name input field with input \"Source name is WSJ\""
+      },
+      {
+        "step": "Click the article date input field"
+      },
+      {
+        "step": "Input into the article date input field with input \"2025-10-01\""
+      },
+      {
+        "step": "Click the URL input for linking to external content"
+      },
+      {
+        "step": "Scroll within page"
+      },
+      {
+        "step": "Input into the URL input for linking to external content with input \n\"https://www.wsj.com\""
+      },
+      {
+        "step": "Click the confirmation checkbox for content distribution rights"
+      },
+      {
+        "step": "Scroll within page"
+      },
+      {
+        "step": "Click on Submit button"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T63",
+    "name": "Verify Learning, Product Status, and Content Update” tiles on the screen according to Figma.",
+    "folder": "/Home",
+    "auto": null,
+    "precond": null,
+    "objective": null,
+    "steps": []
+  },
+  {
+    "key": "DJCSS-T64",
+    "name": "Verify if Suggested Articles” section based on the most viewed articles across the platform above.",
+    "folder": "/Home",
+    "auto": null,
+    "precond": null,
+    "objective": null,
+    "steps": []
+  },
+  {
+    "key": "DJCSS-T65",
+    "name": "Verify if Users is only seeing what products they have and not what they don’t",
+    "folder": "/Home",
+    "auto": null,
+    "precond": null,
+    "objective": null,
+    "steps": []
+  },
+  {
+    "key": "DJCSS-T67",
+    "name": "Home Page_Verify the new header",
+    "folder": "",
+    "auto": null,
+    "precond": null,
+    "objective": null,
+    "steps": [
+      {
+        "step": "Input into the User ID or Email Address input field"
+      },
+      {
+        "step": "Press Tab key"
+      },
+      {
+        "step": "Input into the password input field"
+      },
+      {
+        "step": "Click on Sign In button"
+      },
+      {
+        "step": "Highlight text in How Can We Help? element"
+      },
+      {
+        "step": "Highlight text in We understand that when problems arise, you need \nsolutions quickly. Find answers to popular support questions and learn more \nabout our products and services with free user and administrator resources, \nget important notifications related to our products, or sign up for more \nindepth training with our Product Training Specialists. element"
+      },
+      {
+        "step": "Click the home image on the main content section"
+      },
+      {
+        "step": "Click the home image on the main content section"
+      },
+      {
+        "step": "Click on Sign Up button"
+      },
+      {
+        "step": "Click \"Back\" button"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T68",
+    "name": "Home Page_Verify Search Bar Functionality",
+    "folder": "",
+    "auto": null,
+    "precond": null,
+    "objective": null,
+    "steps": []
+  },
+  {
+    "key": "DJCSS-T76",
+    "name": "Verify Update Acceptance Modal for Quality Assurance FAQ new Content",
+    "folder": "/Recycle",
+    "precond": "Logged into DJCSS QA",
+    "objective": null,
+    "steps": []
+  },
+  {
+    "key": "DJCSS-T77",
+    "name": "Verify Update Acceptance Modal for Quality Assurance FAQ new logic for matching year",
+    "folder": "/Recycle",
+    "auto": null,
+    "precond": "Logged into DJCSS QA and update the year of the pdf attached in the link to \nmatching year",
+    "objective": null,
+    "steps": []
+  },
+  {
+    "key": "DJCSS-T78",
+    "name": "Verify Update Acceptance Modal for Quality Assurance FAQ new logic for different year",
+    "folder": "/Recycle",
+    "auto": null,
+    "precond": "Logged into DJCSS QA and update the year of the pdf attached in the link to \ndifferent year",
+    "objective": null,
+    "steps": []
+  },
+  {
+    "key": "DJCSS-T91",
+    "name": "Verify updated logo on DJID Updates Email Template",
+    "folder": "/Recycle",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> DJID Updates -> check whether \nsubscribed else subscribe( Add new subscriber -> type email id -> next)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Creating and publishing articles in alfresco:\n-> DJID Code updates\n-> Upload and notify\n-> upload DJID file( file name should be in the format (DJID Change \nTracking_Jul_2025.xlsx), we can download DJID file from Prod for different \nyear and use it in QA)",
+        "data": null,
+        "expected": "User should be able to see the artilces in DJID updates page"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the RC \nProduct update Email template has the updated logo",
+        "data": null,
+        "expected": "User's subscribed should be able to see DJID update Email template with the \nupdated logo"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T92",
+    "name": "Verify updated logo on Newswire Product Update Email Template",
+    "folder": "/Recycle",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> Newswire Product Update -> \ncheck whether you subscribed else subscribe( Add new subscriber -> type \nemail id -> next)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Creating and publishing articles in alfresco:\n-> Click on Newswires product Update\n-> Create folder with year name(eg:2020)\n-> Create multiple artiles((+)\n-> Click on product update template\n-> Give title,content,year)\n-> Go to year folder\n-> Click on view details\n-> Click on Manage rule\n-> Create rules\n-> Fill form\n-> (name: any name(2020 rules), perform action: publish_ims_product..., \nrule applies to subfolder\n-> Create -> inherit rules -> run rules -> run rules for this folder and \nit's subfolder -> don't inherit rules",
+        "data": null,
+        "expected": "User should be able to see the artilces in Newswire Product Update page"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the \nNewswire Product update Email template has the updated logo",
+        "data": null,
+        "expected": "User's subscribed should be able to see Newswire update Email template with \nthe updated logo"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T93",
+    "name": "Verify updated logo on IMS Product Update Email Template",
+    "folder": "/Recycle",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> IMS Product Update -> check \nwhether subscribed else subscribe( Add new subscriber -> type email id -> \nnext)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Creating and publishing articles in alfresco:\n-> Click on IMS Product Update\n-> Create folder with year name(eg:2020)\n-> Create multiple artiles((+)\n-> Click on Product update template-> give title,content,year\n-> Go to year folder\n-> Click on view details\n-> Click on Manage rules\n-> Click on create rules\n-> Fill form\n-> (name: any name(eg;2020 rules), perform action: publish_ims_product..., \nrule applies to subfolder)\n-> Create -> inherit rules -> run rules -> run rules for this folder and \nit's subfolder -> don't inherit rules",
+        "data": null,
+        "expected": "User should be able to see the artilces in IMS Product Update page"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the IMS \nProduct update Email template has the updated logo",
+        "data": null,
+        "expected": "User's subscribed should be able to see IMS Product update Email template \nwith the updated logo"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T94",
+    "name": "Verify updated logo on Factiva content update email template",
+    "folder": "/Recycle",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check \nwhether you subscribed else subscribe( Add new subscriber -> type email id \n-> next)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Creating and publishing articles in alfresco:\n-> Click on Factiva content update\n-> Select Product Update -(+)\n-> Year folder(eg; 2020)\n-> Create month folder(eg; December)\n-> Create Factiva content update(you can create article under year folder)\n-> Fill required fields\n-> Go to year folder\n-> Click on view details\n-> Click on Manage rules\n-> Click on create rules\n-> Fill form\n-> (name: any name(eg;2020 rules), perform action: \npublish_factiva_content..., rule applies to subfolder)-> create\n-> Inherit rules -> run rules -> run rules for this folder and it's \nsubfolder -> don't inherit rules",
+        "data": null,
+        "expected": "User should be able to see the artilces in Factiva Content Update page"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the \nFactiva Content update Email template has the updated logo",
+        "data": null,
+        "expected": "User's subscribed should be able to see Factiva content update Email \ntemplate with the updated logo"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T99",
+    "name": "Verify updated logo on RC Product Update Email Template",
+    "folder": "/Logo Updates",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> DJCSS RC Product Updates -> \ncheck whether subscribed else subscribe( Add new subscriber -> type email \nid -> next)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Creating and publishing articles in alfresco\n->Click on R&C Product Update\n-> Select Product Update -(+)\n-> Year folder(eg; 2020)\n-> Create month folder(eg; December)\n-> Create R&C product update\n-> Fill required fields\n-> Go to year folder\n-> Click View details\n-> Click on Manage rules\n-> Click on create rules\n-> Fill form(name: any name(eg;2020 rules),\n->Perform action: publish_rc_product..., rule applies to subfolder)\n-> Create-> Inherit rules -> Run rules -> Run rules for this folder and \nit's subfolder -> Don't inherit rules",
+        "data": null,
+        "expected": "User should be able to create R&C product update by filling in the required \nfields. And also create, inherit and run rules"
+      },
+      {
+        "step": "Verify if we can see articles in RC product update page",
+        "data": null,
+        "expected": "User should be avle to see the artilces in RC Product update page"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the RC \nProduct update Email template has the updated logo",
+        "data": null,
+        "expected": "User's subscribed should be able to see RC Product update Email template \nwith the updated logo"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T100",
+    "name": "Verify updated logo on Factiva Product Update Email Template",
+    "folder": "/Logo Updates",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> Whats New In Factiva -> check \nwhether you subscribed else subscribe( Add new subscriber -> type email id \n-> next)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Creating and publishing articles in alfresco\n->Click on Whats New In Factiva\n-> Select Product Update -(+)\n-> Year folder(eg; 2020)\n-> Create month folder(eg; December)\n-> Create Factiva product update(we can create article under year folder)\n-> Fill required fields\n-> Go to year folder\n-> Click on View details\n-> Click on Manage rules\n-> Create rules\n-> Fill form(name: any name(eg;2020 rules),\n->Perform action: publish_whats_..., rule applies to subfolder)\n-> Create-> Inherit rules -> Run rules -> Run rules for this folder and \nit's subfolder -> Don't inherit rules",
+        "data": null,
+        "expected": "User should be able to create Factiva product update by filling in the \nrequired fields. And also create, inherit and run rules"
+      },
+      {
+        "step": "Verify if we can see articles in RC product update page",
+        "data": null,
+        "expected": "User should be able to see the artilces in Factiva Product update page"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the RC \nProduct update Email template has the updated logo",
+        "data": null,
+        "expected": "User's subscribed should be able to see Factiva Product update Email \ntemplate with the updated logo"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T101",
+    "name": "Verify updated logo on DJID Updates Email Template",
+    "folder": "/Logo Updates",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> DJID Updates -> check whether \nsubscribed else subscribe( Add new subscriber -> type email id -> next)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Creating and publishing articles in alfresco:\n-> DJID Code updates\n-> Upload and notify\n-> upload DJID file( file name should be in the format (DJID Change \nTracking_Jul_2025.xlsx), we can download DJID file from Prod for different \nyear and use it in QA)",
+        "data": null,
+        "expected": "User should be able to see the artilces in DJID updates page"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the RC \nProduct update Email template has the updated logo",
+        "data": null,
+        "expected": "User's subscribed should be able to see DJID update Email template with the \nupdated logo"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T102",
+    "name": "Verify updated logo on Newswire Product Update Email Template",
+    "folder": "/Logo Updates",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> Newswire Product Update -> \ncheck whether you subscribed else subscribe( Add new subscriber -> type \nemail id -> next)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Creating and publishing articles in alfresco:\n-> Click on Newswires product Update\n-> Create folder with year name(eg:2020)\n-> Create multiple artiles((+)\n-> Click on product update template\n-> Give title,content,year)\n-> Go to year folder\n-> Click on view details\n-> Click on Manage rule\n-> Create rules\n-> Fill form\n-> (name: any name(2020 rules), perform action: publish_ims_product..., \nrule applies to subfolder\n-> Create -> inherit rules -> run rules -> run rules for this folder and \nit's subfolder -> don't inherit rules",
+        "data": null,
+        "expected": "User should be able to see the artilces in Newswire Product Update page"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the \nNewswire Product update Email template has the updated logo",
+        "data": null,
+        "expected": "User's subscribed should be able to see Newswire update Email template with \nthe updated logo"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T103",
+    "name": "Verify updated logo on IMS Product Update Email Template",
+    "folder": "/Logo Updates",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> IMS Product Update -> check \nwhether subscribed else subscribe( Add new subscriber -> type email id -> \nnext)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Creating and publishing articles in alfresco:\n-> Click on IMS Product Update\n-> Create folder with year name(eg:2020)\n-> Create multiple artiles((+)\n-> Click on Product update template-> give title,content,year\n-> Go to year folder\n-> Click on view details\n-> Click on Manage rules\n-> Click on create rules\n-> Fill form\n-> (name: any name(eg;2020 rules), perform action: publish_ims_product..., \nrule applies to subfolder)\n-> Create -> inherit rules -> run rules -> run rules for this folder and \nit's subfolder -> don't inherit rules",
+        "data": null,
+        "expected": "User should be able to see the artilces in IMS Product Update page"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the IMS \nProduct update Email template has the updated logo",
+        "data": null,
+        "expected": "User's subscribed should be able to see IMS Product update Email template \nwith the updated logo"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T104",
+    "name": "Verify updated logo on Factiva content update email template",
+    "folder": "/Logo Updates",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check \nwhether you subscribed else subscribe( Add new subscriber -> type email id \n-> next)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Creating and publishing articles in alfresco:\n-> Click on Factiva content update\n-> Select Product Update -(+)\n-> Year folder(eg; 2020)\n-> Create month folder(eg; December)\n-> Create Factiva content update(you can create article under year folder)\n-> Fill required fields\n-> Go to year folder\n-> Click on view details\n-> Click on Manage rules\n-> Click on create rules\n-> Fill form\n-> (name: any name(eg;2020 rules), perform action: \npublish_factiva_content..., rule applies to subfolder)-> create\n-> Inherit rules -> run rules -> run rules for this folder and it's \nsubfolder -> don't inherit rules",
+        "data": null,
+        "expected": "User should be able to see the artilces in Factiva Content Update page"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the \nFactiva Content update Email template has the updated logo",
+        "data": null,
+        "expected": "User's subscribed should be able to see Factiva content update Email \ntemplate with the updated logo"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T107",
+    "name": "Verify updated logo on Factiva Alert Email Template",
+    "folder": "/Logo Updates",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check \nwhether you subscribed else subscribe( Add new subscriber -> type email id \n-> next)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Under Articles folder create a Factiva article by filling in required \ndetails i.e.,\n1.Article Title\n2.Content\n3.Product -> Select Factiva\n4.Notify -> Select Notify from the dropdown\n5.Article Title\n6.And Click on Create",
+        "data": null,
+        "expected": "User should be able to see the newly created under Article folder"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the \nFactiva Alert Email template has the updated logo",
+        "data": null,
+        "expected": "User's subscribed should be able to see Factiva alert Email template with \nthe updated logo"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T108",
+    "name": "Verify updated logo on Preview Alert Email Template",
+    "folder": "/Logo Updates",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check \nwhether you subscribed else subscribe( Add new subscriber -> type email id \n-> next)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Under Articles folder create a Preview article by filling in required \ndetails i.e.,\n1.Article Title\n2.Content\n3.Product -> Select Preview\n4.Notify -> Select Notify from the dropdown\n5.Article Title\n6.And Click on Create",
+        "data": null,
+        "expected": "User should be able to see the newly created under Article folder"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the \nPreview Alert Email template has the updated logo",
+        "data": null,
+        "expected": "User's subscribed should be able to see Preview alert Email template with \nthe updated logo"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T109",
+    "name": "Verify updated logo on Newswire Alert Email Template",
+    "folder": "/Logo Updates",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check \nwhether you subscribed else subscribe( Add new subscriber -> type email id \n-> next)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Under Articles folder create a Newswire article by filling in required \ndetails i.e.,\n1.Article Title\n2.Content\n3.Product -> Select Newswire\n4.Notify -> Select Notify from the dropdown\n5.Article Title\n6.And Click on Create",
+        "data": null,
+        "expected": "User should be able to see the newly created under Article folder"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the \nNewswire Alert Email template has the updated logo",
+        "data": null,
+        "expected": "User's subscribed should be able to see Newswire alert Email template with \nthe updated logo"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T110",
+    "name": "Verify updated logo on Risk & Compliance Alert Email Template",
+    "folder": "/Logo Updates",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check \nwhether you subscribed else subscribe( Add new subscriber -> type email id \n-> next)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Under Articles folder create a Risk & Compliance article by filling in \nrequired details i.e.,\n1.Article Title\n2.Content\n3.Product -> Select Risk & Compliance\n4.Notify -> Select Notify from the dropdown\n5.Article Title\n6.And Click on Create",
+        "data": null,
+        "expected": "User should be able to see the newly created under Article folder"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the Risk \n& Compliance Alert Email template has the updated logo",
+        "data": null,
+        "expected": "User's subscribed should be able to see Risk & Compliance alert Email \ntemplate with the updated logo"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T121",
+    "name": "Verify Updated logo in Export Mail",
+    "folder": "/Logo Updates",
+    "auto": "Not Automated",
+    "precond": "Launch the URL : https://customer.qa.dowjones.com/ using creds: \nlisaadmin/lisaadmin",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Launch the URL https://customer.qa.dowjones.com/",
+        "data": null,
+        "expected": "User should be navigated to DJCSS Home page"
+      },
+      {
+        "step": "Click on FAQ tab on the Home page",
+        "data": null,
+        "expected": "User should be navigated to FAQ page"
+      },
+      {
+        "step": "Select an Article",
+        "data": null,
+        "expected": "User should land on te Article page"
+      },
+      {
+        "step": "Click on Email icon on the left side corner of the article page",
+        "data": null,
+        "expected": "User should land on the Email template"
+      },
+      {
+        "step": "Fill in the required details, enter a valid email and Message and click on \nSend",
+        "data": null,
+        "expected": "User should be able to fill in the required details and will be displayed \nwith a message Email sent successfully"
+      },
+      {
+        "step": "Navigate the mailbox and verify whether a mail is received",
+        "data": null,
+        "expected": "User should receive the report in the email with the attachement"
+      },
+      {
+        "step": "Verify whether the header logo is updated to the new logo",
+        "data": null,
+        "expected": "User should be able to updated Dowjones header logo"
+      },
+      {
+        "step": "Verify whether the Unsubscribe footer and the text \"This will unsubscribe \nyou from all product status updates.\" is removed",
+        "data": null,
+        "expected": "User should not be able to see Unsubscribe footer and the text \"This will \nunsubscribe you from all product status updates.\""
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T152",
+    "name": "Verify there are no duplicate email notifications triggered per publish action in R&C Product Update",
+    "folder": "",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> DJCSS RC Product Updates -> \ncheck whether subscribed else subscribe( Add new subscriber -> type email \nid -> next)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Creating and publishing articles in alfresco\n->Click on R&C Product Update\n-> Select Product Update -(+)\n-> Year folder(eg; 2020)\n-> Create month folder(eg; December)\n-> Create R&C product update\n-> Fill required fields\n-> Go to year folder\n-> Click View details\n-> Click on Manage rules\n-> Click on create rules\n-> Fill form(name: any name(eg;2020 rules),\n->Perform action: publish_rc_product..., rule applies to subfolder)\n-> Create-> Inherit rules -> Run rules -> Run rules for this folder and \nit's subfolder -> Don't inherit rules",
+        "data": null,
+        "expected": "User should be able to create R&C product update by filling in the required \nfields. And also create, inherit and run rules"
+      },
+      {
+        "step": "Verify if we can see articles in RC product update page",
+        "data": null,
+        "expected": "User should be avle to see the artilces in RC Product update page"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user",
+        "data": null,
+        "expected": "User's subscribed should be able to see RC Product update Email"
+      },
+      {
+        "step": "Navigate to Alfresco and republish the RC product ( Run the above rule \nagain with or without any updates. And check whether subscribed users has \nreceived an email again)",
+        "data": null,
+        "expected": "User's subscribed should not receive RC product update email"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T155",
+    "name": "Verify logo on Global Risk Monitor  Alert Email Template",
+    "folder": "/Product Alerts",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check \nwhether you subscribed else subscribe( Add new subscriber -> type email id \n-> next)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Under Articles folder create a Global Risk Monitor article by filling in \nrequired details i.e.,\n1.Article Title\n2.Content\n3.Product -> Select Global Risk Monitor\n4.Notify -> Select Notify from the dropdown\n5.Pubish -> Select Publish\n6.Article Title\n7.And Click on Create",
+        "data": null,
+        "expected": "User should be able to see the newly created under Article folder"
+      },
+      {
+        "step": "Login to DJCSS QA and Verify if the Article is present on DJCSS QA page \nProduct Alert under Global Risk Monitor",
+        "data": null,
+        "expected": "User should be able to see the ulpoaded article on DJCSS QA page Product \nAlert under Global Risk Monitor"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the \nGlobal Risk Monitor Alert Email template has the updated logo",
+        "data": null,
+        "expected": "User's subscribed should be able to see Global Risk Monitor alert Email \ntemplate with the updated logo"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T156",
+    "name": "Verify logo on Dragonfly SIAS Alert Email Template",
+    "folder": "/Product Alerts",
+    "auto": "Not Automated",
+    "precond": "Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check \nwhether you subscribed else subscribe( Add new subscriber -> type email id \n-> next)",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Under Articles folder create a Dragonfly SIAS article by filling in \nrequired details i.e.,\n1.Article Title\n2.Content\n3.Product -> Select Dragonfly SIAS\n4.Notify -> Select Notify from the dropdown\n5.Pubish -> Select Publish\n6.Article Title\n7.And Click on Create",
+        "data": null,
+        "expected": "User should be able to see the newly created under Article folder"
+      },
+      {
+        "step": "Login to DJCSS QA and Verify if the Article is present on DJCSS QA page \nProduct Alerts under Dragonfly SIAS",
+        "data": null,
+        "expected": "User should be able to see the ulpoaded article on DJCSS QA page Product \nAlert under Dragonfly SIAS"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the \nDragonfly SIAS Alert Email template has the updated logo",
+        "data": null,
+        "expected": "User's subscribed should be able to see Dragonfly SIAS alert Email template \nwith the updated logo"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T158",
+    "name": "Verify FAQ & Learning Article Search for Oxford Analytica",
+    "folder": "/FAQ",
+    "auto": "Not Automated",
+    "precond": "Login in to Knowledge Base QA and DJCSS QA page",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login in to Knowledge Base",
+        "data": null,
+        "expected": "User should land on Knowledge Base Home page"
+      },
+      {
+        "step": "Click on Add new Article and create a Oxford Analytica article by filling \nin the required details i.e.,\n1. Product - Select Oxford Analytica from the dropdown\n2. Article Title\n3. Content\n4. And click on Publish",
+        "data": null,
+        "expected": "User should be able to see the newly created Article"
+      },
+      {
+        "step": "Login to DJCSS QA and Click on FAQ",
+        "data": null,
+        "expected": "User should land on FAQ page"
+      },
+      {
+        "step": "Verify whether the newly added Article's Product name is displayed under \nProducts",
+        "data": null,
+        "expected": "User should be able to see Oxford Analytica under the Product list"
+      },
+      {
+        "step": "Search for the newly added Article",
+        "data": null,
+        "expected": "User should be able to see newly added Article under Oxford Analytica \nProduct"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T159",
+    "name": "Verify FAQ & Learning Article Search for Global Risk Monitor",
+    "folder": "/FAQ",
+    "auto": "Not Automated",
+    "precond": "Login in to Knowledge Base QA and DJCSS QA page",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login in to Knowledge Base",
+        "data": null,
+        "expected": "User should land on Knowledge Base Home page"
+      },
+      {
+        "step": "Click on Add new Article and create a Global Risk Monitor article by \nfilling in the required details i.e.,\n1. Product - Select Global Risk Monitor from the dropdown\n2. Article Title\n3. Content\n4. And click on Publish",
+        "data": null,
+        "expected": "User should be able to see the newly created Article"
+      },
+      {
+        "step": "Login to DJCSS QA and Click on FAQ",
+        "data": null,
+        "expected": "User should land on FAQ page"
+      },
+      {
+        "step": "Verify whether the newly added Article's Product name is displayed under \nProducts",
+        "data": null,
+        "expected": "User should be able to see Global Risk Monitor under the Product list"
+      },
+      {
+        "step": "Search for the newly added Article",
+        "data": null,
+        "expected": "User should be able to see newly added Article under Global Risk Monitor \nProduct"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T160",
+    "name": "Verify FAQ & Learning Article Search for Dragonfly SIAS",
+    "folder": "/FAQ",
+    "auto": "Not Automated",
+    "precond": "Login to Knowledge Base QA and DJCSS QA page",
+    "objective": null,
+    "steps": [
+      {
+        "step": "Login in to Knowledge Base",
+        "data": null,
+        "expected": "User should land on Knowledge Base Home page"
+      },
+      {
+        "step": "Click on Add new Article and create a Dragonfly SIAS article by filling in \nthe required details i.e.,\n1. Product - Select Dragonfly SIAS from the dropdown\n2. Article Title\n3. Content\n4. And click on Publish",
+        "data": null,
+        "expected": "User should be able to see the newly created Article"
+      },
+      {
+        "step": "Login to DJCSS QA and Click on FAQ",
+        "data": null,
+        "expected": "User should land on FAQ page"
+      },
+      {
+        "step": "Verify whether the newly added Article's Product name is displayed under \nProducts",
+        "data": null,
+        "expected": "User should be able to see Dragonfly SIAS under the Product list"
+      },
+      {
+        "step": "Search for the newly added Article",
+        "data": null,
+        "expected": "User should be able to see newly added Article under Dragonfly SIAS Product"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T163",
+    "name": "Verify Dragonfly Intelligence Product Filter Name Update on Knowledge base and FAQ page",
+    "folder": "/FAQ",
+    "auto": "Not Automated",
+    "precond": "Login to Knowlede Base and DJCSS",
+    "objective": "Verify the product filter name is correctly updated in the FAQ & Learning \nArticle search, Knowledge Base and that it successfully returns the \nexpected results when applied.",
+    "steps": [
+      {
+        "step": "Login in to Knowledge Base",
+        "data": null,
+        "expected": "User should land on Knowledge Base Home page"
+      },
+      {
+        "step": "Click on Add new Article and verify whether the product name is now \ndisplayed as Drangonfly Intelligence instead of Dragon,",
+        "data": null,
+        "expected": "User should be able to see the updated Product name as Drangonfly \nIntelligence"
+      },
+      {
+        "step": "Add a new Article, fill in required details i.e.,\n1. Product - Select Dragonfly Intelligence from the dropdown\n2. Article Title\n3. Content\n4. And click on Publish",
+        "data": null,
+        "expected": "User should be able to see the newly created Article"
+      },
+      {
+        "step": "Login to DJCSS QA and Click on FAQ",
+        "data": null,
+        "expected": "User should land on FAQ page"
+      },
+      {
+        "step": "Verify whether the newly added Article's Product name is displayed as \nDragonfly Intelligence under Products",
+        "data": null,
+        "expected": "User should be able to see Dragonfly Intelligence under the Product list"
+      },
+      {
+        "step": "Search for the newly added Article",
+        "data": null,
+        "expected": "User should be able to see newly added Article under Dragonfly Intelligence \nProduct"
+      },
+      {
+        "step": "Search for the added article via Advanced search and verify if the product \nname is updated to Dragonfly Intelligence",
+        "data": null,
+        "expected": "User should be able to see the product name as Drangonfly Intelligence and \nthe newly added article under the product"
+      },
+      {
+        "step": "Navigate to Home page",
+        "data": null,
+        "expected": "User should land on Home page"
+      },
+      {
+        "step": "Search for the added article via Advanced search and verify if the product \nname is updated to Dragonfly Intelligence",
+        "data": null,
+        "expected": "User should be able to see the product name as Drangonfly Intelligence and \nthe newly added article under the product"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T164",
+    "name": "Verify Dragonfly Intelligence Product Filter Name Update on CMS, Product alert page and alert Email template",
+    "folder": "/Product Alerts",
+    "auto": "Not Automated",
+    "precond": "Login to Knowlede Base and DJCSS",
+    "objective": "Verify the product filter name is correctly updated in the Product Alert \npage, Email template, CMS and that it successfully returns the expected \nresults when applied.",
+    "steps": [
+      {
+        "step": "Login to Alfrensco",
+        "data": null,
+        "expected": "User should be able to login to Alfrensco"
+      },
+      {
+        "step": "Under Articles folder create a Dragonfly SIAS article by filling in \nrequired details i.e.,\n1.Article Title\n2.Content\n3.Product -> Verify if the product name is displayed as Dragonfly \nIntelligence\n4.Notify -> Select Notify from the dropdown\n5.Pubish -> Select Publish\n6.Article Title\n7.And Click on Create",
+        "data": null,
+        "expected": "User should be able to see the newly created under Article folder"
+      },
+      {
+        "step": "Login to DJCSS QA and Verify if the Article is present on DJCSS QA page \nProduct Alerts under Dragonfly Intelligence",
+        "data": null,
+        "expected": "User should be able to see the ulpoaded article on DJCSS QA page Product \nAlert under Dragonfly Intelligence"
+      },
+      {
+        "step": "Verify if email is sent to the susbcribed user and also verify if the Alert \nEmail template has the updated Product name Dragonfly Intelligence",
+        "data": null,
+        "expected": "User's subscribed should be able to see Product alert Email template with \nthe updated Product name Dragonfly Intelligence"
+      }
+    ]
+  },
+  {
+    "key": "DJCSS-T169",
+    "name": "Help Request Form: Verify Portuguese option appears in Preferred Language dropdown",
+    "folder": "/Help Request Form",
+    "auto": "Not Automated",
+    "precond": "User has access to DJCSS QA environment URL; Help Request Form is reachable",
+    "objective": "Verify Portuguese is available as a selectable option in the Preferred \nLanguage dropdown of Help Request Form",
+    "steps": [
+      {
+        "step": "Navigate to the DJCSS QA Help Request Form",
+        "data": null,
+        "expected": "Help Request Form loads successfully with all fields visible"
+      },
+      {
+        "step": "Click on the 'Preferred Language' dropdown",
+        "data": null,
+        "expected": "Dropdown expands and displays the list of supported languages"
+      },
+      {
+        "step": "Inspect the list of languages displayed in the dropdown",
+        "data": null,
+        "expected": "'Portuguese' is present in the dropdown list alongside the existing \nlanguages (English, Spanish, etc.)"
+      },
+      {
+        "step": "Verify the option label is correctly spelled and rendered",
+        "data": null,
+        "expected": "Label reads 'Portuguese' (no truncation, encoding issues, or missing \ncharacters)"
+      },
+      {
+        "step": "Select 'Portuguese' from the dropdown",
+        "data": null,
+        "expected": "'Portuguese' is highlighted/selected and displayed as the chosen value in \nthe dropdown"
+      }
+    ]
+  }
+]

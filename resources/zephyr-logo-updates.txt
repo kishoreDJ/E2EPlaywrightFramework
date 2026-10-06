@@ -1,0 +1,104 @@
+﻿--- DJCSS-T97 ---
+Name: Verify updated logo on Dow Jones Reports Portal
+Folder: /Logo Updates
+Precondition: Logged into DowJones Report Portal
+Objective: null
+Plain Text Script: undefined
+
+--- DJCSS-T99 ---
+Name: Verify updated logo on RC Product Update Email Template
+Folder: /Logo Updates
+Precondition: Campaign Monitor -> Lists and subscribers -> DJCSS RC Product Updates -> 
+check whether subscribed else subscribe( Add new subscriber -> type email 
+id -> next)
+Objective: null
+Plain Text Script: undefined
+
+--- DJCSS-T100 ---
+Name: Verify updated logo on Factiva Product Update Email Template
+Folder: /Logo Updates
+Precondition: Campaign Monitor -> Lists and subscribers -> Whats New In Factiva -> check 
+whether you subscribed else subscribe( Add new subscriber -> type email id 
+-> next)
+Objective: null
+Plain Text Script: undefined
+
+--- DJCSS-T101 ---
+Name: Verify updated logo on DJID Updates Email Template
+Folder: /Logo Updates
+Precondition: Campaign Monitor -> Lists and subscribers -> DJID Updates -> check whether 
+subscribed else subscribe( Add new subscriber -> type email id -> next)
+Objective: null
+Plain Text Script: undefined
+
+--- DJCSS-T102 ---
+Name: Verify updated logo on Newswire Product Update Email Template
+Folder: /Logo Updates
+Precondition: Campaign Monitor -> Lists and subscribers -> Newswire Product Update -> 
+check whether you subscribed else subscribe( Add new subscriber -> type 
+email id -> next)
+Objective: null
+Plain Text Script: undefined
+
+--- DJCSS-T103 ---
+Name: Verify updated logo on IMS Product Update Email Template
+Folder: /Logo Updates
+Precondition: Campaign Monitor -> Lists and subscribers -> IMS Product Update -> check 
+whether subscribed else subscribe( Add new subscriber -> type email id -> 
+next)
+Objective: null
+Plain Text Script: undefined
+
+--- DJCSS-T104 ---
+Name: Verify updated logo on Factiva content update email template
+Folder: /Logo Updates
+Precondition: Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check 
+whether you subscribed else subscribe( Add new subscriber -> type email id 
+-> next)
+Objective: null
+Plain Text Script: undefined
+
+--- DJCSS-T107 ---
+Name: Verify updated logo on Factiva Alert Email Template
+Folder: /Logo Updates
+Precondition: Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check 
+whether you subscribed else subscribe( Add new subscriber -> type email id 
+-> next)
+Objective: null
+Plain Text Script: undefined
+
+--- DJCSS-T108 ---
+Name: Verify updated logo on Preview Alert Email Template
+Folder: /Logo Updates
+Precondition: Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check 
+whether you subscribed else subscribe( Add new subscriber -> type email id 
+-> next)
+Objective: null
+Plain Text Script: undefined
+
+--- DJCSS-T109 ---
+Name: Verify updated logo on Newswire Alert Email Template
+Folder: /Logo Updates
+Precondition: Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check 
+whether you subscribed else subscribe( Add new subscriber -> type email id 
+-> next)
+Objective: null
+Plain Text Script: undefined
+
+--- DJCSS-T110 ---
+Name: Verify updated logo on Risk & Compliance Alert Email Template
+Folder: /Logo Updates
+Precondition: Campaign Monitor -> Lists and subscribers -> DJCSS Source updates -> check 
+whether you subscribed else subscribe( Add new subscriber -> type email id 
+-> next)
+Objective: null
+Plain Text Script: undefined
+
+--- DJCSS-T121 ---
+Name: Verify Updated logo in Export Mail
+Folder: /Logo Updates
+Precondition: Launch the URL : https://customer.qa.dowjones.com/ using creds: 
+lisaadmin/lisaadmin
+Objective: null
+Plain Text Script: undefined
+

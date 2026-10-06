@@ -6,3 +6,30 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# Allure
+/allure-results/
+/allure-report/
+/allure-report~/
+
+# Playwright report extract
+/pw-report-extract/
+pw-report.zip
+
+# Environment and secrets
+.env
+.env.djcss
+
+# DB schema (project-specific, generated locally)
+db-schema.txt
+
+# Compiled output
+dist/
+
+# Test data (local only, contains environment-specific UUIDs)
+test-data.md
+
+# API spec (local only, not for git)
+docs/DDRAPIs.json
+
+.DS_Store

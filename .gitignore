@@ -31,5 +31,6 @@ test-data.md
 
 # API spec (local only, not for git)
 docs/DDRAPIs.json
+docs/DDRBatchAPI.json
 
 .DS_Store

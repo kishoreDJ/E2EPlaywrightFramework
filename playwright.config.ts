@@ -58,6 +58,7 @@ export default defineConfig({
     {
       name: 'API',
       testMatch: '**/tests/data-privacy/**/*.spec.ts',
+      timeout: 60_000,
       use: {},
     },
 

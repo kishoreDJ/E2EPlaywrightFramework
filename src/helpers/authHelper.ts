@@ -105,3 +105,23 @@ export async function getBearerHeader(
 export function clearTokenCache(): void {
   tokenCache.clear();
 }
+
+/**
+ * Shorthand for CDPR Service API token (uses OAUTH_* env vars)
+ * Returns "Bearer <token>"
+ */
+export async function getToken(): Promise<string> {
+  return getBearerHeader();
+}
+
+/**
+ * Token for the Batches service (uses BATCHES_OAUTH_* env vars — separate Cognito pool)
+ * Returns "Bearer <token>"
+ */
+export async function getBatchesToken(): Promise<string> {
+  return getBearerHeader(
+    process.env.BATCHES_OAUTH_TOKEN_URL,
+    process.env.BATCHES_OAUTH_CLIENT_ID,
+    process.env.BATCHES_OAUTH_CLIENT_SECRET,
+  );
+}

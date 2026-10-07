@@ -211,6 +211,24 @@ Duration    : ${duration} mins
 
 
 // ====================================
+// Detect retests (--last-failed runs) so they can be linked to the full
+// run they retested instead of showing up as an unrelated, tiny-looking row.
+// ====================================
+
+const runMetaPath =
+path.join(
+ latestFolder,
+ "run-meta.json"
+);
+
+const isRetest =
+fs.existsSync(runMetaPath) &&
+JSON.parse(fs.readFileSync(runMetaPath, "utf8")).isRetest === true;
+
+const runId = `${APP_NAME}-${SUITE}-${today}-${runTime}`;
+
+
+// ====================================
 // Update report-history.json
 // ====================================
 
@@ -233,11 +251,45 @@ if(fs.existsSync(historyFile))
  );
 }
 
+// Older entries predate the id field; backfill from their own
+// date/time so parent lookups still work against historical data.
+history = history.map(r => ({
+ id: r.id ||
+  `${r.application}-${r.suite || "Regression"}-${r.executionDate}-${r.executionTime}`,
+ ...r
+}));
+
+// Link to the most recent full (non-retest) run for this app + suite.
+let parentId = null;
+
+if (isRetest) {
+ const parent = history.find(r =>
+  r.application === APP_NAME &&
+  (r.suite || "Regression") === SUITE &&
+  !r.isRetest
+ );
+
+ if (parent) {
+  parentId = parent.id;
+ }
+ else {
+  console.log(
+   "Retest run: no prior full run found to link to; publishing as standalone."
+  );
+ }
+}
+
 history.unshift({
+
+ id: runId,
 
  application: APP_NAME,
 
  suite: SUITE,
+
+ isRetest,
+
+ parentId,
 
  executionDate: today,
 
@@ -306,11 +358,30 @@ console.log(
 // Generate Dashboard HTML
 // ====================================
 
+// Retests (--last-failed runs) are linked to the full run they retested via
+// parentId. Group them under their parent here so the dashboard reads like
+// BrowserStack's "Related Jobs" view instead of showing the retest's small
+// pass/fail counts as an unrelated run.
+const retestsByParentId = new Map();
+
+for (const r of history) {
+ if (!r.isRetest || !r.parentId) continue;
+ if (!retestsByParentId.has(r.parentId)) {
+  retestsByParentId.set(r.parentId, []);
+ }
+ retestsByParentId.get(r.parentId).push(r);
+}
+
+// Parent rows are every run that isn't itself a linked retest; orphaned
+// retests (parent since pruned/not found) fall back to being their own
+// top-level row so they're never silently dropped from the dashboard.
+const parentRows = history.filter(r => !r.isRetest || !r.parentId);
+
 // Group by application + suite, newest run first within each group,
 // so the dashboard shows a clean trend line per app/suite instead of
 // interleaving every app's runs by publish time.
 const sortedForDisplay =
-[...history].sort((a, b) => {
+[...parentRows].sort((a, b) => {
 
  if (a.application !== b.application) {
   return a.application.localeCompare(b.application);
@@ -328,20 +399,70 @@ const sortedForDisplay =
 
 });
 
-const rows =
-sortedForDisplay.map(r => `
+// A retest only reruns the parent's previously-failed tests, so any test
+// that passes on retest moves from failed to passed in the parent's
+// displayed totals (total stays the same — it's the same test set, not
+// new tests). Applied oldest-to-newest across all retests so an earlier
+// retest's gains aren't lost when a later retest reruns a smaller set.
+function computeEffectiveResult(parent, retests) {
 
-<tr>
-<td>${escapeHtml(r.application)}</td>
-<td>${escapeHtml(r.suite || "Regression")}</td>
-<td>${escapeHtml(formatExecutedAt(r.executionDate, r.executionTime))}</td>
-<td>${escapeHtml(r.environment)}</td>
-<td>
+ const chronological =
+  [...retests].sort((a, b) => {
+   const stampA = `${a.executionDate}T${a.executionTime}`;
+   const stampB = `${b.executionDate}T${b.executionTime}`;
+   return stampA.localeCompare(stampB);
+  });
+
+ let remainingFailed = parent.failed;
+
+ for (const r of chronological) {
+  remainingFailed -= Math.min(r.passed, remainingFailed);
+ }
+
+ return {
+  passed: parent.totalTests - remainingFailed,
+  failed: remainingFailed,
+  totalTests: parent.totalTests
+ };
+
+}
+
+function renderRow(r, { indent, effective } = {}) {
+
+ const labelPrefix = indent
+  ? `<span style="color:#0078D4;font-weight:bold;">&#8627; Retest&nbsp;</span>`
+  : "";
+
+ // When retests have cleared prior failures, show the parent's updated
+ // totals with the original counts struck through alongside them, so the
+ // improvement is visible without losing the historical numbers.
+ const result = effective
+  ? `
+<span style="color:#999;text-decoration:line-through;">${escapeHtml(r.passed)} P / ${escapeHtml(r.failed)} F</span>
+<br>
+<span style="color:green;font-weight:bold;">${escapeHtml(effective.passed)} P</span>
+ /
+<span style="color:red;font-weight:bold;">${escapeHtml(effective.failed)} F</span>
+<br>
+<span style="color:#0078D4;font-weight:bold;">${escapeHtml(effective.totalTests)} TOTAL</span>
+`
+  : `
 <span style="color:green;font-weight:bold;">${escapeHtml(r.passed)} P</span>
  /
 <span style="color:red;font-weight:bold;">${escapeHtml(r.failed)} F</span>
 <br>
 <span style="color:#0078D4;font-weight:bold;">${escapeHtml(r.totalTests)} TOTAL</span>
+`;
+
+ return `
+
+<tr${indent ? ' style="background:#f7fbff;"' : ""}>
+<td>${escapeHtml(r.application)}</td>
+<td>${labelPrefix}${escapeHtml(r.suite || "Regression")}</td>
+<td>${escapeHtml(formatExecutedAt(r.executionDate, r.executionTime))}</td>
+<td>${escapeHtml(r.environment)}</td>
+<td>
+${result}
 </td>
 
 <td>${escapeHtml(r.duration)}</td>
@@ -362,7 +483,31 @@ View
 
 </tr>
 
-`).join("");
+`;
+}
+
+const rows =
+sortedForDisplay.map(parent => {
+
+ const retests =
+  (retestsByParentId.get(parent.id) || [])
+   .sort((a, b) => {
+    const stampA = `${a.executionDate}T${a.executionTime}`;
+    const stampB = `${b.executionDate}T${b.executionTime}`;
+    return stampB.localeCompare(stampA);
+   });
+
+ const effective =
+  retests.length > 0
+   ? computeEffectiveResult(parent, retests)
+   : null;
+
+ return (
+  renderRow(parent, { effective }) +
+  retests.map(r => renderRow(r, { indent: true })).join("")
+ );
+
+}).join("");
 
 
 const dashboard = `

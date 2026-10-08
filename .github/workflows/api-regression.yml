@@ -1,0 +1,96 @@
+name: API Regression — Data Privacy (DSAR)
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        required: true
+        default: qa
+        type: choice
+        options: [qa, production]
+
+permissions:
+  contents: write
+
+jobs:
+  api-regression:
+    name: API Regression — Data Privacy (DSAR)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    env:
+      CI: true
+      # CDPR Service API
+      API_BASE_URL:                ${{ secrets.API_BASE_URL }}
+      OAUTH_TOKEN_URL:             ${{ secrets.OAUTH_TOKEN_URL }}
+      OAUTH_CLIENT_ID:             ${{ secrets.OAUTH_CLIENT_ID }}
+      OAUTH_CLIENT_SECRET:         ${{ secrets.OAUTH_CLIENT_SECRET }}
+      # Batches API
+      BATCHES_BASE_URL:            ${{ secrets.BATCHES_BASE_URL }}
+      BATCHES_OAUTH_TOKEN_URL:     ${{ secrets.BATCHES_OAUTH_TOKEN_URL }}
+      BATCHES_OAUTH_CLIENT_ID:     ${{ secrets.BATCHES_OAUTH_CLIENT_ID }}
+      BATCHES_OAUTH_CLIENT_SECRET: ${{ secrets.BATCHES_OAUTH_CLIENT_SECRET }}
+      # UAP API
+      UAP_BASE_URL:                ${{ secrets.UAP_BASE_URL }}
+      UAP_OAUTH_TOKEN_URL:         ${{ secrets.UAP_OAUTH_TOKEN_URL }}
+      UAP_OAUTH_CLIENT_ID:         ${{ secrets.UAP_OAUTH_CLIENT_ID }}
+      UAP_OAUTH_CLIENT_SECRET:     ${{ secrets.UAP_OAUTH_CLIENT_SECRET }}
+      # Databases
+      DATABASE_URL:                ${{ secrets.DATABASE_URL }}
+      CSM_DATABASE_URL:            ${{ secrets.CSM_DATABASE_URL }}
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run API tests and generate Allure report
+        env:
+          APP_NAME: DJCSS
+          BUILD_NUMBER: ${{ github.run_number }}
+          BUILD_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          EXECUTOR_NAME: GitHub Actions
+        run: |
+          node scripts/run-with-allure.js allure-results/api allure-report/api -- \
+            npx playwright test --project=API \
+              tests/data-privacy/do-not-sell.spec.ts
+
+      - name: Upload Allure report as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report-api-${{ github.run_number }}
+          path: allure-report/api/
+          retention-days: 30
+
+      - name: Checkout gh-pages branch into subfolder
+        if: always()
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages-content
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git identity for bot commit
+        if: always()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Publish API report to gh-pages
+        if: always()
+        env:
+          REPORT_REPO_PATH: ${{ github.workspace }}/gh-pages-content
+          APP_NAME: DJCSS
+          SUITE: API
+          TEST_ENV: ${{ vars.TEST_ENV }}
+        run: node scripts/report-deploy.js DJCSS API

@@ -55,7 +55,7 @@ jobs:
 
       - name: Run API tests and generate Allure report
         env:
-          APP_NAME: DJCSS
+          APP_NAME: DDR
           BUILD_NUMBER: ${{ github.run_number }}
           BUILD_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           EXECUTOR_NAME: GitHub Actions
@@ -90,7 +90,7 @@ jobs:
         if: always()
         env:
           REPORT_REPO_PATH: ${{ github.workspace }}/gh-pages-content
-          APP_NAME: DJCSS
+          APP_NAME: DDR
           SUITE: API
           TEST_ENV: ${{ vars.TEST_ENV }}
-        run: node scripts/report-deploy.js DJCSS API
+        run: node scripts/report-deploy.js DDR API

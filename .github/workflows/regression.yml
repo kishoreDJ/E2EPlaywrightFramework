@@ -68,7 +68,7 @@ jobs:
         env:
           ALLURE_RESULTS_DIR: allure-results/regression
         run: |
-          npx playwright test --project=Chrome \
+          npx playwright test --project=BS-Chrome-Windows11 \
             tests/home/home.spec.ts \
             tests/live-chat/live-chat.spec.ts \
             tests/product-alerts/product-alerts.spec.ts

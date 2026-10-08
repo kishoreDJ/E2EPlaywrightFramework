@@ -1,6 +1,19 @@
 [
   {
     "application": "DJCSS",
+    "suite": "API",
+    "executionDate": "2026-10-08",
+    "executionTime": "17-23-33",
+    "environment": "QA",
+    "totalTests": 38,
+    "passed": 0,
+    "failed": 4,
+    "passPercentage": "0.00",
+    "duration": "2 mins",
+    "reportUrl": "DJCSS/api/2026-10-08/17-23-33/"
+  },
+  {
+    "application": "DJCSS",
     "suite": "Regression",
     "executionDate": "2026-10-08",
     "executionTime": "17-19-21",

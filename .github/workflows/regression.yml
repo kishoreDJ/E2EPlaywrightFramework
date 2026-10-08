@@ -65,8 +65,10 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run selected tests on BrowserStack
+        env:
+          ALLURE_RESULTS_DIR: allure-results/regression
         run: |
-          npx playwright test \
+          npx playwright test --project=Chrome \
             tests/home/home.spec.ts \
             tests/live-chat/live-chat.spec.ts \
             tests/product-alerts/product-alerts.spec.ts

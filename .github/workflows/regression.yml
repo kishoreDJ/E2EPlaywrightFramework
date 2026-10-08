@@ -113,7 +113,6 @@ jobs:
     name: API Regression — Data Privacy (DSAR)
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    environment: ${{ inputs.environment }}
 
     env:
       CI: true

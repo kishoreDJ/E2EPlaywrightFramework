@@ -10,8 +10,10 @@ type RestClientFixture = {
 
 export const test = base.extend<RestClientFixture>({
   restClient: async ({ request }, use) => {
+    const baseUrl = process.env.API_BASE_URL;
+    if (!baseUrl) throw new Error('API_BASE_URL is not set — check your .env or CI secrets');
     const connection = new RestConnection(request, {
-      baseUrl: process.env.API_BASE_URL || 'https://jsonplaceholder.typicode.com',
+      baseUrl,
       headers: {
         'Content-Type': 'application/json',
       },

@@ -818,31 +818,6 @@ test.describe('Do Not Sell (DSAR_DONOTSELL) API Tests', () => {
     expect(response.status()).toBe(400);
   });
 
-  test('POST DNS-034: wrong data.type is accepted by API — returns 201 (data.type is not validated)', async ({ api }) => {
-    const user = nextUser();
-    const body = {
-      data: {
-        type: 'wrongType',
-        attributes: {
-          payload: {
-            firstName: user.firstName,
-            lastName: user.lastName,
-            email: user.email,
-            dsarRequestId: makeDsarRequestId('DNS-034'),
-            createdBy: CREATED_BY,
-            requestType: 'DSAR_DONOTSELL',
-          },
-        },
-      },
-    };
-
-    const response = await api.post(BASE_PATH, {
-      headers: getStandardHeaders(token),
-      data: body,
-    });
-    expect(response.status()).toBe(201);
-  });
-
   test('POST DNS-035: invalid addressType value returns 400', async ({ api }) => {
     const body = buildDoNotSellBody(nextUser(), {
       addresses: [

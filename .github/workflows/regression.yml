@@ -64,18 +64,19 @@ jobs:
       - name: Install Playwright (Chromium only — BrowserStack runs remote)
         run: npx playwright install --with-deps chromium
 
-      - name: Run selected tests on BrowserStack
+      - name: Run tests and generate Allure report
         env:
-          ALLURE_RESULTS_DIR: allure-results/regression
+          APP_NAME: DJCSS
+          BROWSER: chrome
+          BUILD_NUMBER: ${{ github.run_number }}
+          BUILD_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          EXECUTOR_NAME: GitHub Actions
         run: |
-          npx playwright test --project=BS-Chrome-Windows11 \
-            tests/home/home.spec.ts \
-            tests/live-chat/live-chat.spec.ts \
-            tests/product-alerts/product-alerts.spec.ts
-
-      - name: Generate Allure report
-        if: always()
-        run: npx allure generate allure-results/regression --clean -o allure-report/regression
+          node scripts/run-with-allure.js allure-results/regression allure-report/regression -- \
+            npx playwright test --project=BS-Chrome-Windows11 \
+              tests/home/home.spec.ts \
+              tests/live-chat/live-chat.spec.ts \
+              tests/product-alerts/product-alerts.spec.ts
 
       - name: Upload Allure report as artifact
         if: always()

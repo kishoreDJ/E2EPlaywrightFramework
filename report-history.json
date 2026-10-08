@@ -1,0 +1,15 @@
+[
+  {
+    "application": "DJCSS",
+    "suite": "Regression",
+    "executionDate": "2026-10-08",
+    "executionTime": "04-41-42",
+    "environment": "QA",
+    "totalTests": 0,
+    "passed": 0,
+    "failed": 0,
+    "passPercentage": "0.00",
+    "duration": "NaN mins",
+    "reportUrl": "DJCSS/regression/2026-10-08/04-41-42/"
+  }
+]

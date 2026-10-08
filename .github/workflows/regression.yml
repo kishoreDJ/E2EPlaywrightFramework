@@ -20,6 +20,9 @@ on:
           - firefox-windows-11
           - edge-windows-11
 
+permissions:
+  contents: write
+
 jobs:
   regression:
     name: Regression on BrowserStack (${{ inputs.browser_preset }})
@@ -41,9 +44,12 @@ jobs:
       TEST_ENV: ${{ vars.TEST_ENV }}
       HEADLESS: true
       DEBUG: false
+      ALFRESCO_BASE_URL: ${{ secrets.ALFRESCO_BASE_URL }}
+      ALFRESCO_USERNAME: ${{ secrets.ALFRESCO_USERNAME }}
+      ALFRESCO_PASSWORD: ${{ secrets.ALFRESCO_PASSWORD }}
 
     steps:
-      - name: Checkout
+      - name: Checkout source
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -58,16 +64,19 @@ jobs:
       - name: Install Playwright (Chromium only — BrowserStack runs remote)
         run: npx playwright install --with-deps chromium
 
-      - name: Run selected tests on BrowserStack
+      - name: Run tests and generate Allure report
+        env:
+          APP_NAME: DJCSS
+          BROWSER: chrome
+          BUILD_NUMBER: ${{ github.run_number }}
+          BUILD_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          EXECUTOR_NAME: GitHub Actions
         run: |
-          npx playwright test \
-            tests/home/home.spec.ts \
-            tests/live-chat/live-chat.spec.ts \
-            tests/product-alerts/product-alerts.spec.ts
-
-      - name: Generate Allure report
-        if: always()
-        run: npx allure generate allure-results/regression --clean -o allure-report/regression
+          node scripts/run-with-allure.js allure-results/regression allure-report/regression -- \
+            npx playwright test --project=BS-Chrome-Windows11 \
+              tests/home/home.spec.ts \
+              tests/live-chat/live-chat.spec.ts \
+              tests/product-alerts/product-alerts.spec.ts
 
       - name: Upload Allure report as artifact
         if: always()
@@ -77,3 +86,25 @@ jobs:
           path: allure-report/regression/
           retention-days: 30
 
+      - name: Checkout gh-pages branch into subfolder
+        if: always()
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages-content
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git identity for bot commit
+        if: always()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Publish report to gh-pages via report-deploy.js
+        if: always()
+        env:
+          REPORT_REPO_PATH: ${{ github.workspace }}/gh-pages-content
+          APP_NAME: DJCSS
+          SUITE: Regression
+          TEST_ENV: ${{ vars.TEST_ENV }}
+        run: node scripts/report-deploy.js DJCSS Regression

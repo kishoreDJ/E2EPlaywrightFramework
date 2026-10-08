@@ -147,11 +147,18 @@ test.describe('Do Not Sell (DSAR_DONOTSELL) API Tests', () => {
 
     [token, batchesToken] = await Promise.all([getToken(), getBatchesToken()]);
 
-    // Fetch a pool of random real users from CSM + UAP for use across tests
-    const uuids = await getRandomUuidsBySubscriptionState(5, 50);
-    const fetched = await getUsersByUuids(uuids);
+    // Fetch a pool of random real users from CSM + UAP.
+    // In CI the CSM DB is on a private network — fall back to the committed users list.
+    let fetched: UapUser[];
+    try {
+      const uuids = await getRandomUuidsBySubscriptionState(5, 50);
+      fetched = await getUsersByUuids(uuids);
+    } catch {
+      const { fallbackUsers } = await import('./data/users');
+      fetched = fallbackUsers;
+    }
     testUsers = fetched.filter((u) => u.uuid && u.email);
-    if (testUsers.length === 0) throw new Error('No valid test users returned from CSM/UAP');
+    if (testUsers.length === 0) throw new Error('No valid test users returned from CSM/UAP or fallback list');
   });
 
   test.afterAll(async () => {

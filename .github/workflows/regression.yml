@@ -1,9 +1,6 @@
 name: Manual Regression — BrowserStack + Allure Pages
 
 on:
-  push:
-    branches:
-      - feature/db-and-allure-integration
   workflow_dispatch:
     inputs:
       environment:

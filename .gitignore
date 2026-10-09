@@ -19,6 +19,7 @@ pw-report.zip
 # Environment and secrets
 .env
 .env.djcss
+.env.tokens
 
 # DB schema (project-specific, generated locally)
 db-schema.txt
@@ -31,5 +32,6 @@ test-data.md
 
 # API spec (local only, not for git)
 docs/DDRAPIs.json
+docs/DDRBatchAPI.json
 
 .DS_Store

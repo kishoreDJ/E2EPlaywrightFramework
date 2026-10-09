@@ -105,7 +105,6 @@ export async function query<T = Record<string, unknown>>(
   params?: unknown[]
 ): Promise<T[]> {
   const driver = getDriver();
-  console.log(`[DB] Using ${driver} driver`);
   const result = driver === 'mysql' ? await mysqlQuery<T>(sql, params) : await pgQuery<T>(sql, params);
   await allureAttachDb(sql, params, result as unknown[]);
   return result;

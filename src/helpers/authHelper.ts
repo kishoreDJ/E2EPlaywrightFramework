@@ -1,5 +1,9 @@
 import * as dotenv from 'dotenv';
+import * as path from 'path';
+
 dotenv.config();
+// Load pre-fetched tokens written by globalSetup (no-op if file doesn't exist)
+dotenv.config({ path: path.resolve(process.cwd(), '.env.tokens'), override: false });
 
 interface TokenResponse {
   access_token: string;
@@ -41,6 +45,17 @@ export async function getOAuthToken(
     throw new Error(
       'Missing OAuth2 config. Set OAUTH_TOKEN_URL, OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRET in .env'
     );
+  }
+
+  // Check if globalSetup pre-fetched this token — use it directly if available
+  const prefix = tokenUrl ? '' : 'OAUTH_';
+  const preFetchedKey = tokenUrl
+    ? null
+    : clientId === process.env.BATCHES_OAUTH_CLIENT_ID ? 'BATCHES_OAUTH_TOKEN'
+    : clientId === process.env.UAP_OAUTH_CLIENT_ID    ? 'UAP_OAUTH_TOKEN'
+    : 'OAUTH_TOKEN';
+  if (preFetchedKey && process.env[preFetchedKey]) {
+    return process.env[preFetchedKey]!;
   }
 
   const cacheKey = `${url}::${id}`;
@@ -104,4 +119,24 @@ export async function getBearerHeader(
  */
 export function clearTokenCache(): void {
   tokenCache.clear();
+}
+
+/**
+ * Shorthand for CDPR Service API token (uses OAUTH_* env vars)
+ * Returns "Bearer <token>"
+ */
+export async function getToken(): Promise<string> {
+  return getBearerHeader();
+}
+
+/**
+ * Token for the Batches service (uses BATCHES_OAUTH_* env vars — separate Cognito pool)
+ * Returns "Bearer <token>"
+ */
+export async function getBatchesToken(): Promise<string> {
+  return getBearerHeader(
+    process.env.BATCHES_OAUTH_TOKEN_URL,
+    process.env.BATCHES_OAUTH_CLIENT_ID,
+    process.env.BATCHES_OAUTH_CLIENT_SECRET,
+  );
 }

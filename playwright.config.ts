@@ -28,6 +28,8 @@ const isHeadless = process.env.HEADLESS !== 'false';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  globalSetup:    './src/setup/globalSetup',
+  globalTeardown: './src/setup/globalTeardown',
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -58,6 +60,7 @@ export default defineConfig({
     {
       name: 'API',
       testMatch: '**/tests/data-privacy/**/*.spec.ts',
+      timeout: 60_000,
       use: {},
     },
 

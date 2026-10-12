@@ -14,6 +14,11 @@ if (sepIndex === -1) {
 const [resultsDir, reportDir] = process.argv.slice(2, sepIndex);
 const [command, ...commandArgs] = process.argv.slice(sepIndex + 1);
 
+// --last-failed reruns only the previous run's failures; flag it so the
+// dashboard can nest it under the full run it retested instead of showing
+// it as an unrelated, tiny-looking run.
+const isRetest = commandArgs.includes('--last-failed');
+
 const testRun = spawnSync(command, commandArgs, {
   stdio: 'inherit',
   shell: true,
@@ -43,16 +48,36 @@ fs.writeFileSync(
   }, null, 2)
 );
 
-const envProps = [
-  `App=${process.env.APP_NAME || 'DJCSS'}`,
-  `Environment=${process.env.TEST_ENV || 'local'}`,
-  `Base URL=${process.env.DJCSS_BASE_URL || ''}`,
-  `Browser=${process.env.BROWSER || 'chromium'}`,
-  `Headless=${process.env.HEADLESS !== 'false' ? 'true' : 'false'}`,
-  `Node=${process.version}`,
-  `Platform=${process.platform}`,
-].join('\n');
-fs.writeFileSync(path.join(resultsDir, 'environment.properties'), envProps);
+// report-deploy.js reads this to link a retest to the full run it retested.
+fs.writeFileSync(
+  path.join(resultsDir, 'run-meta.json'),
+  JSON.stringify({ isRetest }, null, 2)
+);
+
+// allure-playwright hardcodes a "Project" parameter for the Playwright project
+// (browser) name with no reporter option to rename it; relabel it here so the
+// report reads "Browser: Chrome" instead of the ambiguous "Project: Chrome".
+for (const file of fs.readdirSync(resultsDir)) {
+  if (!file.endsWith('-result.json')) continue;
+  const resultPath = path.join(resultsDir, file);
+  const result = JSON.parse(fs.readFileSync(resultPath, 'utf8'));
+  let changed = false;
+  for (const parameter of result.parameters || []) {
+    if (parameter.name === 'Project') {
+      parameter.name = 'Browser';
+      changed = true;
+    }
+  }
+  if (changed) {
+    fs.writeFileSync(resultPath, JSON.stringify(result));
+  }
+}
+
+// Populates the report's Environment widget, which is otherwise empty.
+fs.writeFileSync(
+  path.join(resultsDir, 'environment.properties'),
+  [`Application=${appName}`, `Environment=${process.env.TEST_ENV || 'dev'}`].join('\n'),
+);
 
 const generate = spawnSync('npx', ['allure', 'generate', resultsDir, '--clean', '-o', reportDir], {
   stdio: 'inherit',
@@ -61,6 +86,15 @@ const generate = spawnSync('npx', ['allure', 'generate', resultsDir, '--clean', 
 
 if (generate.status !== 0) {
   console.error(`Allure report generation failed (exit code ${generate.status}); preserving test exit code.`);
+} else {
+  spawnSync('node', [path.join(__dirname, 'allure-brand.js'), reportDir, reportTitle], { stdio: 'inherit' });
+
+  // Allure's generate step only copies files it recognizes, so run-meta.json
+  // has to be written into reportDir directly for report-deploy.js to find it.
+  fs.writeFileSync(
+    path.join(reportDir, 'run-meta.json'),
+    JSON.stringify({ isRetest }, null, 2)
+  );
 }
 
 process.exit(testRun.status ?? 1);

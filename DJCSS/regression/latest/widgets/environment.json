@@ -1,1 +1,1 @@
-[{"values":["DJCSS"],"name":"App"},{"values":["qa"],"name":"Environment"},{"values":["URL="],"name":"Base"},{"values":["chrome"],"name":"Browser"},{"values":["true"],"name":"Headless"},{"values":["v24.21.0"],"name":"Node"},{"values":["linux"],"name":"Platform"}]
+[{"values":["DJCSS"],"name":"Application"},{"values":["qa"],"name":"Environment"}]

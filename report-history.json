@@ -1,5 +1,22 @@
 [
   {
+    "id": "DJCSS-Regression-2026-10-12-09-15-57",
+    "application": "DJCSS",
+    "suite": "Regression",
+    "isRetest": false,
+    "parentId": null,
+    "executionDate": "2026-10-12",
+    "executionTime": "09-15-57",
+    "environment": "QA",
+    "totalTests": 8,
+    "passed": 3,
+    "failed": 5,
+    "passPercentage": "37.50",
+    "duration": "3 mins",
+    "reportUrl": "DJCSS/regression/2026-10-12/09-15-57/"
+  },
+  {
+    "id": "DJCSS-API-2026-10-08-17-23-33",
     "application": "DJCSS",
     "suite": "API",
     "executionDate": "2026-10-08",
@@ -13,6 +30,7 @@
     "reportUrl": "DJCSS/api/2026-10-08/17-23-33/"
   },
   {
+    "id": "DJCSS-Regression-2026-10-08-17-19-21",
     "application": "DJCSS",
     "suite": "Regression",
     "executionDate": "2026-10-08",
@@ -26,6 +44,7 @@
     "reportUrl": "DJCSS/regression/2026-10-08/17-19-21/"
   },
   {
+    "id": "DJCSS-Regression-2026-10-08-05-33-04",
     "application": "DJCSS",
     "suite": "Regression",
     "executionDate": "2026-10-08",
@@ -39,6 +58,7 @@
     "reportUrl": "DJCSS/regression/2026-10-08/05-33-04/"
   },
   {
+    "id": "DJCSS-Regression-2026-10-08-05-07-35",
     "application": "DJCSS",
     "suite": "Regression",
     "executionDate": "2026-10-08",
@@ -52,6 +72,7 @@
     "reportUrl": "DJCSS/regression/2026-10-08/05-07-35/"
   },
   {
+    "id": "DJCSS-Regression-2026-10-08-04-58-40",
     "application": "DJCSS",
     "suite": "Regression",
     "executionDate": "2026-10-08",
@@ -65,6 +86,7 @@
     "reportUrl": "DJCSS/regression/2026-10-08/04-58-40/"
   },
   {
+    "id": "DJCSS-Regression-2026-10-08-04-41-42",
     "application": "DJCSS",
     "suite": "Regression",
     "executionDate": "2026-10-08",

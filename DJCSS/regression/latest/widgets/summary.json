@@ -1,1 +1,1 @@
-{"reportName":"DJCSS Regression Report","testRuns":[],"statistic":{"failed":1,"broken":4,"skipped":0,"passed":3,"unknown":0,"total":8},"time":{"start":1791798206702,"stop":1791798372962,"duration":166260,"minDuration":12856,"maxDuration":34208,"sumDuration":231337}}
+{"reportName":"DJCSS Regression Report","testRuns":[],"statistic":{"failed":1,"broken":4,"skipped":0,"passed":3,"unknown":0,"total":8},"time":{"start":1791799306118,"stop":1791799601537,"duration":295419,"minDuration":13029,"maxDuration":32878,"sumDuration":230181}}

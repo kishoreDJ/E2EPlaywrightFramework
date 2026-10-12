@@ -1,2 +1,0 @@
-[2026-10-12T09:44:03.234Z] [INFO] [LoginPage] Navigating to: /
-[2026-10-12T09:44:19.628Z] [INFO] [LiveChatPage] Clicking nav link: "Contact Us"

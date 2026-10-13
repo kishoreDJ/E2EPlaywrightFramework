@@ -1,0 +1,27 @@
+# Source (consumers get compiled dist, not raw TS)
+src/
+tests/
+test-data/
+resources/
+docs/
+
+# Config
+.env*
+.github/
+.vscode/
+tsconfig.json
+playwright.config.ts
+
+# Runtime output
+allure-results/
+allure-report/
+playwright-report/
+test-results/
+log/
+dist/
+
+# Dev files
+*.spec.ts
+*.test.ts
+.DS_Store
+scripts/*.ts

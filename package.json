@@ -1,8 +1,23 @@
 {
-  "name": "e2eframeworkone",
+  "name": "@kishoredj/e2eframeworkone",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Shared E2E test framework — UI and API",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist/src",
+    "scripts"
+  ],
+  "bin": {
+    "e2e-run-allure": "scripts/run-with-allure.js",
+    "e2e-report-deploy": "scripts/report-deploy.js",
+    "e2e-carry-history": "scripts/allure-carry-history.js",
+    "e2e-allure-brand": "scripts/allure-brand.js"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
   "scripts": {
     "allure:carry-history": "node scripts/allure-carry-history.js",
     "test": "node scripts/allure-carry-history.js allure-results/full allure-report/full && node scripts/run-with-allure.js allure-results/full allure-report/full -- npx playwright test",
@@ -28,7 +43,9 @@
     "publish:browserstack": "node scripts/browserstack-publish.js allure-results/full",
     "publish:browserstack:smoke": "node scripts/browserstack-publish.js allure-results/smoke Smoke",
     "publish:browserstack:regression": "node scripts/browserstack-publish.js allure-results/regression Regression",
-    "test:bs-sdk:djcss": "browserstack-node-sdk playwright test tests/djcss-admin-page --config=playwright.config.ts"
+    "test:bs-sdk:djcss": "browserstack-node-sdk playwright test tests/djcss-admin-page --config=playwright.config.ts",
+    "build": "tsc --project tsconfig.json",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [],
   "author": "",

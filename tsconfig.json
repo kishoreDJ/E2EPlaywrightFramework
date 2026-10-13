@@ -8,8 +8,10 @@
     "resolveJsonModule": true,
     "outDir": "dist",
     "rootDir": ".",
+    "declaration": true,
+    "declarationMap": true,
     "types": ["node"]
   },
-  "include": ["src/**/*", "tests/**/*", "playwright.config.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*", "playwright.config.ts"],
+  "exclude": ["node_modules", "dist", "tests"]
 }

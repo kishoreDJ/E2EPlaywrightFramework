@@ -76,12 +76,23 @@ for (const file of fs.readdirSync(resultsDir)) {
 // Populates the report's Environment widget, which is otherwise empty.
 fs.writeFileSync(
   path.join(resultsDir, 'environment.properties'),
-  [`Application=${appName}`, `Environment=${process.env.TEST_ENV || 'dev'}`].join('\n'),
+  [
+    `Application=${appName}`,
+    `Environment=${process.env.TEST_ENV || 'dev'}`,
+    `Base URL=${process.env.DJCSS_BASE_URL || ''}`,
+    `Browser=${process.env.BROWSER || 'chromium'}`,
+    `Headless=${process.env.HEADLESS !== 'false' ? 'true' : 'false'}`,
+    `Node=${process.version}`,
+    `Platform=${process.platform}`,
+  ].join('\n'),
 );
 
+// A stray DEBUG var in the shell makes allure.bat's "@echo off" guard fail,
+// spewing the whole batch script to the console; clear it for this call only.
 const generate = spawnSync('npx', ['allure', 'generate', resultsDir, '--clean', '-o', reportDir], {
   stdio: 'inherit',
   shell: true,
+  env: { ...process.env, DEBUG: '' },
 });
 
 if (generate.status !== 0) {

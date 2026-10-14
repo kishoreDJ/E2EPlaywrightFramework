@@ -18,7 +18,6 @@ allure-report/
 playwright-report/
 test-results/
 log/
-dist/
 
 # Dev files
 *.spec.ts

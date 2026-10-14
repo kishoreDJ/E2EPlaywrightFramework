@@ -1,2 +1,0 @@
-[2026-10-13T05:29:58.770Z] [INFO] [LoginPage] Navigating to: /
-[2026-10-13T05:30:10.901Z] [INFO] [ProductAlertsPage] Navigating to: /notifications

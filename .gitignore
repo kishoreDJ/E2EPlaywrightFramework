@@ -24,8 +24,6 @@ pw-report.zip
 # DB schema (project-specific, generated locally)
 db-schema.txt
 
-# Compiled output
-dist/
 
 # Test data (local only, contains environment-specific UUIDs)
 test-data.md

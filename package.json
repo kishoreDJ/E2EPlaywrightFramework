@@ -44,8 +44,7 @@
     "publish:browserstack:smoke": "node scripts/browserstack-publish.js allure-results/smoke Smoke",
     "publish:browserstack:regression": "node scripts/browserstack-publish.js allure-results/regression Regression",
     "test:bs-sdk:djcss": "browserstack-node-sdk playwright test tests/djcss-admin-page --config=playwright.config.ts",
-    "build": "tsc --project tsconfig.json",
-    "prepare": "npm run build"
+    "build": "tsc --project tsconfig.json"
   },
   "keywords": [],
   "author": "",

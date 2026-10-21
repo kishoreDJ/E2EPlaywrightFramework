@@ -1,5 +1,21 @@
 [
   {
+    "id": "DJCSS-Regression-2026-10-21-17-23-36",
+    "application": "DJCSS",
+    "suite": "Regression",
+    "isRetest": false,
+    "parentId": null,
+    "executionDate": "2026-10-21",
+    "executionTime": "17-23-36",
+    "environment": "QA",
+    "totalTests": 8,
+    "passed": 7,
+    "failed": 1,
+    "passPercentage": "87.50",
+    "duration": "4 mins",
+    "reportUrl": "DJCSS/regression/2026-10-21/17-23-36/"
+  },
+  {
     "id": "DJCSS-Regression-2026-10-14-06-55-24",
     "application": "DJCSS",
     "suite": "Regression",

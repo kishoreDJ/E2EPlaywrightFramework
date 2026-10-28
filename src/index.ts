@@ -15,13 +15,15 @@ export { getOAuthToken, getBearerHeader, clearTokenCache, getToken, getBatchesTo
 export { query, closeDb } from './helpers/dbHelper';
 
 // Data utilities
-export { formatDate, formatDateTime, dateOffset, dateTimeOffset } from './data/date-formatter';
-export { readExcelSheet, listExcelSheets } from './data/excel-reader';
 export { uniqueSuffix, uniqueEmail, uniqueOrderNumber, uniqueCodePrefix } from './data/unique';
+
+// Utils
+export { formatDate, formatDateTime, dateOffset, dateTimeOffset } from './utils/dateUtils';
+export { readExcelSheet, listExcelSheets } from './utils/excelUtils';
 
 // Schema validation
 export { validateResponse } from './schema-validation/validator';
 
 // Types
-export type { ExcelRow, ReadExcelOptions } from './data/excel-reader';
+export type { ExcelRow, ReadExcelOptions } from './utils/excelUtils';
 export type { BrowserName, PoolConfig, BrowserLaunchConfig, BrowserContextConfig, PoolStats, BrowserStackCredentials, BrowserStackCapabilities, BrowserStackConfig, ProxyConfig, ViewportSize } from './browser/browser-types';

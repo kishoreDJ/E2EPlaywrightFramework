@@ -37,8 +37,13 @@ exports.default = (0, test_1.defineConfig)({
     forbidOnly: !!process.env.CI,
     /* Retry on CI only */
     retries: process.env.CI ? 2 : 0,
-    /* Workers: allow enough parallelism for 50+ concurrent tests */
-    workers: process.env.CI ? 4 : process.env.WORKERS ? parseInt(process.env.WORKERS) : undefined,
+    /* Workers: BrowserStack plans typically allow few parallel sessions, so
+       CI runs with limited concurrency against it; local runs still parallelize for speed. */
+    workers: process.env.CI
+        ? (isBrowserStack ? 2 : 4)
+        : process.env.WORKERS
+            ? parseInt(process.env.WORKERS)
+            : undefined,
     /* Reporter to use. See https://playwright.dev/docs/test-reporters */
     reporter: [['allure-playwright', { resultsDir: process.env.ALLURE_RESULTS_DIR || 'allure-results' }]],
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */

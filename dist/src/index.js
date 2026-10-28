@@ -1,7 +1,7 @@
 "use strict";
 // ⚠️ SCOPE: if this repo moves to a new org, update the package name in package.json
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.validateResponse = exports.uniqueCodePrefix = exports.uniqueOrderNumber = exports.uniqueEmail = exports.uniqueSuffix = exports.listExcelSheets = exports.readExcelSheet = exports.dateTimeOffset = exports.dateOffset = exports.formatDateTime = exports.formatDate = exports.closeDb = exports.query = exports.getBatchesToken = exports.getToken = exports.clearTokenCache = exports.getBearerHeader = exports.getOAuthToken = exports.BasePage = exports.apiTest = exports.browserStackTest = exports.expect = exports.test = void 0;
+exports.validateResponse = exports.listExcelSheets = exports.readExcelSheet = exports.dateTimeOffset = exports.dateOffset = exports.formatDateTime = exports.formatDate = exports.uniqueCodePrefix = exports.uniqueOrderNumber = exports.uniqueEmail = exports.uniqueSuffix = exports.closeDb = exports.query = exports.getBatchesToken = exports.getToken = exports.clearTokenCache = exports.getBearerHeader = exports.getOAuthToken = exports.BasePage = exports.apiTest = exports.browserStackTest = exports.expect = exports.test = void 0;
 // Framework test objects
 var browser_fixture_1 = require("./fixtures/browser-fixture");
 Object.defineProperty(exports, "test", { enumerable: true, get: function () { return browser_fixture_1.test; } });
@@ -25,19 +25,20 @@ var dbHelper_1 = require("./helpers/dbHelper");
 Object.defineProperty(exports, "query", { enumerable: true, get: function () { return dbHelper_1.query; } });
 Object.defineProperty(exports, "closeDb", { enumerable: true, get: function () { return dbHelper_1.closeDb; } });
 // Data utilities
-var date_formatter_1 = require("./data/date-formatter");
-Object.defineProperty(exports, "formatDate", { enumerable: true, get: function () { return date_formatter_1.formatDate; } });
-Object.defineProperty(exports, "formatDateTime", { enumerable: true, get: function () { return date_formatter_1.formatDateTime; } });
-Object.defineProperty(exports, "dateOffset", { enumerable: true, get: function () { return date_formatter_1.dateOffset; } });
-Object.defineProperty(exports, "dateTimeOffset", { enumerable: true, get: function () { return date_formatter_1.dateTimeOffset; } });
-var excel_reader_1 = require("./data/excel-reader");
-Object.defineProperty(exports, "readExcelSheet", { enumerable: true, get: function () { return excel_reader_1.readExcelSheet; } });
-Object.defineProperty(exports, "listExcelSheets", { enumerable: true, get: function () { return excel_reader_1.listExcelSheets; } });
 var unique_1 = require("./data/unique");
 Object.defineProperty(exports, "uniqueSuffix", { enumerable: true, get: function () { return unique_1.uniqueSuffix; } });
 Object.defineProperty(exports, "uniqueEmail", { enumerable: true, get: function () { return unique_1.uniqueEmail; } });
 Object.defineProperty(exports, "uniqueOrderNumber", { enumerable: true, get: function () { return unique_1.uniqueOrderNumber; } });
 Object.defineProperty(exports, "uniqueCodePrefix", { enumerable: true, get: function () { return unique_1.uniqueCodePrefix; } });
+// Utils
+var dateUtils_1 = require("./utils/dateUtils");
+Object.defineProperty(exports, "formatDate", { enumerable: true, get: function () { return dateUtils_1.formatDate; } });
+Object.defineProperty(exports, "formatDateTime", { enumerable: true, get: function () { return dateUtils_1.formatDateTime; } });
+Object.defineProperty(exports, "dateOffset", { enumerable: true, get: function () { return dateUtils_1.dateOffset; } });
+Object.defineProperty(exports, "dateTimeOffset", { enumerable: true, get: function () { return dateUtils_1.dateTimeOffset; } });
+var excelUtils_1 = require("./utils/excelUtils");
+Object.defineProperty(exports, "readExcelSheet", { enumerable: true, get: function () { return excelUtils_1.readExcelSheet; } });
+Object.defineProperty(exports, "listExcelSheets", { enumerable: true, get: function () { return excelUtils_1.listExcelSheets; } });
 // Schema validation
 var validator_1 = require("./schema-validation/validator");
 Object.defineProperty(exports, "validateResponse", { enumerable: true, get: function () { return validator_1.validateResponse; } });

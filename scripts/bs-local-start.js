@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // Starts BrowserStack Local tunnel for routing QA/dev URLs through your machine.
 // Usage: node scripts/bs-local-start.js
 // The tunnel runs until the process exits; for detached use see bs-local-daemon.js.

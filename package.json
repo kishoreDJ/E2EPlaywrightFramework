@@ -12,7 +12,9 @@
     "e2e-run-allure": "scripts/run-with-allure.js",
     "e2e-report-deploy": "scripts/report-deploy.js",
     "e2e-carry-history": "scripts/allure-carry-history.js",
-    "e2e-allure-brand": "scripts/allure-brand.js"
+    "e2e-allure-brand": "scripts/allure-brand.js",
+    "e2e-bs-tunnel": "scripts/bs-local-start.js",
+    "e2e-bs-test": "scripts/bs-local-test.js"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",

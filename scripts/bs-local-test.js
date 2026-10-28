@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // Starts BrowserStack Local tunnel, runs Playwright tests, then stops tunnel.
 // Usage: node scripts/bs-local-test.js -- npx playwright test --project=BS-Chrome-Windows11
 // Exits with the test process exit code so CI can detect failures.

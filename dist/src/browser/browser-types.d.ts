@@ -77,6 +77,7 @@ export interface BrowserStackCapabilities {
     build?: string;
     project?: string;
     'browserstack.local'?: boolean;
+    'browserstack.localIdentifier'?: string;
     'browserstack.debug'?: boolean;
     'browserstack.networkLogs'?: boolean;
     'browserstack.video'?: boolean;

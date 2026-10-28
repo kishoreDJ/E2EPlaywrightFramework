@@ -43,6 +43,10 @@
     "publish:browserstack": "node scripts/browserstack-publish.js allure-results/full",
     "publish:browserstack:smoke": "node scripts/browserstack-publish.js allure-results/smoke Smoke",
     "publish:browserstack:regression": "node scripts/browserstack-publish.js allure-results/regression Regression",
+    "bs:tunnel": "node scripts/bs-local-start.js",
+    "test:bs": "node scripts/allure-carry-history.js allure-results/full allure-report/full && node scripts/bs-local-test.js -- node scripts/run-with-allure.js allure-results/full allure-report/full -- npx playwright test",
+    "test:bs:smoke": "node scripts/allure-carry-history.js allure-results/smoke allure-report/smoke && node scripts/bs-local-test.js -- node scripts/run-with-allure.js allure-results/smoke allure-report/smoke -- npx playwright test --grep @smoke",
+    "test:bs:regression": "node scripts/allure-carry-history.js allure-results/regression allure-report/regression && node scripts/bs-local-test.js -- node scripts/run-with-allure.js allure-results/regression allure-report/regression -- npx playwright test --grep @regression",
     "test:bs-sdk:djcss": "browserstack-node-sdk playwright test tests/djcss-admin-page --config=playwright.config.ts",
     "build": "tsc --project tsconfig.json"
   },
@@ -57,13 +61,13 @@
     "allure-commandline": "^2.34.0",
     "allure-js-commons": "^3.10.2",
     "allure-playwright": "^3.4.2",
+    "browserstack-local": "^1.5.16",
     "jsonpath-plus": "^10.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^7.0.2",
     "xlsx": "^0.18.5"
   },
   "dependencies": {
-    "zod": "^3.24.0",
     "@anthropic-ai/bedrock-sdk": "^0.32.0",
     "@anthropic-ai/sdk": "^0.115.0",
     "@types/mysql": "^2.15.27",
@@ -71,6 +75,7 @@
     "dotenv": "^17.4.2",
     "mysql2": "^3.24.4",
     "pg": "^8.22.0",
-    "uuid": "^14.0.2"
+    "uuid": "^14.0.2",
+    "zod": "^3.24.0"
   }
 }

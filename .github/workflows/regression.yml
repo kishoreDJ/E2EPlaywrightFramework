@@ -42,6 +42,8 @@ jobs:
       DJCSS_USERNAME: ${{ secrets.DJCSS_USERNAME }}
       DJCSS_PASSWORD: ${{ secrets.DJCSS_PASSWORD }}
       TEST_ENV: ${{ vars.TEST_ENV }}
+      BS_LOCAL_IDENTIFIER: ${{ github.run_id }}
+      USE_BS_LOCAL: true
       HEADLESS: true
       DEBUG: false
       ALFRESCO_BASE_URL: ${{ secrets.ALFRESCO_BASE_URL }}
@@ -64,6 +66,15 @@ jobs:
       - name: Install Playwright (Chromium only — BrowserStack runs remote)
         run: npx playwright install --with-deps chromium
 
+      - name: Start BrowserStack Local tunnel
+        uses: browserstack/github-actions/setup-local@v1
+        with:
+          local-testing: start
+          local-identifier: ${{ github.run_id }}
+          local-args: --force-local
+        env:
+          BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+
       - name: Run tests and generate Allure report
         env:
           APP_NAME: DJCSS
@@ -77,6 +88,15 @@ jobs:
               tests/home/home.spec.ts \
               tests/live-chat/live-chat.spec.ts \
               tests/product-alerts/product-alerts.spec.ts
+
+      - name: Stop BrowserStack Local tunnel
+        if: always()
+        uses: browserstack/github-actions/setup-local@v1
+        with:
+          local-testing: stop
+          local-identifier: ${{ github.run_id }}
+        env:
+          BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
 
       - name: Upload Allure report as artifact
         if: always()

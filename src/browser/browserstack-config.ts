@@ -54,6 +54,15 @@ export function buildBrowserStackWsEndpoint(config: BrowserStackConfig): string 
 // Default capability presets
 // ==========================================
 
+// When USE_BS_LOCAL=true, all presets include local tunnel capabilities so
+// BrowserStack workers route through the running BrowserStackLocal tunnel.
+const bsLocalCaps = process.env.USE_BS_LOCAL === 'true'
+  ? {
+      'browserstack.local': true,
+      'browserstack.localIdentifier': process.env.BS_LOCAL_IDENTIFIER || 'default',
+    }
+  : {};
+
 export const BS_CAPABILITY_PRESETS: Record<string, BrowserStackCapabilities> = {
   'chrome-windows-11': {
     browser: 'chrome',
@@ -63,6 +72,7 @@ export const BS_CAPABILITY_PRESETS: Record<string, BrowserStackCapabilities> = {
     'browserstack.debug': true,
     'browserstack.networkLogs': true,
     'browserstack.video': true,
+    ...bsLocalCaps,
   },
   'chrome-mac-sequoia': {
     browser: 'chrome',
@@ -71,6 +81,7 @@ export const BS_CAPABILITY_PRESETS: Record<string, BrowserStackCapabilities> = {
     os_version: 'Sequoia',
     'browserstack.debug': true,
     'browserstack.video': true,
+    ...bsLocalCaps,
   },
   'firefox-windows-11': {
     browser: 'playwright-firefox',
@@ -79,6 +90,7 @@ export const BS_CAPABILITY_PRESETS: Record<string, BrowserStackCapabilities> = {
     os_version: '11',
     'browserstack.debug': true,
     'browserstack.video': true,
+    ...bsLocalCaps,
   },
   'edge-windows-11': {
     browser: 'edge',
@@ -87,6 +99,7 @@ export const BS_CAPABILITY_PRESETS: Record<string, BrowserStackCapabilities> = {
     os_version: '11',
     'browserstack.debug': true,
     'browserstack.video': true,
+    ...bsLocalCaps,
   },
 };
 

@@ -42,14 +42,16 @@ function buildBrowserStackWsEndpoint(config) {
 // ==========================================
 // Default capability presets
 // ==========================================
-// When USE_BS_LOCAL=true, all presets include local tunnel capabilities so
-// BrowserStack workers route through the running BrowserStackLocal tunnel.
-const bsLocalCaps = process.env.USE_BS_LOCAL === 'true'
-    ? {
+// Returns local-tunnel caps evaluated at call time (not module-load time),
+// so dotenv.config() is guaranteed to have run before this is read.
+function resolveLocalCaps() {
+    if (process.env.USE_BS_LOCAL !== 'true')
+        return {};
+    return {
         'browserstack.local': true,
         'browserstack.localIdentifier': process.env.BS_LOCAL_IDENTIFIER || 'default',
-    }
-    : {};
+    };
+}
 exports.BS_CAPABILITY_PRESETS = {
     'chrome-windows-11': {
         browser: 'chrome',
@@ -59,7 +61,6 @@ exports.BS_CAPABILITY_PRESETS = {
         'browserstack.debug': true,
         'browserstack.networkLogs': true,
         'browserstack.video': true,
-        ...bsLocalCaps,
     },
     'chrome-mac-sequoia': {
         browser: 'chrome',
@@ -68,7 +69,6 @@ exports.BS_CAPABILITY_PRESETS = {
         os_version: 'Sequoia',
         'browserstack.debug': true,
         'browserstack.video': true,
-        ...bsLocalCaps,
     },
     'firefox-windows-11': {
         browser: 'playwright-firefox',
@@ -77,7 +77,6 @@ exports.BS_CAPABILITY_PRESETS = {
         os_version: '11',
         'browserstack.debug': true,
         'browserstack.video': true,
-        ...bsLocalCaps,
     },
     'edge-windows-11': {
         browser: 'edge',
@@ -86,7 +85,6 @@ exports.BS_CAPABILITY_PRESETS = {
         os_version: '11',
         'browserstack.debug': true,
         'browserstack.video': true,
-        ...bsLocalCaps,
     },
 };
 // ==========================================
@@ -95,14 +93,11 @@ exports.BS_CAPABILITY_PRESETS = {
 class BrowserStackConfigBuilder {
     constructor(presetKey) {
         this.creds = loadBrowserStackCredentials();
-        this.caps = presetKey
+        const base = presetKey
             ? { ...exports.BS_CAPABILITY_PRESETS[presetKey] }
-            : {
-                browser: 'chrome',
-                browser_version: 'latest',
-                os: 'Windows',
-                os_version: '11',
-            };
+            : { browser: 'chrome', browser_version: 'latest', os: 'Windows', os_version: '11' };
+        // Merge local-tunnel caps at construction time so dotenv has already run
+        this.caps = { ...base, ...resolveLocalCaps() };
     }
     setBrowser(browser) {
         this.caps.browser = browser;
@@ -136,6 +131,10 @@ class BrowserStackConfigBuilder {
     }
     enableLocal(enable = true) {
         this.caps['browserstack.local'] = enable;
+        return this;
+    }
+    setLocalIdentifier(identifier) {
+        this.caps['browserstack.localIdentifier'] = identifier;
         return this;
     }
     enableDebug(enable = true) {

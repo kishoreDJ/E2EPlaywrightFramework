@@ -91,32 +91,9 @@ export const test = browserTest.extend<BsFixtures, BsWorkerFixtures>({
 
     const browser = await BrowserStackConnection.connect(config);
     await use(browser);
-
-    // Child fixtures (bsPage → bsContext) have fully torn down by this point,
-    // so all pages and contexts are closed. We report session status here —
-    // right before disconnect — to guarantee the directive lands before
-    // browser.close() ends the session on BrowserStack's side.
-    //
-    // bsPage stores the final status/reason on testInfo so we can read them here.
-    const status = BrowserStackSessionReporter.mapStatus(testInfo.status);
-    const reason = BrowserStackSessionReporter.buildReason(
-      testInfo.title,
-      status,
-      testInfo.errors?.[0]?.message
-    );
-
-    // Open a short-lived page solely to deliver the executor directive.
-    // This avoids depending on a page that bsPage already closed.
-    let statusPage: Page | undefined;
-    try {
-      const ctx = await browser.newContext();
-      statusPage = await ctx.newPage();
-      await BrowserStackConnection.updateSessionStatus(statusPage, status, reason);
-      await ctx.close();
-    } catch (err) {
-      console.warn('[BrowserStack] Failed to report session status:', err);
-    }
-
+    // bsPage teardown has already run (Playwright guarantees child-before-parent
+    // fixture ordering), so the session status directive was sent before we reach
+    // this point. Just disconnect cleanly.
     await BrowserStackConnection.disconnect(browser);
   },
 
@@ -137,8 +114,8 @@ export const test = browserTest.extend<BsFixtures, BsWorkerFixtures>({
     await context.close();
   },
 
-  // ---- Test-scoped: page in the remote context ----
-  bsPage: async ({ bsContext, pooledPage }, use) => {
+  // ---- Test-scoped: page in the remote context, reports session status on teardown ----
+  bsPage: async ({ bsContext, pooledPage }, use, testInfo: TestInfo) => {
     if (!isBrowserStackEnabled()) {
       await use(pooledPage);
       return;
@@ -146,6 +123,24 @@ export const test = browserTest.extend<BsFixtures, BsWorkerFixtures>({
 
     const page = await bsContext.newPage();
     await use(page);
+
+    // Report pass/fail on the live session page before closing it.
+    // BrowserStack's CDP proxy intercepts page.evaluate calls whose argument
+    // starts with "browserstack_executor:" — this must run on the original
+    // session page, not a newly opened one, and before browser.close().
+    const status = BrowserStackSessionReporter.mapStatus(testInfo.status);
+    const reason = BrowserStackSessionReporter.buildReason(
+      testInfo.title,
+      status,
+      testInfo.errors?.[0]?.message
+    );
+
+    try {
+      await BrowserStackConnection.updateSessionStatus(page, status, reason);
+    } catch (err) {
+      console.warn('[BrowserStack] Failed to report session status:', err);
+    }
+
     await page.close();
   },
 });

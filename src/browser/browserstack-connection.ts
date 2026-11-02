@@ -58,12 +58,11 @@ export class BrowserStackConnection {
       arguments: args,
     });
 
-    // BrowserStack intercepts page.evaluate when the script string starts with
-    // "browserstack_executor:" and routes it as a server-side command.
-    // Passing the string directly (not as a function) is required — a function
-    // body would never contain the magic prefix and would be ignored.
-    // Awaiting ensures the directive is committed before the caller disconnects.
-    await page.evaluate(`browserstack_executor: ${directive}`);
+    // BrowserStack intercepts at the CDP level by reading the argument string
+    // from Runtime.callFunctionOn — NOT by executing JS. The directive must be
+    // passed as the argument (second param), not as the function body, so the
+    // JS engine never sees the "browserstack_executor:" prefix as a statement.
+    await page.evaluate((_directive: string) => {}, `browserstack_executor: ${directive}`);
   }
 
   /**

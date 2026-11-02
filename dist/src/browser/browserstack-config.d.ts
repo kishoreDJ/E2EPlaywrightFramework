@@ -27,6 +27,7 @@ export declare class BrowserStackConfigBuilder {
     setBuild(build: string): this;
     setProject(project: string): this;
     enableLocal(enable?: boolean): this;
+    setLocalIdentifier(identifier: string): this;
     enableDebug(enable?: boolean): this;
     enableNetworkLogs(enable?: boolean): this;
     enableVideo(enable?: boolean): this;

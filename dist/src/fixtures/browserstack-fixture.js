@@ -45,7 +45,8 @@ exports.test = browser_fixture_1.test.extend({
             await use(pooledBrowser);
             return;
         }
-        const config = new browserstack_config_1.BrowserStackConfigBuilder()
+        const presetKey = process.env.BS_CAPABILITY_PRESET ?? 'chrome-windows-11';
+        const builder = new browserstack_config_1.BrowserStackConfigBuilder(presetKey)
             .setBrowser(bsCapabilities.browser)
             .setBrowserVersion(bsCapabilities.browser_version ?? 'latest')
             .setOS(bsCapabilities.os, bsCapabilities.os_version)
@@ -54,8 +55,13 @@ exports.test = browser_fixture_1.test.extend({
             .setProject(resolveProjectName())
             .enableDebug(bsCapabilities['browserstack.debug'] ?? true)
             .enableVideo(bsCapabilities['browserstack.video'] ?? true)
-            .enableNetworkLogs(bsCapabilities['browserstack.networkLogs'] ?? false)
-            .build();
+            .enableNetworkLogs(bsCapabilities['browserstack.networkLogs'] ?? false);
+        if (process.env.USE_BS_LOCAL === 'true') {
+            builder
+                .enableLocal(true)
+                .setLocalIdentifier(process.env.BS_LOCAL_IDENTIFIER || 'default');
+        }
+        const config = builder.build();
         const browser = await browserstack_connection_1.BrowserStackConnection.connect(config);
         await use(browser);
         await browserstack_connection_1.BrowserStackConnection.disconnect(browser);

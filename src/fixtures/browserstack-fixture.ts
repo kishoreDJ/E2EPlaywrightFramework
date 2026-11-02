@@ -69,7 +69,8 @@ export const test = browserTest.extend<BsFixtures, BsWorkerFixtures>({
       return;
     }
 
-    const config = new BrowserStackConfigBuilder()
+    const presetKey = process.env.BS_CAPABILITY_PRESET ?? 'chrome-windows-11';
+    const builder = new BrowserStackConfigBuilder(presetKey)
       .setBrowser(bsCapabilities.browser)
       .setBrowserVersion(bsCapabilities.browser_version ?? 'latest')
       .setOS(bsCapabilities.os, bsCapabilities.os_version)
@@ -78,8 +79,15 @@ export const test = browserTest.extend<BsFixtures, BsWorkerFixtures>({
       .setProject(resolveProjectName())
       .enableDebug(bsCapabilities['browserstack.debug'] ?? true)
       .enableVideo(bsCapabilities['browserstack.video'] ?? true)
-      .enableNetworkLogs(bsCapabilities['browserstack.networkLogs'] ?? false)
-      .build();
+      .enableNetworkLogs(bsCapabilities['browserstack.networkLogs'] ?? false);
+
+    if (process.env.USE_BS_LOCAL === 'true') {
+      builder
+        .enableLocal(true)
+        .setLocalIdentifier(process.env.BS_LOCAL_IDENTIFIER || 'default');
+    }
+
+    const config = builder.build();
 
     const browser = await BrowserStackConnection.connect(config);
     await use(browser);

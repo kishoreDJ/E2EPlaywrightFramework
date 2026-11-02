@@ -36,10 +36,19 @@ class BrowserStackConnection {
      * Must be called before browser.close() — the session is already gone after that.
      */
     static async updateSessionStatus(page, status, reason) {
-        const script = reason
-            ? `browserstack_executor: {"action": "setSessionStatus", "arguments": {"status": "${status}", "reason": "${reason}"}}`
-            : `browserstack_executor: {"action": "setSessionStatus", "arguments": {"status": "${status}"}}`;
-        await page.evaluate(() => { }, script);
+        const args = { status };
+        if (reason)
+            args.reason = reason;
+        const directive = JSON.stringify({
+            action: 'setSessionStatus',
+            arguments: args,
+        });
+        // BrowserStack intercepts page.evaluate when the script string starts with
+        // "browserstack_executor:" and routes it as a server-side command.
+        // Passing the string directly (not as a function) is required — a function
+        // body would never contain the magic prefix and would be ignored.
+        // Awaiting ensures the directive is committed before the caller disconnects.
+        await page.evaluate(`browserstack_executor: ${directive}`);
     }
     /**
      * Returns the correct Playwright launcher based on the BS browser capability.

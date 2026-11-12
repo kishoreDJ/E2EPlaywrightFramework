@@ -8,7 +8,7 @@ import { test as base, Browser, BrowserContext, Page, chromium, firefox, webkit 
 import { parentSuite } from 'allure-js-commons';
 import { BrowserPoolRegistry } from '../browser/browser-pool';
 import { BrowserLaunchOptionsManager, BrowserContextOptionsBuilder } from '../browser/browser-launch-options';
-import { buildBrowserStackWsEndpoint, BS_CAPABILITY_PRESETS } from '../browser/browserstack-config';
+import { buildBrowserStackWsEndpoint, BS_CAPABILITY_PRESETS, resolveLocalCaps } from '../browser/browserstack-config';
 import type { BrowserName, BrowserContextConfig, PoolConfig } from '../browser/browser-types';
 import { LoginPage } from '../pages/LoginPage';
 import { AlfrescoLoginPage } from '../pages/AlfrescoLoginPage';
@@ -124,6 +124,7 @@ export const test = base.extend<BrowserFixtures, BrowserWorkerFixtures>({
       const presetKey = PROJECT_TO_PRESET[testInfo.project.name] ?? process.env.BS_CAPABILITY_PRESET ?? 'chrome-windows-11';
       const caps = {
         ...BS_CAPABILITY_PRESETS[presetKey],
+        ...resolveLocalCaps(),
         build: process.env.BS_BUILD_NAME ?? 'local',
         project: process.env.BS_PROJECT_NAME ?? 'E2EFrameworkOne',
         name: testInfo.title,

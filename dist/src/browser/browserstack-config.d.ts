@@ -14,6 +14,7 @@ export declare function loadBrowserStackCredentials(): BrowserStackCredentials;
  * the full wss:// URL that playwright.connect() accepts.
  */
 export declare function buildBrowserStackWsEndpoint(config: BrowserStackConfig): string;
+export declare function resolveLocalCaps(): Partial<BrowserStackCapabilities>;
 export declare const BS_CAPABILITY_PRESETS: Record<string, BrowserStackCapabilities>;
 export declare class BrowserStackConfigBuilder {
     private caps;

@@ -80,17 +80,17 @@ function durationBetween(a, b) {
  */
 function addToDate(date, delta) {
     const d = new Date(date);
-    if (delta.years)
+    if (delta.years != null)
         d.setFullYear(d.getFullYear() + delta.years);
-    if (delta.months)
+    if (delta.months != null)
         d.setMonth(d.getMonth() + delta.months);
-    if (delta.days)
+    if (delta.days != null)
         d.setDate(d.getDate() + delta.days);
-    if (delta.hours)
+    if (delta.hours != null)
         d.setHours(d.getHours() + delta.hours);
-    if (delta.minutes)
+    if (delta.minutes != null)
         d.setMinutes(d.getMinutes() + delta.minutes);
-    if (delta.seconds)
+    if (delta.seconds != null)
         d.setSeconds(d.getSeconds() + delta.seconds);
     return d;
 }

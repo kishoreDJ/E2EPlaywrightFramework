@@ -1,6 +1,6 @@
 {
   "name": "@kishoredj/e2eframeworkone",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Shared E2E test framework — UI and API",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
@@ -64,6 +64,7 @@
     "allure-js-commons": "^3.10.2",
     "allure-playwright": "^3.4.2",
     "browserstack-local": "^1.5.16",
+    "browserstack-node-sdk": "^1.77.0",
     "jsonpath-plus": "^10.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^7.0.2",

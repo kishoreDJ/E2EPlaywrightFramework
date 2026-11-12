@@ -82,6 +82,7 @@ exports.test = test_1.test.extend({
             const presetKey = PROJECT_TO_PRESET[testInfo.project.name] ?? process.env.BS_CAPABILITY_PRESET ?? 'chrome-windows-11';
             const caps = {
                 ...browserstack_config_1.BS_CAPABILITY_PRESETS[presetKey],
+                ...(0, browserstack_config_1.resolveLocalCaps)(),
                 build: process.env.BS_BUILD_NAME ?? 'local',
                 project: process.env.BS_PROJECT_NAME ?? 'E2EFrameworkOne',
                 name: testInfo.title,

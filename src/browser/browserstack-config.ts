@@ -56,7 +56,7 @@ export function buildBrowserStackWsEndpoint(config: BrowserStackConfig): string 
 
 // Returns local-tunnel caps evaluated at call time (not module-load time),
 // so dotenv.config() is guaranteed to have run before this is read.
-function resolveLocalCaps(): Partial<BrowserStackCapabilities> {
+export function resolveLocalCaps(): Partial<BrowserStackCapabilities> {
   if (process.env.USE_BS_LOCAL !== 'true') return {};
   return {
     'browserstack.local': true,

@@ -8,6 +8,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BrowserStackConfigBuilder = exports.BS_CAPABILITY_PRESETS = void 0;
 exports.loadBrowserStackCredentials = loadBrowserStackCredentials;
 exports.buildBrowserStackWsEndpoint = buildBrowserStackWsEndpoint;
+exports.resolveLocalCaps = resolveLocalCaps;
 const BS_CDP_URL = 'wss://cdp.browserstack.com/playwright';
 // ==========================================
 // Credential loader
